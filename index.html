@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Meetability</title>
+    <title>UpMeet</title>
     <meta name="description" content="A Meetup Tool For Programmers">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -14,10 +14,35 @@
 
 <body>
     <div id="the-response">
-
     </div>
-    <div id="map">
+    <div class="container">
+        <div id="map">
+        </div>
+    </div>
 
+    <!-- Create User Form-->
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading panel-custom">
+                Add User
+            </div>
+            <div class="panel-body">
+                <form>
+                    <div class="form-group">
+                        <label for="trainName">Email Address:</label>
+                        <input type="email" class="form-control" name="email" id="user-email" placeholder="info@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">Password:</label>
+                        <input type="password" class="form-control" id="user-password" required>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" id="btn-add" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- end create User Panel -->
     </div>
 
     <script type="text/javascript"></script>
