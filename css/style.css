@@ -1,4 +1,61 @@
+/* Layout
+==============================*/
+
+body {
+	padding-top: 50px;
+}
+
+.container {
+	max-width: 1000px;
+}
+
+/* Navbar
+==============================*/
+
+div.navbar.navbar-inverse.navbar-fixed-top {
+	background-color: #ed1c40; 
+}
+
+/*Jumbotron
+===============================*/
+
+.jumbotron {
+	/*background: #ed1c40; */ 
+	color: #ed1c40;
+	margin-bottom: 0;
+   	min-height: 50%;
+   	background-image: url("../images/StockSnap.jpg");
+   	background-repeat: no-repeat;
+   	background-position: center;
+   	image-rendering: -webkit-optimize-contrast;
+   	-webkit-background-size: cover;
+   	background-size: cover;
+	color: #fff;
+	font-weight: 200;
+	text-align: center;
+	text-shadow: 3px 3px 0px #000;
+}
+
+
+/*Glyphicons
+===============================*/
+
+.glyphicon {
+	font-size: 3em;
+	display: block;
+	text-align: center;
+	color: #ed1c40; 
+}
+
+
+
+
+
+
+
+
 #map {
   height: 400px;
   width: 100%;
  }
+
