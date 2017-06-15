@@ -116,10 +116,14 @@ var initApp = function() {
             // user is signed in
             var email = user.email;
             console.log("Signed In!");
+            $("#login-form").hide();
+            $("#signout-btn").show();
             // CREATE SIGNOUT BUTTON ***
         } else {
             // user is signed out
-            console.log("Signed out!");
+            console.log("User is Signed out!");
+            $("#signout-btn").hide();
+            $("#login-form").show();
             // CREATE SIGNED IN BUTTON ***
         }
     });
@@ -151,6 +155,14 @@ var initApp = function() {
             userLogin(event);
         }
     });
+
+    $("#signout-btn").on("click", function(event) {
+        firebase.auth().signOut().then(function() {
+            console.log("User is signed out!");
+        }, function(error) {
+            console.error("sign out error: " + error);
+        })
+    })
 }
 
 window.onload = function() {
