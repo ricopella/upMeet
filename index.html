@@ -27,7 +27,7 @@
                 Add User
             </div>
             <div class="panel-body">
-                <form>
+                <form id="create-form">
                     <div class="form-group">
                         <label for="trainName">Email Address:</label>
                         <input type="email" class="form-control" name="email" id="user-email" placeholder="info@example.com" required>
@@ -38,6 +38,31 @@
                     </div>
                     <div class="btn-group" role="group">
                         <button type="button" id="btn-add" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end create User Panel -->
+
+    <!-- Login User Form-->
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading panel-custom">
+                User Login
+            </div>
+            <div class="panel-body">
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="trainName">Email Address:</label>
+                        <input type="email" class="form-control" name="email" id="user-name" placeholder="info@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">Password:</label>
+                        <input type="password" class="form-control" id="current-password" required>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" id="btn-login" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Submit</button>
                     </div>
                 </form>
             </div>

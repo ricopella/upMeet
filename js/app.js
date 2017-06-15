@@ -25,19 +25,24 @@ function initMap() {
 }
 
 $("#btn-add").on("click", function(event) {
-
-    function validateEmail(e) {
-        var re = /\S+@\S+\.\S+/;
-        return re.test(e);
-        userSignUp(event);
-    }
-
+    userSignUp(event);
 });
 
-$("form").on("keypress", function(event) {
+$("#create-form").on("keypress", function(event) {
     if (event.which == 13) {
         console.log("Enter!")
         userSignUp(event);
+    }
+});
+
+$("#btn-login").on("click", function(event) {
+    userLogin(event);
+});
+
+$("#login-form").on("keypress", function(event) {
+    if (event.which == 13) {
+        console.log("Enter!")
+        userLogin(event);
     }
 });
 
@@ -52,16 +57,48 @@ var userSignUp = function(event) {
 
     console.log("User: " + userEmail + " Password: " + password);
 
+    // email must be > 4
+    if (userEmail.length < 4) {
+        alert("Please enter an email address.");
+        return;
+    }
+    // password must be > 4
+    if (password.length < 4) {
+        alert("Please enter a password.");
+        return;
+    }
+    // IF email & password are valid, create user
+    firebase.auth().createUserWithEmailAndPassword(userEmail, password).catch(function(error) {
+        // Handle Errors
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+        if (errorCode == 'auth/week-password') {
+            alert("The password is too weak.");
+        } else {
+            alert(errorMessage);
+        }
+        console.log(error);
+    }); // end createUserWithEmailAndPassword
 
     // reset form
     $("#user-email").val("");
     $("#user-password").val("");
 
-    firebase.auth().createUserWithEmailAndPassword(userEmail, password).catch(function(error) {
+}; // end userSignUp
+
+var userLogin = function(event) {
+    // prevent page reload
+    event.preventDefault;
+    currentUser = $("#user-name").val();
+    userPassword = $("#current-password").val();
+
+    firebase.auth().signInWithEmailAndPassword(currentUser, userPassword).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
         // ...
     });
+
 
 };
