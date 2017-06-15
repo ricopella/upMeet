@@ -108,32 +108,51 @@ var userLogin = function(event) {
 
 }; // end userLogin
 
+// handles event listeners & registering Firebase authlisteners
+var initApp = function() {
+    // listens for changes to auth (login / sign ou)
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            // user is signed in
+            var email = user.email;
+            console.log("Signed In!");
+            // CREATE SIGNOUT BUTTON ***
+        } else {
+            // user is signed out
+            console.log("Signed out!");
+            // CREATE SIGNED IN BUTTON ***
+        }
+    });
+    //  EVENT LISTENERS
 
-//  EVENT LISTENERS
-
-// submit button on Sign-Up
-$("#btn-add").on("click", function(event) {
-    userSignUp(event);
-});
-
-// enter key on Sign-up
-$("#create-form").on("keypress", function(event) {
-    if (event.which == 13) {
-        console.log("Enter!")
+    // submit button on Sign-Up
+    $("#btn-add").on("click", function(event) {
         userSignUp(event);
-    }
-});
+    });
 
-// submit button on Login
-$("#btn-login").on("click", function(event) {
-    console.log("Entered on Form!");
-    userLogin(event);
-});
+    // enter key on Sign-up
+    $("#create-form").on("keypress", function(event) {
+        if (event.which == 13) {
+            console.log("Enter!")
+            userSignUp(event);
+        }
+    });
 
-// enter key on login
-$("#login-form").on("keypress", function(event) {
-    if (event.which == 13) {
-        console.log("Enter on form!");
+    // submit button on Login
+    $("#btn-login").on("click", function(event) {
+        console.log("Entered on Form!");
         userLogin(event);
-    }
-});
+    });
+
+    // enter key on login
+    $("#login-form").on("keypress", function(event) {
+        if (event.which == 13) {
+            console.log("Enter on form!");
+            userLogin(event);
+        }
+    });
+}
+
+window.onload = function() {
+    initApp();
+};
