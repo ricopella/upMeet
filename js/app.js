@@ -22,29 +22,7 @@ function initMap() {
         position: uluru,
         map: map
     });
-}
-
-$("#btn-add").on("click", function(event) {
-    userSignUp(event);
-});
-
-$("#create-form").on("keypress", function(event) {
-    if (event.which == 13) {
-        console.log("Enter!")
-        userSignUp(event);
-    }
-});
-
-$("#btn-login").on("click", function(event) {
-    userLogin(event);
-});
-
-$("#login-form").on("keypress", function(event) {
-    if (event.which == 13) {
-        console.log("Enter!")
-        userLogin(event);
-    }
-});
+} // end initMap
 
 var userSignUp = function(event) {
 
@@ -88,17 +66,74 @@ var userSignUp = function(event) {
 }; // end userSignUp
 
 var userLogin = function(event) {
+    console.log("reached me!");
     // prevent page reload
     event.preventDefault;
-    currentUser = $("#user-name").val();
-    userPassword = $("#current-password").val();
+    userEmail = $("#user-name").val();
+    password = $("#current-password").val();
 
-    firebase.auth().signInWithEmailAndPassword(currentUser, userPassword).catch(function(error) {
+    if (firebase.auth().currentUser) {
+        // start signout
+        firebase.auth().signOut();
+        // end signout
+    } else {
+        if (userEmail.length < 4) {
+            alert("Please enter an email address.");
+            return;
+        }
+        if (password.length < 4) {
+            alert("Please enter a password.");
+            return;
+        }
+    }
+    // sign in with email & pasword
+    firebase.auth().signInWithEmailAndPassword(userEmail, password).catch(function(error) {
+        console.log("User: " + userEmail + " Password: " + password);
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
         // ...
+        if (errorCode === 'auth/wrong-password') {
+            alert('Wrong password.');
+        } else {
+            alert(errorMessage);
+        }
+        console.log(error);
+        // disable / hide login ***
+        console.log("successful login!");
     });
+    // reset form
+    $("#user-name").val("");
+    $("#current-password").val("");
+
+}; // end userLogin
 
 
-};
+//  EVENT LISTENERS
+
+// submit button on Sign-Up
+$("#btn-add").on("click", function(event) {
+    userSignUp(event);
+});
+
+// enter key on Sign-up
+$("#create-form").on("keypress", function(event) {
+    if (event.which == 13) {
+        console.log("Enter!")
+        userSignUp(event);
+    }
+});
+
+// submit button on Login
+$("#btn-login").on("click", function(event) {
+    console.log("Entered on Form!");
+    userLogin(event);
+});
+
+// enter key on login
+$("#login-form").on("keypress", function(event) {
+    if (event.which == 13) {
+        console.log("Enter on form!");
+        userLogin(event);
+    }
+});
