@@ -2,7 +2,7 @@
 ==============================*/
 
 body {
-	padding-top: 50px;
+	padding-top: 10px;
 }
 
 .container {
@@ -16,12 +16,13 @@ div.navbar.navbar-inverse.navbar-fixed-top {
 	background-color: #ed1c40; 
 }
 
+
 /*Jumbotron
 ===============================*/
 
 .jumbotron {
 	/*background: #ed1c40; */ 
-	color: #ed1c40;
+	color: #fff;
 	margin-bottom: 0;
    	min-height: 50%;
    	background-image: url("../images/StockSnap.jpg");
@@ -30,10 +31,8 @@ div.navbar.navbar-inverse.navbar-fixed-top {
    	image-rendering: -webkit-optimize-contrast;
    	-webkit-background-size: cover;
    	background-size: cover;
-	color: #fff;
 	font-weight: 200;
 	text-align: center;
-	text-shadow: 3px 3px 0px #000;
 }
 
 
@@ -48,14 +47,24 @@ div.navbar.navbar-inverse.navbar-fixed-top {
 }
 
 
+.lead {
+	font-family: 'Titillium Web', sans-serif;
+	text-shadow: 3px 3px 3px black;
+}
 
-
-
-
+.jumbotron p {
+	font-size: 28px;
+}
 
 
 #map {
   height: 400px;
   width: 100%;
  }
+
+.jumbotron .h1, .jumbotron h1 {
+    font-size: 96px;
+    font-family: 'Titillium Web', sans-serif;
+    text-shadow: 2px 2px 2px black;
+}
 
