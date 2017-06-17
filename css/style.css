@@ -17,6 +17,11 @@ div.navbar.navbar-inverse.navbar-fixed-top {
 }
 
 
+h2{
+	margin: auto;
+	text-align: center;
+}
+
 /*Jumbotron
 ===============================*/
 
@@ -54,6 +59,7 @@ div.navbar.navbar-inverse.navbar-fixed-top {
 
 .jumbotron p {
 	font-size: 28px;
+	letter-spacing: 
 }
 
 
