@@ -20,3 +20,17 @@ function initMap() {
         map: map
     });
 } // end initMap
+
+var userSubject;
+var userAddress;
+var userDate;
+var userTime;
+
+// Click event for to render data to accordian
+$("#user-submit").on("click", function() {
+    userSubject = $("#user-subject").val().trim();
+    userAddress = $("#user-address").val().trim();
+    userDate = $("#user-date").val().trim();
+    userTime = $("#user-time").val().trim();
+    // CONVERT userDate & userTime to one UNIX number
+});

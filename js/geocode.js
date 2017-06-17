@@ -1,43 +1,18 @@
   console.log("geocode");
 
-  var geocoder;
+  var geocoder = new google.maps.Geocoder();
   var map;
   var address;
 
-  var initialize = function() {
-      console.log("iiiintialized");
-      geocoder = new google.maps.Geocoder();
-      var latlng = new google.maps.LatLng(-34.397, 150.644);
-      var mapOptions = {
-          zoom: 8,
-          center: latlng
-      }
-      map = new google.maps.Map(document.getElementById('map2'), mapOptions);
-  }
-
-  var codeAddress = function() {
-      console.log("clicked2");
-      address = $("#address").val();
+  function geocodeAddress(geocoder, userInput) {
+      var address = userInput;
       geocoder.geocode({ 'address': address }, function(results, status) {
-          if (status == 'OK') {
-              map.setCenter(results[0].geometry.location);
-              var marker = new google.maps.Marker({
-                  map: map,
-                  position: results[0].geometry.location
-              });
+          if (status === 'OK') {
+              console.log(results[0].geometry.location.lat());
+              console.log(results[0].geometry.location.lng());
+              console.log(address);
           } else {
               alert('Geocode was not successful for the following reason: ' + status);
           }
       });
-  }
-
-  $("#address-btn").on("click", function() {
-      codeAddress();
-      initialize();
-      console.log("clicked!");
-  })
-
-  window.onload = function() {
-      console.log("initialized");
-      initialize();
   }
