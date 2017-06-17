@@ -1,14 +1,21 @@
 # Meetability
 A meetup tool for developers
 
-### Team Members
------------------
-* Hovsep Agop
-* Kellen James
-* Myles Allen
-* Narin Sundarabhaya
+### Colaborators
+
+* Hovsep Agop - @hovsepa
+* Kellen James - @kellenkjames
+* Myles Allen - @mylesvallen
+* Narin Sundarabhaya - @ricopella
 
 ### Project Description
-------------------------
-Meetability is a all-in-one search tool that allows developers to easily find meetups that match their availability and provides resources to prep them for the topics to be covered.
+
+UpMeet is a all-in-one search tool that allows developers to easily find meetups that match their availability and provides resources to prep them for the topics to be covered.
+
+### API's 
+
+* MeetUp
+* Wikipedia
+* Youtube
+* Google Maps
 
