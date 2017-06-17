@@ -33,7 +33,6 @@ div.navbar.navbar-inverse.navbar-fixed-top {
 	text-align: center;
 }
 
-
 /*Glyphicons
 ===============================*/
 
@@ -64,3 +63,24 @@ div.navbar.navbar-inverse.navbar-fixed-top {
     font-family: 'Titillium Web', sans-serif;
     text-shadow: 2px 2px 2px black;
 }
+
+/*Carousel
+===============================*/
+
+.carousel-indicators {
+	bottom: 0;
+}
+
+.carousel-indicators .active {
+	background-color: #222;
+}
+
+.carousel-indicators li {
+	background-color: #222;
+}
+
+
+
+
+
+
