@@ -120,5 +120,8 @@ buildApiRequest('GET',
   interval: 6000
 })
 
+  // Wickedpicker Jquery Time Clock
+$('.timepicker').wickedpicker();
+
 
 
