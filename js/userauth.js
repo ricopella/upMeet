@@ -3,6 +3,17 @@ console.log("User Auth");
 var userEmail = "";
 var password = "";
 
+var config = {
+    apiKey: "AIzaSyCiFEAaf5MJyCwQnsPaPt8rac1oRto3UbA",
+    authDomain: "upmeet-35726.firebaseapp.com",
+    databaseURL: "https://upmeet-35726.firebaseio.com",
+    projectId: "upmeet-35726",
+    storageBucket: "upmeet-35726.appspot.com",
+    messagingSenderId: "623046336883"
+};
+firebase.initializeApp(config);
+
+
 var userSignUp = function(event) {
 
     // prevent page reload
