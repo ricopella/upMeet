@@ -1,7 +1,6 @@
-console.log("in");
+console.log("apis.js loaded");
 // NY // searchAPIS("python", 40.728862, -73.996413);
 // LA // searchAPIS("javascript", 34.020204, -118.490765)
-
 var meetupResponse;
 var youtubeResponse;
 var wikiResponse;
@@ -56,7 +55,7 @@ function updateMap (meetupResponse) {
 
       for (i = 0; i < 50; i++) {
       	if ('venue' in meetupResponse[i]) {
-          locations.push([meetupResponse[i].name, meetupResponse[i].venue.lat, meetupResponse[i].venue.lon, meetupResponse[i].venue.name]);
+          locations.push([meetupResponse[i].name, meetupResponse[i].venue.lat, meetupResponse[i].venue.lon, meetupResponse[i].venue.name, meetupResponse[i].link]);
       	}
     }
     console.log(locations);
@@ -79,7 +78,7 @@ function updateMap (meetupResponse) {
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-          infowindow.setContent(locations[i][0] + "<br />" + locations[i][3]);
+          infowindow.setContent("<a href='" + locations[i][4] + "' target='blank'>'" + locations[i][0] + "</a>" + "<br />" + locations[i][3]);
           infowindow.open(map, marker);
         }
       })(marker, i));
