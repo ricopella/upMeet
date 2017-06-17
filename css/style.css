@@ -74,17 +74,20 @@ a.navbar-brand.text-muted {
 
 /*Carousel
 ===============================*/
-
 .carousel-indicators {
 	bottom: 0;
 }
-
 .carousel-indicators .active {
 	background-color: #222;
 }
-
 .carousel-indicators li {
 	background-color: #222;
+}
+
+/*Input Fields
+===============================*/
+#user-address {
+	/*margin-left: 400px;*/
 }
 
 
