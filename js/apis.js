@@ -17,7 +17,7 @@ function searchAPIS(search, lat, lon) {
         method: "GET",
     }).done(function(response) {
         meetupResponse = response;
-        console.log("here is response data: " + response);
+        console.log(response);
         console.log(response.length);
     });
 
