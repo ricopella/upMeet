@@ -3,10 +3,10 @@ A meetup tool for developers
 
 ### Colaborators
 
-* Hovsep Agop - @hovsepa
-* Kellen James - @kellenkjames
-* Myles Allen - @mylesvallen
-* Narin Sundarabhaya - @ricopella
+* Hovsep Agop - [@hovsepa](https://github.com/hovsepa)
+* Kellen James - [@kellenkjames](https://github.com/kellenkjames)
+* Myles Allen - [@mylesvallen](https://github.com/mylesvallen)
+* Narin Sundarabhaya - [@ricopella](https://github.com/ricopella)
 
 ### Project Description
 
