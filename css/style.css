@@ -2,7 +2,8 @@
 ==============================*/
 
 body {
-	padding-top: 10px;
+	padding-top: 30px;
+
 }
 
 .container {
@@ -12,10 +13,16 @@ body {
 /* Navbar
 ==============================*/
 
-div.navbar.navbar-inverse.navbar-fixed-top {
-	background-color: #ed1c40; 
+div.navbar.navbar-static-top {
+	font-size: 1em;
+
 }
 
+a.navbar-brand.text-muted {
+	font-size: 3em;
+	text-align: center;
+	color: #000;
+}
 
 h2{
 	margin: auto;
@@ -26,9 +33,8 @@ h2{
 ===============================*/
 
 .jumbotron {
-	/*background: #ed1c40; */ 
 	color: #fff;
-	margin-bottom: 0;
+	margin-bottom: 20px;
    	min-height: 50%;
    	background-image: url("../images/StockSnap.jpg");
    	background-repeat: no-repeat;
@@ -40,7 +46,6 @@ h2{
 	text-align: center;
 }
 
-
 /*Glyphicons
 ===============================*/
 
@@ -50,7 +55,6 @@ h2{
 	text-align: center;
 	color: #ed1c40; 
 }
-
 
 .lead {
 	font-family: 'Titillium Web', sans-serif;
@@ -73,4 +77,24 @@ h2{
     font-family: 'Titillium Web', sans-serif;
     text-shadow: 2px 2px 2px black;
 }
+
+/*Carousel
+===============================*/
+.carousel-indicators {
+	bottom: 0;
+}
+.carousel-indicators .active {
+	background-color: #222;
+}
+.carousel-indicators li {
+	background-color: #222;
+}
+
+/*Input Fields
+===============================*/
+
+
+
+
+
 

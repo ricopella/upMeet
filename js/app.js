@@ -99,9 +99,6 @@ buildApiRequest('GET',
                  'q': 'javascript',
                  'type': ''}); // channel, video, or playlist
 
-
-
-
 // function wikiRequest (){
 //   $.ajax( {
 //     var url = "https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json";
@@ -117,3 +114,14 @@ buildApiRequest('GET',
 //   } );
 //
 // }
+
+  //Bootstrap Carousel (timing)
+  $('.carousel').carousel({
+  interval: 6000
+})
+
+  // Wickedpicker Jquery Time Clock
+$('.timepicker').wickedpicker();
+
+
+
