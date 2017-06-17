@@ -1,9 +1,7 @@
 /* Layout
 ==============================*/
-
 body {
 	padding-top: 30px;
-
 }
 
 .container {
@@ -17,11 +15,15 @@ div.navbar.navbar-static-top {
 	font-size: 1em;
 
 }
-
 a.navbar-brand.text-muted {
 	font-size: 3em;
 	text-align: center;
 	color: #000;
+}
+
+h2{
+	margin: auto;
+	text-align: center;
 }
 
 /*Jumbotron
@@ -58,6 +60,7 @@ a.navbar-brand.text-muted {
 
 .jumbotron p {
 	font-size: 28px;
+	letter-spacing: 
 }
 
 
@@ -86,9 +89,6 @@ a.navbar-brand.text-muted {
 
 /*Input Fields
 ===============================*/
-
-
-
 
 
 

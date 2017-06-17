@@ -3,9 +3,9 @@ console.log("in");
 
 $(document).ready(function() {
 
-    console.log( "ready!" );
-    var searchTerm = "javascript";
-    var queryURL = "https://api.meetup.com/find/events?photo-host=public&text="+ searchTerm + "&key=13493128171b80333fc956a274b1c";
+  console.log( "ready!" );
+  var searchTerm = "javascript";
+  var queryURL = "https://api.meetup.com/find/events?photo-host=public&text="+ searchTerm + "&key=13493128171b80333fc956a274b1c";
 
     // Meetup.com API call
     $.ajax({
@@ -25,7 +25,7 @@ $(document).ready(function() {
       };
       console.log(theResponse);
     });
-});
+  });
 // YouTube
 
 // Sample js code for search.list
@@ -39,7 +39,7 @@ $(document).ready(function() {
 // you need to register your own client ID.
 var OAUTH2_CLIENT_ID = '__YOUR_CLIENT_ID__';
 var OAUTH2_SCOPES = [
-  'https://www.googleapis.com/auth/youtube'
+'https://www.googleapis.com/auth/youtube'
 ];
 
 // Upon loading, the Google APIs JS client automatically invokes this callback.
@@ -78,7 +78,7 @@ function handleAuthResult(authResult) {
         client_id: OAUTH2_CLIENT_ID,
         scope: OAUTH2_SCOPES,
         immediate: false
-        }, handleAuthResult);
+      }, handleAuthResult);
     });
   }
 }
@@ -93,10 +93,10 @@ function loadAPIClientInterfaces() {
 }
 
 buildApiRequest('GET',
-                '/youtube/v3/search',
-                {'maxResults': '25',
-                 'part': 'snippet',
-                 'q': 'javascript',
+  '/youtube/v3/search',
+  {'maxResults': '25',
+  'part': 'snippet',
+  'q': 'javascript',
                  'type': ''}); // channel, video, or playlist
 
 // function wikiRequest (){
@@ -117,11 +117,12 @@ buildApiRequest('GET',
 
   //Bootstrap Carousel (timing)
   $('.carousel').carousel({
-  interval: 6000
-})
+    interval: 6000
+  })
 
-  // Wickedpicker Jquery Time Clock
-$('.timepicker').wickedpicker();
-
+  // Datepicker plugin
+     $(function() {
+    $("#datepicker").datepicker();
+  } );
 
 
