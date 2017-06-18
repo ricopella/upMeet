@@ -13,18 +13,34 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
   <!-- Link to CSS stylesheet -->
-  <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
-  <link rel="stylesheet" href="css/jquery-ui.css">
-
-  <!-- Date Picker --> 
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+  
+  <!-- Link to jQuery -->
   <script
   src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   
+  <!-- jquery UI -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="css/jquery-ui.css">
+
+  <!-- Three Picker Files for Time and Date -->
+  <script type="text/javascript" src="js/picker.js"></script>
+  <script type="text/javascript" src="js/picker.date.js"></script>
+  <script type="text/javascript" src="js/picker.time.js"></script>
+
+  <!-- Themes for JS Picker Time and Date -->
+  <link rel="stylesheet" type="text/css" href="css/default.css">
+  <link rel="stylesheet" type="text/css" href="css/default.date.css">
+  <link rel="stylesheet" type="text/css" href="css/default.time.css">
+
   <script>
-  $(function() {
-    $("#datepicker").datepicker();
-  } );
+
+  $(function() { 
+    $('#datepicker').pickadate()
+    $('#timepicker').pickatime();
+  });
+
   </script>
 
 </head>
@@ -134,13 +150,13 @@
         </div><!-- /input-group -->
       </div><!-- /.col-lg-6 -->
 
-      <!-- Search input for Time -->
+      <!-- TIMEPICKER-->
       <div class="row" text align="center">
         <div class="col-sm-3">
           <div class="input-group">
             <span class="input-group-btn">
             </span>
-            <input type="text" class="form-control" placeholder="Search for...">
+          <p><input type="text" id="timepicker"></p> 
           </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
 
@@ -157,7 +173,7 @@
           <br><br>
           <hr>
 
-          <br><br>
+          <br><br><br><br><br><br><br><br>
 
           <!-- Link to Google Maps API -->
           <div id="map-data"></div>
@@ -212,7 +228,10 @@
   </script>
   <!-- Latest compiled and minified JavaScript for Bootstrap -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+
+
+
 
 </body>
 </html>

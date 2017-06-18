@@ -28,8 +28,6 @@ var HOURS_IN_DAY = 24,
     MINUTES_IN_DAY = HOURS_IN_DAY * MINUTES_IN_HOUR,
     _ = Picker._
 
-
-
 /**
  * The time picker constructor
  */
