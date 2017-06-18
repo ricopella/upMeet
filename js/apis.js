@@ -6,13 +6,13 @@ var youtubeResponse;
 var wikiResponse;
 var mapCoordinates;
 
-function searchAPIS(search, lat, lng) {
+function searchAPIS(search, lat, lng, callback) {
     var query = search;
 
     // call meetup
     $.ajax({
         url: "https://api.meetup.com/find/events?&sign=true&photo-host=public&lon=" +
-            lon + "&text=" + query + "&radius=" + "30" + "&lat=" + lat + "&key=13493128171b80333fc956a274b1c",
+            lng + "&text=" + query + "&radius=" + "30" + "&lat=" + lat + "&key=13493128171b80333fc956a274b1c",
         method: "GET",
     }).done(function(response) {
         meetupResponse = response;
@@ -47,8 +47,6 @@ function searchAPIS(search, lat, lng) {
             wikiResponse = json.query.pages
         }
     });
-
-    updatePage(meetupResponse);
 }
 
 // googlemaps update

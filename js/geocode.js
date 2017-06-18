@@ -4,7 +4,7 @@ var address;
 var lat;
 var lng;
 
-function geocodeAddress(geocoder, userInput) {
+function geocodeAddress(geocoder, userInput, callback) {
     geocoder = new google.maps.Geocoder();
     address = userInput;
     geocoder.geocode({ 'address': address }, function(results, status) {

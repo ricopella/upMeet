@@ -19,25 +19,16 @@ function initMap() {
     });
 } // end initMap
 
-var search;
-
 // User submits form for query data
 // stores data for use in other functions
 $("#user-submit").on("click", function() {
-
-    search = $("#search-subject").val();
-
-
-    var geoResults = geocodeAddress(geocoder, $("#search-address").val());
-
-    console.log("lat: " + lat);
-
-
-    // CONVERT userDate & userTime to one UNIX number
-
-
-    // run searchAPI
-    // searchAPIS(search, lat, lng);
-    // run updatePage
-    // updatePage(meetupResponse);
+    var search = $("#search-subject").val();
+    geocodeAddress(geocoder, $("#search-address").val(), function() {
+        console.log('first func ran!');
+        searchAPIS(search, lat, lng, function() {
+            console.log('Second func ran!');
+            updatePage(meetupResponse);
+            console.log('Third func ran!');
+        });
+    });
 });

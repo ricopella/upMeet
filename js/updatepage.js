@@ -13,6 +13,7 @@ function updatePage(meetupResponse) {
             "meetingLength": meetupResponse[i].duration,
             "lat": meetupResponse[i].group.lat,
             "lon": meetupResponse[i].group.lon,
+            "venue": meetupResponse[i].venue.name,
             "meetupURL": meetupResponse[i].link,
             "waitlist": meetupResponse[i].waitlist_count
         });
