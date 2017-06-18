@@ -1,6 +1,3 @@
-console.log("in");
-
-
 $(document).ready(function() {
 
   console.log( "ready!" );
@@ -119,10 +116,5 @@ buildApiRequest('GET',
   $('.carousel').carousel({
     interval: 6000
   })
-
-  // Datepicker plugin
-     $(function() {
-    $("#datepicker").datepicker();
-  } );
 
 

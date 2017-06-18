@@ -4,31 +4,29 @@ body {
 	padding-top: 30px;
 }
 
+h2{
+	margin: auto;
+	text-align: center;
+}
+
 .container {
 	max-width: 1000px;
 }
 
 /* Navbar
 ==============================*/
-
 div.navbar.navbar-static-top {
 	font-size: 1em;
-
 }
+
 a.navbar-brand.text-muted {
 	font-size: 3em;
 	text-align: center;
 	color: #000;
 }
 
-h2{
-	margin: auto;
-	text-align: center;
-}
-
 /*Jumbotron
 ===============================*/
-
 .jumbotron {
 	color: #fff;
 	margin-bottom: 20px;
@@ -45,7 +43,6 @@ h2{
 
 /*Glyphicons
 ===============================*/
-
 .glyphicon {
 	font-size: 3em;
 	display: block;
