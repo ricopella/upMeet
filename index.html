@@ -188,23 +188,54 @@
                 <h3>Map</h3>
                 <p>Maps powered by Google to help you locate and arrive on time to your MeetUp on time</p>
               </div>
+              
               <div class="col-md-8">
                 <b class="glyphicon glyphicon-road" id="render-data"></b>
                 <h3>Render Data</h3>
-              </div>
-            </div> <!-- end row div -->
 
-            <br><br>
-            <hr> 
-            <br><br><br><br>
+                <div class="tab-group">  
+                  <div class="tab">
+                    <input id="tab-one" type="radio" name="tabs">
+                    <label for="tab-one">Label One</label>
+                    <div class="tab-content">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat, nisl quis dignissim vehicula, ex risus tempor diam, vitae varius tellus mauris ut lectus. Nunc efficitur risus sed augue aliquam, nec pretium arcu posuere.</p>
+                    </div>
+                  </div> <!-- end tab group -->
+                  <div class="tab">
+                    <input id="tab-two" type="radio" name="tabs">
+                    <label for="tab-two">Label Two</label>
+                    <div class="tab-content">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat, nisl quis dignissim vehicula, ex risus tempor diam, vitae varius tellus mauris ut lectus. Nunc efficitur risus sed augue aliquam, nec pretium arcu posuere.</p>
+                    </div>
+                  </div> <!-- end tab group -->
 
-            <div>
-              <p>&copy; 2017 UpMeet - By Narin, Kellen, Myles &amp; Hovsep</p>
-            </div>
+                  <div class="tab">
+                    <input id="tab-three" type="radio" name="tabs">
+                    <label for="tab-three">Label Three</label>
+                    <div class="tab-content">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat, nisl quis dignissim vehicula, ex risus tempor diam, vitae varius tellus mauris ut lectus. Nunc efficitur risus sed augue aliquam, nec pretium arcu posuere.</p>
+                    </div>
+                  </div> <!-- end tab group -->
 
-          </div>  <!-- end container -->
+                  <div class="tab">
+                    <input id="tab-four" type="radio" name="tabs">
+                    <label for="tab-four">Label Four</label>
+                    <div class="tab-content">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat, nisl quis dignissim vehicula, ex risus tempor diam, vitae varius tellus mauris ut lectus. Nunc efficitur risus sed augue aliquam, nec pretium arcu posuere.</p>
+                    </div>
+                  </div> <!-- end tab group -->
+                  
+                </div>
+                
+              </div> <!-- end row div -->
 
-          <script type="text/javascript">
+              <br><br>
+              <hr> 
+              <br><br><br><br><br><br>
+
+            </div>  <!-- end container -->
+
+            <script type="text/javascript">
     // initiate google map
     function initMap() {
       var uluru = {lat: -25.363, lng: 131.044};
@@ -225,6 +256,10 @@
 </script>
 <!-- Latest compiled and minified JavaScript for Bootstrap -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<div id="footer">
+  <p>&copy; 2017 UpMeet - By Narin, Kellen, Myles &amp; Hovsep</p>
+</div>
 
 </body>
 </html>
