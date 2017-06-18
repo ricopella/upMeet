@@ -1,4 +1,4 @@
-console.log("In1");
+console.log("app.js Loaded");
 
 function initMap() {
 
@@ -21,20 +21,22 @@ function initMap() {
     });
 } // end initMap
 
-var userSubject;
-var userAddress;
-var userDate;
-var userTime;
+var search;
+var lat;
+var lon;
 
 // User submits form for query data
 // stores data for use in other functions
 $("#user-submit").on("click", function() {
-    userSubject = $("#user-subject").val().trim();
-    userAddress = $("#user-address").val().trim();
-    userDate = $("#user-date").val().trim();
-    userTime = $("#user-time").val().trim();
+    search = $("#search-subject").val();
+    lat = $("#search-lat").val();
+    lon = $("#search-lon").val();
+
     // CONVERT userDate & userTime to one UNIX number
 
-    // run searchAPI function
 
+    // run searchAPI
+    searchAPIS(search, lat, lon);
+    // run updatePage
+    updatePage(meetupResponse);
 });

@@ -1,4 +1,4 @@
-console.log("in");
+console.log("apis.js loaded");
 // NY // searchAPIS("python", 40.728862, -73.996413);
 // LA // searchAPIS("javascript", 34.020204, -118.490765)
 
@@ -17,8 +17,8 @@ function searchAPIS(search, lat, lon) {
         method: "GET",
     }).done(function(response) {
         meetupResponse = response;
-        console.log(response);
-        console.log(response.length);
+        console.log("MeetUp Response: " + response);
+        console.log("Meetup Response Length " + response.length);
     });
 
     // call youtube
@@ -31,7 +31,7 @@ function searchAPIS(search, lat, lon) {
         },
 
         function(data) {
-            console.log(data.items);
+            console.log("youtube Data: " + data.items);
             youtubeData = data.items;
         }
     );
@@ -44,7 +44,7 @@ function searchAPIS(search, lat, lon) {
         crossDomain: true,
         cache: false,
         success: function(json) {
-            console.log(json.query.pages);
+            console.log("Wiki data: " + json.query.pages);
             wikiData = json.query.pages
         }
     });
@@ -87,7 +87,8 @@ function updateMap(meetupResponse) {
     }
     var trafficLayer = new google.maps.TrafficLayer();
     trafficLayer.setMap(map);
+
 }
 
 // to have data on page load
-searchAPIS("javascript", 34.020204, -118.490765);
+// searchAPIS("javascript", 34.020204, -118.490765);

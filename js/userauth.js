@@ -1,4 +1,4 @@
-console.log("User Auth");
+console.log("User Auth Loaded");
 
 var userEmail = "";
 var password = "";
