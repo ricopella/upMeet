@@ -1,5 +1,3 @@
-console.log("app.js Loaded");
-
 function initMap() {
 
     var theLat = 34.01839828491211;
@@ -22,21 +20,24 @@ function initMap() {
 } // end initMap
 
 var search;
-var lat;
-var lon;
 
 // User submits form for query data
 // stores data for use in other functions
 $("#user-submit").on("click", function() {
+
     search = $("#search-subject").val();
-    lat = $("#search-lat").val();
-    lon = $("#search-lon").val();
+
+
+    var geoResults = geocodeAddress(geocoder, $("#search-address").val());
+
+    console.log("lat: " + lat);
+
 
     // CONVERT userDate & userTime to one UNIX number
 
 
     // run searchAPI
-    searchAPIS(search, lat, lon);
+    // searchAPIS(search, lat, lng);
     // run updatePage
-    updatePage(meetupResponse);
+    // updatePage(meetupResponse);
 });

@@ -1,18 +1,19 @@
-  console.log("geocode");
+var geocoder;
+var map;
+var address;
+var lat;
+var lng;
 
-  var geocoder = new google.maps.Geocoder();
-  var map;
-  var address;
-
-  function geocodeAddress(geocoder, userInput) {
-      var address = userInput;
-      geocoder.geocode({ 'address': address }, function(results, status) {
-          if (status === 'OK') {
-              console.log(results[0].geometry.location.lat());
-              console.log(results[0].geometry.location.lng());
-              console.log(address);
-          } else {
-              alert('Geocode was not successful for the following reason: ' + status);
-          }
-      });
-  }
+function geocodeAddress(geocoder, userInput) {
+    geocoder = new google.maps.Geocoder();
+    address = userInput;
+    geocoder.geocode({ 'address': address }, function(results, status) {
+        if (status === 'OK') {
+            lat = results[0].geometry.location.lat();
+            lng = results[0].geometry.location.lng();
+            console.log("address: " + address + " lat: " + lat + " lng: " + lng);
+        } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+        }
+    });
+}

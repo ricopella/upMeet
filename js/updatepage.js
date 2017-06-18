@@ -1,5 +1,3 @@
-console.log("updatepage.js loaded");
-
 var allData = [];
 
 function updatePage(meetupResponse) {
@@ -23,8 +21,8 @@ function updatePage(meetupResponse) {
     // append Youtube results to object
     addYoutubeLinks(youtubeResponse);
 
-    console.log("All Data: " + allData);
-
+    console.log("All Data:");
+    console.log(allData);
 
     // Append items to page
     for (j = 0; j <= 10; j++) {

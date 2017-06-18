@@ -1,4 +1,3 @@
-console.log("apis.js loaded");
 // NY // searchAPIS("python", 40.728862, -73.996413);
 // LA // searchAPIS("javascript", 34.020204, -118.490765)
 
@@ -7,7 +6,7 @@ var youtubeResponse;
 var wikiResponse;
 var mapCoordinates;
 
-function searchAPIS(search, lat, lon) {
+function searchAPIS(search, lat, lng) {
     var query = search;
 
     // call meetup
@@ -32,7 +31,7 @@ function searchAPIS(search, lat, lon) {
 
         function(data) {
             console.log("youtube Data: " + data.items);
-            youtubeData = data.items;
+            youtubeResponse = data.items;
         }
     );
 
@@ -45,9 +44,11 @@ function searchAPIS(search, lat, lon) {
         cache: false,
         success: function(json) {
             console.log("Wiki data: " + json.query.pages);
-            wikiData = json.query.pages
+            wikiResponse = json.query.pages
         }
     });
+
+    updatePage(meetupResponse);
 }
 
 // googlemaps update
