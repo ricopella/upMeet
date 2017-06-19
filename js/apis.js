@@ -6,7 +6,7 @@ var youtubeResponse;
 var wikiResponse;
 var mapCoordinates;
 
-function searchAPIS(search, lat, lng, callback) {
+function searchAPIS(search, lat, lng) {
     var query = search;
 
     // call meetup
@@ -16,7 +16,8 @@ function searchAPIS(search, lat, lng, callback) {
         method: "GET",
     }).done(function(response) {
         meetupResponse = response;
-        console.log("MeetUp Response: " + response);
+        console.log("MeetUp Response:");
+        console.log(response);
         console.log("Meetup Response Length " + response.length);
     });
 
@@ -47,6 +48,8 @@ function searchAPIS(search, lat, lng, callback) {
             wikiResponse = json.query.pages
         }
     });
+
+    // setTimeout(updatePage(meetupResponse), 100000);
 }
 
 // googlemaps update

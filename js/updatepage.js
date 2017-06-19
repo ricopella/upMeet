@@ -1,60 +1,99 @@
 var allData = [];
 
-function updatePage(meetupResponse) {
+var updatePage = function(meetupResponse) {
 
-    allData = [];
-    console.log('update page mayne! ' + meetupResponse);
+        allData = [];
+        console.log("update page mayne!");
+        console.log(meetupResponse);
 
-    for (var i = 0; i < meetupResponse.length; i++) {
-        allData.push(allData[meetupResponse[i]] = {
-            "meetupName": meetupResponse[i].name,
-            "meetupDescription": meetupResponse[i].description,
-            "startTime": meetupResponse[i].time,
-            "meetingLength": meetupResponse[i].duration,
-            "lat": meetupResponse[i].group.lat,
-            "lon": meetupResponse[i].group.lon,
-            "venue": meetupResponse[i].venue.name,
-            "meetupURL": meetupResponse[i].link,
-            "waitlist": meetupResponse[i].waitlist_count
-        });
-    }
+        for (var i = 0; i < meetupResponse.length; i++) {
+            console.log('breaking on: ' + i);
 
-    // append Youtube results to object
-    addYoutubeLinks(youtubeResponse);
+            allData.push(allData[meetupResponse[i]] = {
+                "meetupName": meetupResponse[i].name,
+                "meetupDescription": meetupResponse[i].description,
+                "startTime": meetupResponse[i].time,
+                "meetingLength": meetupResponse[i].duration,
+                "lat": meetupResponse[i].group.lat,
+                "lon": meetupResponse[i].group.lon,
+                "rsvp": meetupResponse[i].yes_rsvp_count,
+                "waitlist": meetupResponse[i].waitlist_count,
+                // "venueName": meetupResponse[i].venue.name,
+                // "venueAdress": meetupResponse[i].venue.address_1,
+                // "venueCity": meetupResponse[i].venue.city,
+                "meetupURL": meetupResponse[i].link,
+                "waitlist": meetupResponse[i].waitlist_count
+            });
+        }
 
-    console.log("All Data:");
-    console.log(allData);
+        // // pull these in
+        // if (meetupItem.duration !== undefined) {
+        //     var a = meetupItem.time;
+        //     var b = meetupItem.duration;
+        //     console.log(moment(a).format("h:mm") + " - " + moment(a + b).format("hh:mm a"));
+        // }
 
-    // Append items to page
-    for (j = 0; j <= 10; j++) {
+        // if (waitlist > 0) {
+        //     console.log("this one is full");
+        // }
 
-        // displays Accordian title
-        var meetupName = $("<h1>").text("Name: " + allData[j].meetupName);
-        // displays subject short description
-        var description = $("<p>").text("Description: " + allData[j].meetupDescription);
-        // displays time
-        var time = $("<p>").text(allData[j].startTime);
-        // display wiki description
+        // append Youtube results to object
+        addYoutubeLinks(youtubeResponse);
 
-        // display youtube title
-        var videoTitle = $("<p>").text(allData[j].youtubeTitle);
-        // display youtube Thumbnail
-        var videoThumbnail = $("<img>").attr("src", allData[j].youtubeThumbnail);
-        var imgContainer = $("<div>").addClass("ytImgContainer");
-        imgContainer.append(videoTitle);
-        imgContainer.append(videoThumbnail);
+        console.log("All Data:");
+        console.log(allData);
 
-        var meetupSelection = $("<div>").addClass("meetup-selection");
-        meetupSelection.append(meetupName);
-        meetupSelection.append(description);
-        meetupSelection.append(venue);
-        meetupSelection.append(time);
+        // Append items to page
+        for (j = 0; j <= 10; j++) {
 
-        $("#render-data").append(meetupSelection);
-        $("#render-data").append(imgContainer);
+            var panelDefault = $("<div>").addClass("panel panel-default");
+            var panelHeading = $("<div>").addClass("panel-heading"); // displays Accordian title
+            var panelName = $("<h4>")
+                .addClass("panel-title")
+                .append('<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse' + j + '">' + allData[j].meetupName + '</a>');
 
-    } // end for loop
-}
+            // collapsed data
+            var collapseId = $("<div>")
+                .addClass("panel-collapse collapse in")
+                .attr("id", "collapse" + j);
+            // displays subject short description
+            var collapseBody = $("<div>")
+                .addClass("panel-body")
+                .text(allData[j].meetupDescription);
+            // var collapseVenue = $("<p>").text(allData[j].venueName + " Address: " + allData[j].venueAddress + " " + allData[j].venueCity);
+            var collapseUrl = $("<a>").attr("src", allData[j].link);
+            var collapseAttending = $("<p>").text("RSVP'd: " + allData[j].rsvp);
+            var collapseWaitlist = $("<p>").text("Waitlist: " + allData[j].waitlist);
+
+            // // displays time
+            // var time = $("<p>").text(allData[j].startTime);
+            // // display wiki description
+
+            // display youtube title
+            var videoTitle = $("<p>").text(allData[j].youtubeTitle);
+            // display youtube Thumbnail
+            var videoThumbnail = $("<img>").attr("src", allData[j].youtubeThumbnail);
+            var imgContainer = $("<div>").addClass("ytImgContainer");
+
+
+
+            panelDefault.append(panelHeading);
+            panelDefault.append(panelName);
+            // panelLink.wrap(panelName);
+            collapseId.append(collapseBody);
+            // collapseId.append(collapseVenue);
+            collapseId.append(collapseUrl);
+            collapseId.append(collapseAttending);
+            collapseId.append(collapseWaitlist);
+            imgContainer.append(videoTitle);
+            imgContainer.append(videoThumbnail);
+            collapseId.append(imgContainer);
+
+            $("#accordion").append(panelDefault);
+            $("#accordion").append(collapseId);
+
+        } // end for loop
+    } // end updatePage()
 
 function addYoutubeLinks(youtubeResponse) {
     for (var i = 0; i < youtubeResponse.length; i++) {
@@ -62,7 +101,7 @@ function addYoutubeLinks(youtubeResponse) {
         allData[i].youtubeURL = "https://www.youtube.com/watch?v=" + youtubeResponse[i].id.videoId;
         allData[i].youtubeThumbnail = youtubeResponse[i].snippet.thumbnails.high.url;
     }
-}
+} // end addYoutubeResponse()
 
 // for (var val in wikiData) {
 //     var title = wikiData[val].title;

@@ -21,14 +21,30 @@ function initMap() {
 
 // User submits form for query data
 // stores data for use in other functions
+// $("#user-submit").on("click", function() {
+//     var search = $("#search-subject").val();
+//     var address = $("#search-address").val()
+//     geocodeAddress(geocoder, address, function() {
+//         console.log('first func ran!');
+//         searchAPIS(search, lat, lng, function() {
+//             console.log('Second func ran!');
+//             updatePage(meetupResponse);
+//             console.log('Third func ran!');
+//         });
+//     });
+// });
+
+// Timeouts
+// $("#user-submit").on("click", function() {
+//     var search = $("#search-subject").val();
+//     var address = $("#search-address").val();
+//     // setTimeout(geocodeAddress(geocoder, address), 10);
+//     searchAPIS(search, 34.0183982849121, -118.48661041259766);
+//     setTimeout(updatePage(meetupResponse), 10000);
+// })
+
+// chaining
 $("#user-submit").on("click", function() {
-    var search = $("#search-subject").val();
-    geocodeAddress(geocoder, $("#search-address").val(), function() {
-        console.log('first func ran!');
-        searchAPIS(search, lat, lng, function() {
-            console.log('Second func ran!');
-            updatePage(meetupResponse);
-            console.log('Third func ran!');
-        });
-    });
-});
+    var address = $("#search-address").val();
+    geocodeAddress(geocoder, address);
+})

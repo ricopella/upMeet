@@ -4,7 +4,7 @@ var address;
 var lat;
 var lng;
 
-function geocodeAddress(geocoder, userInput, callback) {
+function geocodeAddress(geocoder, userInput) {
     geocoder = new google.maps.Geocoder();
     address = userInput;
     geocoder.geocode({ 'address': address }, function(results, status) {
@@ -15,5 +15,8 @@ function geocodeAddress(geocoder, userInput, callback) {
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
         }
+        var search = $("#search-subject").val();
+        searchAPIS(search, lat, lng);
     });
+
 }
