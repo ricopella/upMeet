@@ -7,8 +7,6 @@ var updatePage = function(meetupResponse) {
         console.log(meetupResponse);
 
         for (var i = 0; i < meetupResponse.length; i++) {
-            console.log('breaking on: ' + i);
-
             allData.push(allData[meetupResponse[i]] = {
                 "meetupName": meetupResponse[i].name,
                 "meetupDescription": meetupResponse[i].description,
