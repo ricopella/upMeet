@@ -4,8 +4,11 @@ body {
   padding-top: 30px; }
 
 h2 {
+  color: #000;
   margin: auto;
-  text-align: center; }
+  text-align: center;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold 700; }
 
 .container {
   max-width: 1000px; }
@@ -26,14 +29,14 @@ a.navbar-brand.text-muted {
   color: #fff;
   margin-bottom: 20px;
   min-height: 50%;
+  font-weight: 200;
+  text-align: center;
   background-image: url("../images/StockSnap.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  image-rendering: -webkit-optimize-contrast;
-  -webkit-background-size: cover;
   background-size: cover;
-  font-weight: 200;
-  text-align: center; }
+  background-image-rendering: -webkit-optimize-contrast;
+  background--webkit-background-size: cover; }
 
 /*Glyphicons
 ===============================*/
@@ -43,7 +46,7 @@ a.navbar-brand.text-muted {
   text-align: center;
   color: #ed1c40; }
 
-.lead {
+p.lead {
   font-family: "Titillium Web", sans-serif;
   text-shadow: 3px 3px 3px black; }
 
@@ -54,21 +57,22 @@ a.navbar-brand.text-muted {
   height: 400px;
   width: 100%; }
 
-.jumbotron .h1, .jumbotron h1 {
-  font-size: 96px;
-  font-family: "Titillium Web", sans-serif;
+.jumbotron
+h1 {
   text-shadow: 2px 2px 2px black; }
+  .jumbotron
+  h1 font {
+    size: 96px;
+    family: "Titillium Web", sans-serif; }
 
 /*Carousel
 ===============================*/
 .carousel-indicators {
   bottom: 0; }
-
-.carousel-indicators .active {
-  background-color: #222; }
-
-.carousel-indicators li {
-  background-color: #222; }
+  .carousel-indicators .active {
+    background-color: #222; }
+  .carousel-indicators li {
+    background-color: #222; }
 
 /*Render Data Accordian 
 ===============================*/

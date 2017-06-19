@@ -1,12 +1,23 @@
 // Variable for main primary color
 $color-primary: #ed1c40;
 
+//Variable for secondary color
+$color-secondary: #000;
+
 // Variable for carousel colors
 $carousel-color: #222; 
 
 //Variable for main fonts
 $font-stack-primary: 'Titillium Web', sans-serif;
 
+//Variable for secondary fonts (h2)
+$font-stack-secondary: 'Noto Sans', sans-serif;
+
+//Center alignment
+$align-center: center;
+
+//Variable for Jumbotron and lead paragraph color
+$white: #fff;
 
 /* Layout
 ==============================*/
@@ -15,8 +26,14 @@ body {
 }
 
 h2{
+	color: $color-secondary;
 	margin: auto;
-	text-align: center;
+	text-align: $align-center;
+
+	font:{
+		family: $font-stack-secondary;
+		weight: bold 700;
+	}
 }
 
 .container {
@@ -31,24 +48,28 @@ div.navbar.navbar-static-top {
 
 a.navbar-brand.text-muted {
 	font-size: 3em;
-	text-align: center;
-	color: #000;
+	text-align: $align-center;
+	color: $color-secondary;
 }
 
 /*Jumbotron
 ===============================*/
 .jumbotron {
-	color: #fff;
+	color: $white;
 	margin-bottom: 20px;
 	min-height: 50%;
-	background-image: url("../images/StockSnap.jpg");
-	background-repeat: no-repeat;
-	background-position: center;
-	image-rendering: -webkit-optimize-contrast;
-	-webkit-background-size: cover;
-	background-size: cover;
 	font-weight: 200;
-	text-align: center;
+	text-align: $align-center;
+	
+	background: {
+		image: url("../images/StockSnap.jpg");
+		repeat: no-repeat;
+		position: $align-center;
+		size: cover;
+		image-rendering: -webkit-optimize-contrast;
+		-webkit-background-size: cover;
+		
+	}
 }
 
 /*Glyphicons
@@ -56,13 +77,14 @@ a.navbar-brand.text-muted {
 .glyphicon {
 	font-size: 3em;
 	display: block;
-	text-align: center;
+	text-align: $align-center;
 	color: $color-primary; 
 }
 
-.lead {
+p.lead {
 	font-family: $font-stack-primary;
 	text-shadow: 3px 3px 3px black;
+
 }
 
 .jumbotron p {
@@ -75,22 +97,26 @@ a.navbar-brand.text-muted {
 	width: 100%;
 }
 
-.jumbotron .h1, .jumbotron h1 {
-	font-size: 96px;
-	font-family: $font-stack-primary;
+
+.jumbotron 
+h1 {	
+	font {
+		size: 96px;
+		family: $font-stack-primary;
+	}
 	text-shadow: 2px 2px 2px black;
-}
+}	
 
 /*Carousel
 ===============================*/
 .carousel-indicators {
 	bottom: 0;
-}
-.carousel-indicators .active {
-	background-color: $carousel-color; 
-}
-.carousel-indicators li {
-	background-color: $carousel-color; 
+	.active {
+		background-color: $carousel-color; 
+	}
+	li {
+		background-color: $carousel-color; 	
+	}
 }
 
 /*Render Data Accordian 
@@ -105,8 +131,4 @@ a.navbar-brand.text-muted {
 .panel-heading .accordion-toggle.collapsed:after {
 	/* symbol for "collapsed" panels */
 	content: "\e080";    /* adjust as needed, taken from bootstrap.css */
-}
-
-div.panel-heading {
-	background: $color-primary;
 }
