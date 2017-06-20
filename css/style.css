@@ -3,15 +3,23 @@
 body {
   padding-top: 30px; }
 
-h2 {
-  color: #000;
-  margin: auto;
-  text-align: center;
-  font-family: "Noto Sans", sans-serif;
-  font-weight: bold 700; }
-
 .container {
   max-width: 1000px; }
+
+h2 {
+  color: #222;
+  margin: auto;
+  text-align: center;
+  letter-spacing: 2px; }
+  h2 font {
+    family: "PT Sans", sans-serif; }
+
+.user-input {
+  text-align: center; }
+
+#map {
+  height: 400px;
+  width: 100%; }
 
 /* Navbar
 ==============================*/
@@ -37,6 +45,16 @@ a.navbar-brand.text-muted {
   background-size: cover;
   background-image-rendering: -webkit-optimize-contrast;
   background--webkit-background-size: cover; }
+  .jumbotron h1 {
+    text-shadow: 2px 2px 2px black; }
+    .jumbotron h1 font {
+      size: 96px;
+      family: "Titillium Web", sans-serif; }
+  .jumbotron .jumbotron p {
+    font-size: 28px; }
+  .jumbotron p.lead {
+    font-family: "Titillium Web", sans-serif;
+    text-shadow: 3px 3px 3px black; }
 
 /*Glyphicons
 ===============================*/
@@ -46,35 +64,14 @@ a.navbar-brand.text-muted {
   text-align: center;
   color: #ed1c40; }
 
-p.lead {
-  font-family: "Titillium Web", sans-serif;
-  text-shadow: 3px 3px 3px black; }
-
-.jumbotron p {
-  font-size: 28px; }
-
-#map {
-  height: 400px;
-  width: 100%; }
-
-.jumbotron
-h1 {
-  text-shadow: 2px 2px 2px black; }
-  .jumbotron
-  h1 font {
-    size: 96px;
-    family: "Titillium Web", sans-serif; }
-
 /*Carousel
 ===============================*/
-.carousel-indicators {
-  bottom: 0; }
-  .carousel-indicators .active {
-    background-color: #222; }
-  .carousel-indicators li {
-    background-color: #222; }
+.carousel-indicators .active {
+  background-color: #222; }
+.carousel-indicators li {
+  background-color: #222; }
 
-/*Render Data Accordian 
+/*Accordian (Render Data)
 ===============================*/
 .panel-heading .accordion-toggle:after {
   /* symbol for "opening" panels */
@@ -93,6 +90,6 @@ h1 {
   /* adjust as needed, taken from bootstrap.css */ }
 
 div.panel-heading {
-  background: #ed1c40; }
+  color: #ed1c40; }
 
 /*# sourceMappingURL=style.css.map */

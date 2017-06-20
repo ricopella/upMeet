@@ -11,7 +11,7 @@ $carousel-color: #222;
 $font-stack-primary: 'Titillium Web', sans-serif;
 
 //Variable for secondary fonts (h2)
-$font-stack-secondary: 'Noto Sans', sans-serif;
+$font-stack-secondary: 'PT Sans', sans-serif;
 
 //Center alignment
 $align-center: center;
@@ -25,19 +25,28 @@ body {
 	padding-top: 30px;
 }
 
+.container {
+	max-width: 1000px;
+}
+
 h2{
-	color: $color-secondary;
+	color: $carousel-color;
 	margin: auto;
 	text-align: $align-center;
+	letter-spacing: 2px;
 
-	font:{
+	font {
 		family: $font-stack-secondary;
-		weight: bold 700;
 	}
 }
 
-.container {
-	max-width: 1000px;
+.user-input {
+	text-align: $align-center;
+}
+
+#map {
+	height: 400px;
+	width: 100%;
 }
 
 /* Navbar
@@ -69,7 +78,24 @@ a.navbar-brand.text-muted {
 		image-rendering: -webkit-optimize-contrast;
 		-webkit-background-size: cover;
 	}
-}
+	h1 {
+		text-shadow: 2px 2px 2px black;	
+		font {
+			size: 96px;
+			family: $font-stack-primary;
+		}
+	} //end h1 
+	
+	.jumbotron p {
+		font-size: 28px;
+	}
+	
+	p.lead {
+		font-family: $font-stack-primary;
+		text-shadow: 3px 3px 3px black;
+	}
+
+} //end jumbotron
 
 /*Glyphicons
 ===============================*/
@@ -79,33 +105,6 @@ a.navbar-brand.text-muted {
 	text-align: $align-center;
 	color: $color-primary; 
 }
-
-p.lead {
-	font-family: $font-stack-primary;
-	text-shadow: 3px 3px 3px black;
-
-}
-
-.jumbotron p {
-	font-size: 28px;
-	
-}
-
-#map {
-	height: 400px;
-	width: 100%;
-}
-
-
-.jumbotron {
-	h1 {	
-		font {
-			size: 96px;
-			family: $font-stack-primary;
-		}
-		text-shadow: 2px 2px 2px black;
-	} //end h1 
-} //end jumbotron	
 
 /*Carousel
 ===============================*/
@@ -118,7 +117,7 @@ p.lead {
 	}
 } //end .carousel-indicators
 
-/*Render Data Accordian 
+/*Accordian (Render Data)
 ===============================*/
 .panel-heading .accordion-toggle:after {
 	/* symbol for "opening" panels */
@@ -130,4 +129,8 @@ p.lead {
 .panel-heading .accordion-toggle.collapsed:after {
 	/* symbol for "collapsed" panels */
 	content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+}
+
+div.panel-heading {
+	color: #ed1c40;
 }

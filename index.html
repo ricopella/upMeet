@@ -7,15 +7,16 @@
   <title>upMeet</title>
 
   <!-- Bootstrap CDN --> 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-  <!-- Link to CSS stylesheet -->
+  <!-- Link to CSS stylesheets -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  
+  <!-- Links to Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 
   <!-- Link to jQuery -->
   <script
@@ -32,13 +33,13 @@
   <link rel="stylesheet" type="text/css" href="css/default.time.css">
 
   <script>
+  //Run Date and Time Picker JS
+  $(function() { 
+    $('#datepicker').pickadate()
+    $('#timepicker').pickatime()
+  });
 
-    $(function() { 
-      $('#datepicker').pickadate()
-      $('#timepicker').pickatime()
-    });
-
-  </script>
+</script>
 
 </head>
 <body>
@@ -72,15 +73,15 @@
 
   <!-- Carousel -->
   <div id="carousel-example-generic" class="carousel slide jumbotron" data-ride="carousel">
-    
-    <!-- Indicators -->
+
+    <!-- Indicators for Carousel -->
     <ol class="carousel-indicators">
       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
       <li data-target="#carousel-example-generic" data-slide-to="1"></li>
       <li data-target="#carousel-example-generic" data-slide-to="2"></li>
     </ol>
 
-    <!-- Wrapper for slides -->
+    <!-- Wrapper for slides Carousel -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
         <h1>How does it work?</h1>
@@ -102,7 +103,7 @@
      </div>
    </div>
 
-   <!-- Controls -->
+   <!-- Controls for Carousel -->
    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -125,10 +126,10 @@
     <div class="col-sm-3"><h2>Times</h2></div>
     <div class="col-sm-3"><h2>Address</h2></div>
   </div> 
-
+  
   <!-- Search input for MeetUp -->
   <div class="row">
-    <div class="col-md-3" text align="center">
+  <div class="col-md-3" text align="center">
       <div class="input-group" id="user-submit">
         <span class="input-group-btn">
         </span>
@@ -168,7 +169,6 @@
 
           <br><br>
           <hr>
-
           <br><br><br><br><br>
 
           <!-- Link to Google Maps API -->
@@ -271,6 +271,7 @@
   <!-- jQuery -->  
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL_Eqmi87SQiLCJENBUkS14hW1JM_uWy0&callback=initMap">
+
 </script>
 <!-- Latest compiled and minified JavaScript for Bootstrap -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -279,5 +280,6 @@
   <p>&copy; 2017 UpMeet - By Narin, Kellen, Myles &amp; Hovsep</p>
 </div>
 
+</div>
 </body>
 </html>
