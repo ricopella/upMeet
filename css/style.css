@@ -31,7 +31,6 @@ a.navbar-brand.text-muted {
     color: #000;
 }
 
-
 .pure-button {
     font-size: 90%;
     margin: 1px;
@@ -70,6 +69,7 @@ a.navbar-brand.text-muted {
 
 /*Glyphicons
 ===============================*/
+
 .glyphicon {
     font-size: 3em;
     display: block;
@@ -81,69 +81,96 @@ p.lead {
     font-family: "Titillium Web", sans-serif;
     text-shadow: 3px 3px 3px black;
 }
+
 .jumbotron p {
     font-size: 28px;
 }
+
 #sign-up-2 {
     margin-left: 42% !important;
 }
+
 #box-sp {
     margin: 2px;
 }
+
 form#login-2.pure-form {
-	margin-top: 5px;
+    margin-top: 5px;
     margin-left: 50% !important;
     margin-bottom: -10px;
-    }
+}
+
 #map {
     height: 400px;
     width: 100%;
 }
+
 .jumbotron h1 {
     text-shadow: 2px 2px 2px black;
 }
+
 .jumbotron h1 font {
     size: 96px;
     family: "Titillium Web", sans-serif;
 }
 
+
 /*Carousel
 ===============================*/
+
 .carousel-indicators {
     bottom: 0;
 }
+
 .carousel-indicators .active {
     background-color: #222;
 }
+
 .carousel-indicators li {
     background-color: #222;
 }
 
+
 /*Render Data Accordian 
 ===============================*/
+
 .panel-heading .accordion-toggle:after {
     /* symbol for "opening" panels */
-    
     font-family: 'Glyphicons Halflings';
     /* essential for enabling glyphicon */
-    
     content: "\e114";
     /* adjust as needed, taken from bootstrap.css */
-    
     float: right;
     /* adjust as needed */
-    
     color: grey;
     /* adjust as needed */
 }
+
 .panel-heading .accordion-toggle.collapsed:after {
     /* symbol for "collapsed" panels */
-    
     content: "\e080";
     /* adjust as needed, taken from bootstrap.css */
 }
+
 div.panel-heading {
     background: #ed1c40;
 }
 
+
 /*# sourceMappingURL=style.css.map */
+
+#upmeet-logo {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    height: 102px;
+}
+
+.pure-button {
+    font-size: 90%;
+    margin: 1px;
+    border-radius: 3px;
+    color: white;
+    background: #CC3737;
+    opacity: 0.9;
+}
