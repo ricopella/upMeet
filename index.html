@@ -2,6 +2,8 @@
 <html lang="en-us">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <title>upMeet</title>
 
   <!-- Bootstrap CDN --> 
@@ -15,13 +17,35 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+
+  <!-- Link to jQuery -->
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  
+  <!-- Three Picker Files for JS Time and Date (required) -->
+  <script type="text/javascript" src="js/picker.js"></script>
+  <script type="text/javascript" src="js/picker.date.js"></script>
+  <script type="text/javascript" src="js/picker.time.js"></script>
+
+  <!-- Themes for JS Picker Time and Date (required) -->
+  <link rel="stylesheet" type="text/css" href="css/default.css">
+  <link rel="stylesheet" type="text/css" href="css/default.date.css">
+  <link rel="stylesheet" type="text/css" href="css/default.time.css">
+
+  <script>
+
+    $(function() { 
+      $('#datepicker').pickadate()
+      $('#timepicker').pickatime()
+    });
+
+  </script>
 
 </head>
 <body>
 
 
-<!-- Title -->
-<h2>upMeet</h2>
 
 
 <!--==============================LOG-IN FORM============================-->
@@ -60,13 +84,15 @@
 
 </div>
 
-
-  
-  <!-- Navbar -->
+ <!-- Navbar -->
   <div class="navbar navbar navbar-static-top">
+
+  <!-- Title -->
+  <h2>upMeet</h2>
 
   <!-- Carousel -->
   <div id="carousel-example-generic" class="carousel slide jumbotron" data-ride="carousel">
+    
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -106,7 +132,6 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
 <!-- End Carosuel -->
 
 <div class="container">
@@ -114,92 +139,141 @@
   <br><br><br><br>
 
   <!-- User Input -->
-  <div class="row" text align="center">
+  <div class="row">
     <div class="col-sm-3"><h2>MeetUp</h2></div>
     <div class="col-sm-3"><h2>Date</h2></div>
     <div class="col-sm-3"><h2>Times</h2></div>
-    <div class="col-sm-3" text align="center"><h2>Address</h2></div>
-
+    <div class="col-sm-3"><h2>Address</h2></div>
   </div> 
-  
+
   <!-- Search input for MeetUp -->
   <div class="row">
-  <div class="col-sm-3" text align="center">
-    <div class="input-group" id="user-submit">
-      <span class="input-group-btn">
-      </span>
-      <input type="text" class="form-control" placeholder="Search for...">
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
+    <div class="col-md-3" text align="center">
+      <div class="input-group" id="user-submit">
+        <span class="input-group-btn">
+        </span>
+        <input type="text" class="form-control" id="MeetUp" placeholder="Search for...">
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
 
-  <!-- Date Picker -->
-  <div class="row">
-  <div class="col-sm-3" text align="center">
-    <div class="input-group" id="user-submit">
-      <span class="input-group-btn">
-      </span>
-      <input type="text" class="form-control" placeholder="Search for...">
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-  
-  <!-- Time Picker -->
-  <div class="row">
-  <div class="col-sm-3" text align="center">
-    <div class="input-group" id="user-address">
-      <span class="input-group-btn">
-      </span>
-      <input type="text" class="form-control" placeholder="Search for...">
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
+    <!-- DATEPICKER -->
+    <div class="row">
+      <div class="col-md-3" text align="center">
+        <div class="input-group">
+          <span class="input-group-btn">
+          </span>
+          <input type="text" class="form-control" id="datepicker" placeholder="Search for...">
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
 
-  <!-- Address -->
-  <div class="row">
-  <div class="col-sm-3" text align="center">
-    <div class="input-group" id="user-address">
-      <span class="input-group-btn">
-      </span>
-      <input type="text" class="form-control" placeholder="Search for...">
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
+      <!-- TIMEPICKER-->
+      <div class="row">
+        <div class="col-md-3" text align="center">
+          <div class="input-group">
+            <span class="input-group-btn">
+            </span>
+            <input type="text" class="form-control" id="timepicker" placeholder="Search for...">
+          </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
 
-  <br><br>
-  <hr>
+        <!-- Address -->
+        <div class="row">
+          <div class="col-md-3">
+            <div class="input-group">
+              <span class="input-group-btn">
+              </span>
+              <input type="text" class="form-control" id="Address" placeholder="Search for...">
+            </div><!-- /input-group -->
+          </div><!-- /.col-lg-6 -->
 
-  <br><br>
+          <br><br>
+          <hr>
 
-  <!-- Link to Google Maps API -->
-  <div id="map-data"></div>
+          <br><br><br><br><br>
 
-  <!-- Resources + Map -->
-  <div class="row" align="center">
-    <div class="col-sm-12">
-      <b class="glyphicon glyphicon-flash"></b>
-      <h3>Resources</h3>
-      <p>Access our recommended resources that will help educate you before the MeetUp</p><br>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/M4MqIdKJYdM" frameborder="0" allowfullscreen></iframe><br><br><br>
-    </div>
+          <!-- Link to Google Maps API -->
+          <div id="map-data"></div>
 
-    <div class="row" align="center">  
-      <div class="col-lg-12">
-        <b class="glyphicon glyphicon-road"></b>
-        <h3>Map</h3>
-        <p>Maps powered by Google to help you locate and arrive on time to your MeetUp on time</p>
-        <img src="images/Google-Maps.png" width="560" height="370"> <!-- placeholder -->
-      </div>
+          <!-- Resources + Map -->
+          <div class="row" align="center">
+            <div class="col-sm-12">
+              <b class="glyphicon glyphicon-flash"></b>
+              <h3>Resources</h3>
+              <p>Access our recommended resources that will help educate you before the MeetUp</p><br>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/M4MqIdKJYdM" frameborder="0" allowfullscreen></iframe><br><br><br>
+            </div>
 
-    </div> <!-- end row div -->
+            <div class="row" align="center">  
+              <div class="col-md-4">
+                <b class="glyphicon glyphicon-road" id="map"></b>
+                <h3>Map</h3>
+                <p>Maps powered by Google to help you locate and arrive on time to your MeetUp on time</p>
+              </div>
+              
+              <div class="col-md-8">
+                <b class="glyphicon glyphicon-road" id="render-data"></b>
+                <h3>Render Data</h3>
+                <!-- Accordian to Render Data -->
+                
+                <!-- Collapsible Group Item #1 -->
+                <div class="panel-group" id="accordion">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                          Collapsible Group Item #1
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                      <div class="panel-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Collapsible Group Item #2 -->
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                          Collapsible Group Item #2
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                      </div>
+                    </div>
+                  </div>
 
-    <br><br>
-    <hr> 
-    <br><br><br><br>
+                  <!-- Collapsible Group Item #3 -->
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                          Collapsible Group Item #3
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div> <!-- end col-md-8 div -->
 
-    <div>
-      <p>&copy; 2017 UpMeet - By Narin, Kellen, Myles &amp; Hovsep</p>
-    </div>
+              <br><br>
+              <hr> 
+              <br><br><br><br><br><br>
 
-  </div>  <!-- end container -->
+            </div>  <!-- end container -->
 
-  <script type="text/javascript">
+            <script type="text/javascript">
     // initiate google map
     function initMap() {
       var uluru = {lat: -25.363, lng: 131.044};
@@ -213,18 +287,17 @@
       });
     }
   </script>
-  <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+
+  <!-- jQuery -->  
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL_Eqmi87SQiLCJENBUkS14hW1JM_uWy0&callback=initMap">
 </script>
-
-<!-- Latest compiled and minified JavaScript -->
+<!-- Latest compiled and minified JavaScript for Bootstrap -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="js/login.js" charset="utf-8"></script>
-<script src="js/app.js" charset="utf-8"></script>
+<div id="footer">
+  <p>&copy; 2017 UpMeet - By Narin, Kellen, Myles &amp; Hovsep</p>
+</div>
 
 </body>
 </html>

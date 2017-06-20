@@ -1,31 +1,28 @@
 /* Layout
 ==============================*/
-
 body {
-    padding-top: 30px;
-}
+    padding-top: 30px;}
+h2 {
+  color: #000;
+  margin: auto;
+  text-align: center;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold 700; }
 
 .container {
-    bottom: 0;
-}
+  max-width: 1000px; }
 
 
 /* Navbar
 ==============================*/
-
 div.navbar.navbar-static-top {
-    font-size: 1em;
-}
+  font-size: 1em; }
 
 a.navbar-brand.text-muted {
-    font-size: 3em;
+  font-size: 3em;
+  text-align: center;
+  color: #000; }
     text-align: center;
-    color: #000;
-}
-
-h2 {
-    text-align: center;
-}
 
 .pure-button {
     font-size: 90%;
@@ -49,36 +46,33 @@ h2 {
 
 /*Jumbotron
 ===============================*/
-
 .jumbotron {
-    color: #fff;
-    margin-bottom: 20px;
-    min-height: 50%;
-    background-image: url("../images/StockSnap.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    image-rendering: -webkit-optimize-contrast;
-    -webkit-background-size: cover;
-    background-size: cover;
-    font-weight: 200;
-    text-align: center;
-}
+  color: #fff;
+  margin-bottom: 20px;
+  min-height: 50%;
+  font-weight: 200;
+  text-align: center;
+  background-image: url("../images/StockSnap.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image-rendering: -webkit-optimize-contrast;
+  background--webkit-background-size: cover; }
 
 
 /*Glyphicons
 ===============================*/
+  font-size: 3em;
+  display: block;
+  text-align: center;
+  color: #ed1c40; }
 
-
-.lead {
-    font-family: 'Titillium Web', sans-serif;
-    text-shadow: 3px 3px 3px black;
-}
+p.lead {
+  font-family: "Titillium Web", sans-serif;
+  text-shadow: 3px 3px 3px black; }
 
 .jumbotron p {
-    font-size: 28px;
-    letter-spacing:
-}
-
+  font-size: 28px; }
 #sign-up-2 {
     margin-left: 42% !important;
 }
@@ -92,32 +86,45 @@ form#login-2.pure-form {
 
 #map {
     height: 400px;
-    width: 100%;
-}
+  width: 100%; }
 
-.jumbotron .h1,
-.jumbotron h1 {
-    font-size: 96px;
-    font-family: 'Titillium Web', sans-serif;
-    text-shadow: 2px 2px 2px black;
-}
+.jumbotron
+h1 {
+  text-shadow: 2px 2px 2px black; }
+  .jumbotron
+  h1 font {
+    size: 96px;
+    family: "Titillium Web", sans-serif; }
 
 
 /*Carousel
 ===============================*/
 
 .carousel-indicators {
-    bottom: 0;
-}
+  bottom: 0; }
 
-.carousel-indicators .active {
-    background-color: #222;
-}
+  .carousel-indicators .active {
+    background-color: #222; }
 
-.carousel-indicators li {
-    background-color: #222;
-}
+  .carousel-indicators li {
+    background-color: #222; }
 
-
-/*Input Fields
+/*Render Data Accordian 
 ===============================*/
+.panel-heading .accordion-toggle:after {
+  /* symbol for "opening" panels */
+  font-family: 'Glyphicons Halflings';
+  /* essential for enabling glyphicon */
+  content: "\e114";
+  /* adjust as needed, taken from bootstrap.css */
+  float: right;
+  /* adjust as needed */
+  color: grey;
+  /* adjust as needed */ }
+.panel-heading .accordion-toggle.collapsed:after {
+  /* symbol for "collapsed" panels */
+  content: "\e080";
+  /* adjust as needed, taken from bootstrap.css */ }
+div.panel-heading {
+  background: #ed1c40; }
+/*# sourceMappingURL=style.css.map */
