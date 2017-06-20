@@ -1,6 +1,4 @@
 
-$(document).ready(function() {
-
   console.log( "ready!" );
   var searchTerm = "javascript";
   var queryURL = "https://api.meetup.com/find/events?photo-host=public&text="+ searchTerm + "&key=13493128171b80333fc956a274b1c";
@@ -45,21 +43,12 @@ googleApiClientReady = function() {
   gapi.auth.init(function() {
     window.setTimeout(checkAuth, 1);
   });
-}
-
-// Attempt the immediate OAuth 2.0 client flow as soon as the page loads.
-// If the currently logged-in Google Account has previously authorized
-// the client specified as the OAUTH2_CLIENT_ID, then the authorization
-// succeeds with no user intervention. Otherwise, it fails and the
-// user interface that prompts for authorization needs to display.
-function checkAuth() {
+} // end initMap
   gapi.auth.authorize({
     client_id: OAUTH2_CLIENT_ID,
     scope: OAUTH2_SCOPES,
     immediate: true
   }, handleAuthResult);
-}
-
 // Handle the result of a gapi.auth.authorize() call.
 function handleAuthResult(authResult) {
   if (authResult && !authResult.error) {
@@ -77,8 +66,6 @@ function handleAuthResult(authResult) {
         scope: OAUTH2_SCOPES,
         immediate: false
       }, handleAuthResult);
-    });
-  }
 }
 
 // Load the client interfaces for the YouTube Analytics and Data APIs, which
@@ -87,21 +74,12 @@ function handleAuthResult(authResult) {
 function loadAPIClientInterfaces() {
   gapi.client.load('youtube', 'v3', function() {
     handleAPILoaded();
-  });
 }
-
-buildApiRequest('GET',
   '/youtube/v3/search',
   {'maxResults': '25',
   'part': 'snippet',
   'q': 'javascript',
                  'type': ''}); // channel, video, or playlist
-
-// function wikiRequest (){
-//   $.ajax( {
-//     var url = "https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json";
-//
-//       url: remoteUrlWithOrigin,
 //       data: queryData,
 //       dataType: 'json',
 //       type: 'POST',
@@ -117,9 +95,3 @@ buildApiRequest('GET',
 $('.carousel').carousel({
     interval: 6000
   })
-
-
-
-
-
-
