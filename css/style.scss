@@ -68,7 +68,6 @@ a.navbar-brand.text-muted {
 		size: cover;
 		image-rendering: -webkit-optimize-contrast;
 		-webkit-background-size: cover;
-		
 	}
 }
 
@@ -98,26 +97,26 @@ p.lead {
 }
 
 
-.jumbotron 
-h1 {	
-	font {
-		size: 96px;
-		family: $font-stack-primary;
-	}
-	text-shadow: 2px 2px 2px black;
-}	
+.jumbotron {
+	h1 {	
+		font {
+			size: 96px;
+			family: $font-stack-primary;
+		}
+		text-shadow: 2px 2px 2px black;
+	} //end h1 
+} //end jumbotron	
 
 /*Carousel
 ===============================*/
 .carousel-indicators {
-	bottom: 0;
 	.active {
 		background-color: $carousel-color; 
 	}
 	li {
 		background-color: $carousel-color; 	
 	}
-}
+} //end .carousel-indicators
 
 /*Render Data Accordian 
 ===============================*/
