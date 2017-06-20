@@ -1,0 +1,134 @@
+// Variable for main primary color
+$color-primary: #ed1c40;
+
+//Variable for secondary color
+$color-secondary: #000;
+
+// Variable for carousel colors
+$carousel-color: #222; 
+
+//Variable for main fonts
+$font-stack-primary: 'Titillium Web', sans-serif;
+
+//Variable for secondary fonts (h2)
+$font-stack-secondary: 'Noto Sans', sans-serif;
+
+//Center alignment
+$align-center: center;
+
+//Variable for Jumbotron and lead paragraph color
+$white: #fff;
+
+/* Layout
+==============================*/
+body {
+	padding-top: 30px;
+}
+
+h2{
+	color: $color-secondary;
+	margin: auto;
+	text-align: $align-center;
+
+	font:{
+		family: $font-stack-secondary;
+		weight: bold 700;
+	}
+}
+
+.container {
+	max-width: 1000px;
+}
+
+/* Navbar
+==============================*/
+div.navbar.navbar-static-top {
+	font-size: 1em;
+}
+
+a.navbar-brand.text-muted {
+	font-size: 3em;
+	text-align: $align-center;
+	color: $color-secondary;
+}
+
+/*Jumbotron
+===============================*/
+.jumbotron {
+	color: $white;
+	margin-bottom: 20px;
+	min-height: 50%;
+	font-weight: 200;
+	text-align: $align-center;
+	
+	background: {
+		image: url("../images/StockSnap.jpg");
+		repeat: no-repeat;
+		position: $align-center;
+		size: cover;
+		image-rendering: -webkit-optimize-contrast;
+		-webkit-background-size: cover;
+		
+	}
+}
+
+/*Glyphicons
+===============================*/
+.glyphicon {
+	font-size: 3em;
+	display: block;
+	text-align: $align-center;
+	color: $color-primary; 
+}
+
+p.lead {
+	font-family: $font-stack-primary;
+	text-shadow: 3px 3px 3px black;
+
+}
+
+.jumbotron p {
+	font-size: 28px;
+	
+}
+
+#map {
+	height: 400px;
+	width: 100%;
+}
+
+
+.jumbotron 
+h1 {	
+	font {
+		size: 96px;
+		family: $font-stack-primary;
+	}
+	text-shadow: 2px 2px 2px black;
+}	
+
+/*Carousel
+===============================*/
+.carousel-indicators {
+	bottom: 0;
+	.active {
+		background-color: $carousel-color; 
+	}
+	li {
+		background-color: $carousel-color; 	
+	}
+}
+
+/*Render Data Accordian 
+===============================*/
+.panel-heading .accordion-toggle:after {
+	/* symbol for "opening" panels */
+	font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+	content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+	float: right;        /* adjust as needed */
+	color: grey;         /* adjust as needed */
+}
+.panel-heading .accordion-toggle.collapsed:after {
+	/* symbol for "collapsed" panels */
+	content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+}

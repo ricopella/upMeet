@@ -1,0 +1,105 @@
+// Input CSS FILE
+
+/* Layout
+==============================*/
+body {
+	padding-top: 30px;
+}
+
+h2{
+	margin: auto;
+	text-align: center;
+}
+
+.container {
+	max-width: 1000px;
+}
+
+/* Navbar
+==============================*/
+div.navbar.navbar-static-top {
+	font-size: 1em;
+}
+
+a.navbar-brand.text-muted {
+	font-size: 3em;
+	text-align: center;
+	color: #000;
+}
+
+/*Jumbotron
+===============================*/
+.jumbotron {
+	color: #fff;
+	margin-bottom: 20px;
+	min-height: 50%;
+	background-image: url("../images/StockSnap.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	image-rendering: -webkit-optimize-contrast;
+	-webkit-background-size: cover;
+	background-size: cover;
+	font-weight: 200;
+	text-align: center;
+}
+
+/*Glyphicons
+===============================*/
+.glyphicon {
+	font-size: 3em;
+	display: block;
+	text-align: center;
+	color: #ed1c40; 
+}
+
+.lead {
+	font-family: 'Titillium Web', sans-serif;
+	text-shadow: 3px 3px 3px black;
+}
+
+.jumbotron p {
+	font-size: 28px;
+	letter-spacing: 
+}
+
+
+#map {
+	height: 400px;
+	width: 100%;
+}
+
+.jumbotron .h1, .jumbotron h1 {
+	font-size: 96px;
+	font-family: 'Titillium Web', sans-serif;
+	text-shadow: 2px 2px 2px black;
+}
+
+/*Carousel
+===============================*/
+.carousel-indicators {
+	bottom: 0;
+}
+.carousel-indicators .active {
+	background-color: #222;
+}
+.carousel-indicators li {
+	background-color: #222;
+}
+
+/*Render Data Accordian 
+===============================*/
+.panel-heading .accordion-toggle:after {
+	/* symbol for "opening" panels */
+	font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+	content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+	float: right;        /* adjust as needed */
+	color: grey;         /* adjust as needed */
+}
+.panel-heading .accordion-toggle.collapsed:after {
+	/* symbol for "collapsed" panels */
+	content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+}
+
+div.panel-heading {
+	background: #ed1c40;
+}
