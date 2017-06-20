@@ -276,3 +276,8 @@ $("#user-submit").on("click", function() {
     var address = $("#search-address").val();
     geocodeAddress(geocoder, address);
 })
+
+//Bootstrap Carousel (timing)
+$('.carousel').carousel({
+    interval: 6000
+})
