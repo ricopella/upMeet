@@ -50,6 +50,8 @@ function geocodeAddress(geocoder, userInput) {
 
 }
 
+// uses inputed subject & geocodeAddress Latitude & Longitude
+// generates meetupResonse of data to be used on page
 function searchAPIS(search, lat, lng) {
     var query = search;
     var numFinished = 0;
@@ -60,57 +62,27 @@ function searchAPIS(search, lat, lng) {
             lng + "&text=" + query + "&radius=" + "30" + "&lat=" + lat + "&key=13493128171b80333fc956a274b1c",
         method: "GET",
     }).done(function(response) {
-        //  meetupResponse = response;
+
         console.log(meetupResponse.length);
 
-        // var counterOfDel = 0;
-
         response.forEach(function(item, index) {
-          var evalStatement = (moment(item.time, 'YYYY-MM-DD').diff(moment()), "hours") <= 6;
+            var evalStatement = (moment(item.time, 'YYYY-MM-DD').diff(moment()), "hours") <= 6;
 
-          // moment(meetupResponse[0].time).diff(moment("2017-06-18"), "days") ===1
-          console.log(evalStatement);
+            console.log(evalStatement);
 
-          if (item.venue !== undefined){
-            // && evalStatement === true
-            // console.log(moment(item.time).diff(moment("2017-07-11"), "days"));
-        		// console.log(item.venue);
-            meetupResponse.push(response[index]);
-            console.log(index);
-            // counterOfDel++;
-        	}
-          // console.log(meetupResponse.length);
-
-          // if (moment(item.time).diff(moment("2017-07-11"), "days") === 1){
-          //   console.log(moment(item.time).diff(moment("2017-07-11"), "days"));
-        	// 	// console.log(item.venue);
-          //   meetupResponse.splice(index, 1);
-        	// }
-          // console.log(counterOfDel);
-          // console.log("item time: " + moment(item.time).format("YYYYMMDD") + "passed: 2017-07-11" + " diff: " + moment(item.time).diff(moment("2017-07-11"), "days"));
+            // filter results to NOT include meetups with NO VENUE 
+            if (item.venue !== undefined) {
+                meetupResponse.push(response[index]);
+                // console.log(index);
+            }
         });
+
+        // waits for all 3 API's calls to finish loading data 
         numFinished++;
-        if(numFinished === 3) {
-          updatePage(meetupResponse);
-          updateMap(meetupResponse);
+        if (numFinished === 3) {
+            updatePage(meetupResponse);
+            updateMap(meetupResponse);
         }
-
-        // meetupResponse.forEach(function(item) {
-        //     console.log(moment(item.time).format("YYYY-MM-DD"));
-        //     console.log(moment(item.time).diff(moment("2017-07-11"), "days") === 1);
-        // });
-
-        // console.log(meetupResponse[i].time);
-
-        // if (true) {
-        //
-        // }
-        // moment(1500512400000).diff(moment("2017-07-11"), "days") > 1
-        // word.venue !== undefined
-
-        // console.log("MeetUp Response:");
-        // console.log(response);
-        // console.log("Meetup Response Length " + response.length);
     });
 
     // call youtube
@@ -125,10 +97,12 @@ function searchAPIS(search, lat, lng) {
         function(data) {
             console.log("youtube Data: " + data.items);
             youtubeResponse = data.items;
+
+            // waits for all 3 API's calls to finish loading data 
             numFinished++;
-            if(numFinished === 3) {
-              updatePage(meetupResponse);
-              updateMap(meetupResponse);
+            if (numFinished === 3) {
+                updatePage(meetupResponse);
+                updateMap(meetupResponse);
             }
         }
     );
@@ -143,57 +117,16 @@ function searchAPIS(search, lat, lng) {
         success: function(json) {
             console.log("Wiki data: " + json.query.pages);
             wikiResponse = json.query.pages;
+
+            // waits for all 3 API's calls to finish loading data 
             numFinished++;
-            if(numFinished === 3) {
-              updatePage(meetupResponse);
-              updateMap(meetupResponse);
+            if (numFinished === 3) {
+                updatePage(meetupResponse);
+                updateMap(meetupResponse);
             }
         }
     });
-
-    // setTimeout(updatePage(meetupResponse), 100000);
-
 }
-
-
-
-// to have data on page load
-// searchAPIS("javascript", 34.020204, -118.490765);
-
-
-
-// User submits form for query data
-// stores data for use in other functions
-$("#user-submit").on("click", function() {
-
-    var search = $("#search-subject").val();
-    var address = $("#search-address").val()
-
-    geocodeAddress(geocoder, address, function() {
-        console.log('first func ran!');
-
-        searchAPIS(search, lat, lng, function() {
-            console.log('Second func ran!');
-            updatePage(meetupResponse);
-            console.log('Third func ran!');
-        });
-    });
-});
-
-// Timeouts
-// $("#user-submit").on("click", function() {
-//     var search = $("#search-subject").val();
-//     var address = $("#search-address").val();
-//     // setTimeout(geocodeAddress(geocoder, address), 10);
-//     searchAPIS(search, 34.0183982849121, -118.48661041259766);
-//     setTimeout(updatePage(meetupResponse), 10000);
-// })
-
-// chaining
-$("#user-submit").on("click", function() {
-    var address = $("#search-address").val();
-    geocodeAddress(geocoder, address);
-})
 
 var updatePage = function(meetupResponse) {
 
@@ -212,23 +145,12 @@ var updatePage = function(meetupResponse) {
                 "rsvp": meetupResponse[i].yes_rsvp_count,
                 "waitlist": meetupResponse[i].waitlist_count,
                 "venueName": meetupResponse[i].venue.name,
-                "venueAdress": meetupResponse[i].venue.address_1,
+                "venueAddress": meetupResponse[i].venue.address_1,
                 "venueCity": meetupResponse[i].venue.city,
                 "meetupURL": meetupResponse[i].link,
                 "waitlist": meetupResponse[i].waitlist_count
             });
         }
-
-        // // pull these in
-        // if (meetupItem.duration !== undefined) {
-        //     var a = meetupItem.time;
-        //     var b = meetupItem.duration;
-        //     console.log(moment(a).format("h:mm") + " - " + moment(a + b).format("hh:mm a"));
-        // }
-
-        // if (waitlist > 0) {
-        //     console.log("this one is full");
-        // }
 
         // append Youtube results to object
         addYoutubeLinks(youtubeResponse);
@@ -239,28 +161,34 @@ var updatePage = function(meetupResponse) {
         // Append items to page
         for (j = 0; j <= 10; j++) {
 
+            // structures accordion & title
             var panelDefault = $("<div>").addClass("panel panel-default");
-            var panelHeading = $("<div>").addClass("panel-heading"); // displays Accordian title
+            var panelHeading = $("<div>").addClass("panel-heading");
             var panelName = $("<h4>")
                 .addClass("panel-title")
                 .append('<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse' + j + '">' + allData[j].meetupName + '</a>');
 
-            // collapsed data
+            // accordion collapsed data
             var collapseId = $("<div>")
                 .addClass("panel-collapse collapse in")
                 .attr("id", "collapse" + j);
-            // displays subject short description
-            var collapseBody = $("<div>")
-                .addClass("panel-body")
-                .text(allData[j].meetupDescription);
-            // var collapseVenue = $("<p>").text(allData[j].venueName + " Address: " + allData[j].venueAddress + " " + allData[j].venueCity);
-            var collapseUrl = $("<a>").attr("src", allData[j].link);
+
+            var collapseBody = $('<p>').html(allData[j].meetupDescription).text();
+
+            // var collapseBody = $("<div>")
+            //     .addClass("panel-body")
+            //     .text(cleanedDescription);
+            // var collapseBody = $("<div>")
+            //     .addClass("panel-body")
+            //     .text(allData[j].meetupDescription);
+            var collapseVenue = $("<p>").text(allData[j].venueName + " Address: " + allData[j].venueAddress + " " + allData[j].venueCity);
+            var collapseUrl = $("<a>").text("Click for more info").attr("href", allData[j].meetupURL);
             var collapseAttending = $("<p>").text("RSVP'd: " + allData[j].rsvp);
             var collapseWaitlist = $("<p>").text("Waitlist: " + allData[j].waitlist);
 
-            // // displays time
-            // var time = $("<p>").text(allData[j].startTime);
-            // // display wiki description
+            // displays time
+
+            // display wiki description
 
             // display youtube title
             var videoTitle = $("<p>").text(allData[j].youtubeTitle);
@@ -268,13 +196,11 @@ var updatePage = function(meetupResponse) {
             var videoThumbnail = $("<img>").attr("src", allData[j].youtubeThumbnail);
             var imgContainer = $("<div>").addClass("ytImgContainer");
 
-
-
+            // create accordion HTML elements
             panelDefault.append(panelHeading);
             panelDefault.append(panelName);
-            // panelLink.wrap(panelName);
             collapseId.append(collapseBody);
-            // collapseId.append(collapseVenue);
+            collapseId.append(collapseVenue);
             collapseId.append(collapseUrl);
             collapseId.append(collapseAttending);
             collapseId.append(collapseWaitlist);
@@ -282,12 +208,14 @@ var updatePage = function(meetupResponse) {
             imgContainer.append(videoThumbnail);
             collapseId.append(imgContainer);
 
+            // update accordion to page
             $("#accordion").append(panelDefault);
             $("#accordion").append(collapseId);
 
         } // end for loop
     } // end updatePage()
 
+// adds Youtube query to meetupResponse object
 function addYoutubeLinks(youtubeResponse) {
     for (var i = 0; i < youtubeResponse.length; i++) {
         allData[i].youtubeTitle = youtubeResponse[i].snippet.title;
@@ -296,12 +224,13 @@ function addYoutubeLinks(youtubeResponse) {
     }
 } // end addYoutubeResponse()
 
-// googlemaps update
+// Updates Map to display one marker for each meetup
+// utilizes meetupResponse for lat/lng
 function updateMap(meetupResponse) {
 
     var locations = [];
 
-    for (i = 0; i < 50; i++) {
+    for (i = 0; i < 10; i++) {
         if ('venue' in meetupResponse[i]) {
             locations.push([meetupResponse[i].name, meetupResponse[i].venue.lat, meetupResponse[i].venue.lon, meetupResponse[i].venue.name]);
         }
@@ -336,6 +265,7 @@ function updateMap(meetupResponse) {
 
 }
 
+//  add wikipedia data to meetupResponse object
 // for (var val in wikiData) {
 //     var title = wikiData[val].title;
 //     var extract = wikiData[val].extract;
@@ -343,3 +273,11 @@ function updateMap(meetupResponse) {
 //     console.log(title, extract, articleURL);
 //     allData
 // }
+
+// User submits form for query data
+// stores data for use in other functions
+$("#user-submit").on("click", function() {
+    var search = $("#search-subject").val();
+    var address = $("#search-address").val();
+    geocodeAddress(geocoder, address);
+})
