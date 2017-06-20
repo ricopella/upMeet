@@ -131,8 +131,7 @@
             <div class="row">
                 <div class="col-md-3" text align="center">
                     <div class="input-group" id="user-submit">
-                        <span class="input-group-btn">
-        </span>
+                        <span class="input-group-btn"></span>
                         <input type="text" class="form-control" id="MeetUp" placeholder="Search for...">
                     </div>
                     <!-- /input-group -->
@@ -140,37 +139,117 @@
                 <!-- /.col-lg-6 -->
                 <!-- DATEPICKER -->
                 <div class="row">
-                    <div class="col-md-3" text align="center">
+                  <div class="col-md-3" text align="center">
+                      <div class="input-group">
+                          <span class="input-group-btn"></span>
+                          <input type="text" class="form-control" id="datepicker" placeholder="Search for...">
+                      </div>
+                      <!-- /input-group -->
+                    </div>
+                </div>
+                    <!-- /.col-lg-6 -->
+                    <!-- TIMEPICKER-->
+            <div class="row">
+                <div class="col-md-3" text align="center">
+                    <div class="input-group">
+                        <span class="input-group-btn"></span>
+                        <input type="text" class="form-control" id="timepicker" placeholder="Search for...">
+                    </div>
+                    <!-- /input-group -->
+                </div>
+                <!-- /.col-lg-6 -->
+                <!-- Address -->
+                <div class="row">
+                    <div class="col-md-3">
                         <div class="input-group">
-                            <span class="input-group-btn">
-          </span>
-                            <input type="text" class="form-control" id="datepicker" placeholder="Search for...">
+                            <span class="input-group-btn"></span>
+                            <input type="text" class="form-control" id="Address" placeholder="Search for...">
                         </div>
                         <!-- /input-group -->
                     </div>
                     <!-- /.col-lg-6 -->
-                    <!-- TIMEPICKER-->
-                    <div class="row">
-                        <div class="col-md-3" text align="center">
-                            <div class="input-group">
-                                <span class="input-group-btn">
-            </span>
-                                <input type="text" class="form-control" id="timepicker" placeholder="Search for...">
-                            </div>
-                            <!-- /input-group -->
+                    <br>
+                    <br>
+                    <hr>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <!-- Link to Google Maps API -->
+                    <div id="map-data"></div>
+                    <!-- Resources + Map -->
+                    <div class="row" align="center">
+                        <div class="col-sm-12">
+                            <b class="glyphicon glyphicon-flash"></b>
+                            <h3>Resources</h3>
+                            <p>Access our recommended resources that will help educate you before the MeetUp</p>
+                            <br>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/M4MqIdKJYdM" frameborder="0" allowfullscreen></iframe>
+                            <br>
+                            <br>
+                            <br>
                         </div>
-                        <!-- /.col-lg-6 -->
-                        <!-- Address -->
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="input-group">
-                                    <span class="input-group-btn">
-              </span>
-                                    <input type="text" class="form-control" id="Address" placeholder="Search for...">
-                                </div>
-                                <!-- /input-group -->
+                        <div class="row" align="center">
+                            <div class="col-md-4">
+                                <b class="glyphicon glyphicon-road" id="map"></b>
+                                <h3>Map</h3>
+                                <p>Maps powered by Google to help you locate and arrive on time to your MeetUp on time</p>
                             </div>
-                            <!-- /.col-lg-6 -->
+                            <div class="col-md-8">
+                                <b class="glyphicon glyphicon-road" id="render-data"></b>
+                                <h3>Render Data</h3>
+                                <!-- Accordian to Render Data -->
+                                <!-- Collapsible Group Item #1 -->
+                                <div class="panel-group" id="accordion">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                  Collapsible Group Item #1
+                </a>
+              </h4>
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse in">
+                                            <div class="panel-body">
+        <form id="create-form">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Collapsible Group Item #2 -->
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                  Collapsible Group Item #2
+                </a>
+              </h4>
+                                        </div>
+                                        <div id="collapseTwo" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                            </div>
+</div>
+<!-- end create User Panel -->
+                                    </div>
+                                    <!-- Collapsible Group Item #3 -->
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                  Collapsible Group Item #3
+                </a>
+<script src="js/userauth.js" charset="utf-8"></script>
+<script src="js/updatepage.js"></script>
+                                        <div id="collapseThree" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end col-md-8 div -->
                             <br>
                             <br>
                             <hr>
@@ -179,142 +258,35 @@
                             <br>
                             <br>
                             <br>
-                            <!-- Link to Google Maps API -->
-                            <div id="map-data"></div>
-                            <!-- Resources + Map -->
-                            <div class="row" align="center">
-                                <div class="col-sm-12">
-                                    <b class="glyphicon glyphicon-flash"></b>
-                                    <h3>Resources</h3>
-                                    <p>Access our recommended resources that will help educate you before the MeetUp</p>
-                                    <br>
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/M4MqIdKJYdM" frameborder="0" allowfullscreen></iframe>
-                                    <br>
-                                    <br>
-                                    <br>
-                                </div>
-                                <div class="row" align="center">
-                                    <div class="col-md-4">
-                                        <b class="glyphicon glyphicon-road" id="map"></b>
-                                        <h3>Map</h3>
-                                        <p>Maps powered by Google to help you locate and arrive on time to your MeetUp on time</p>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <b class="glyphicon glyphicon-road" id="render-data"></b>
-                                        <h3>Render Data</h3>
-                                        <!-- Accordian to Render Data -->
-                                        <!-- Collapsible Group Item #1 -->
-                                        <div class="panel-group" id="accordion">
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                          Collapsible Group Item #1
-                        </a>
-                      </h4>
-                                                </div>
-                                                <div id="collapseOne" class="panel-collapse collapse in">
-                                                    <div class="panel-body">
-                <form id="create-form">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Collapsible Group Item #2 -->
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                          Collapsible Group Item #2
-                        </a>
-                      </h4>
-                                                </div>
-                                                <div id="collapseTwo" class="panel-collapse collapse">
-                                                    <div class="panel-body">
-                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                                    </div>
-    </div>
-    <!-- end create User Panel -->
-
-    <!-- Login User Form-->
-    <div class="container">
-        <div class="panel panel-default">
-            <div class="panel-heading panel-custom">
-                User Login
-            </div>
-            <div class="panel-body">
-                <form id="login-form">
-                    <div class="form-group">
-                        <label for="trainName">Email Address:</label>
-                        <input type="email" class="form-control" name="email" id="user-name" placeholder="info@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="destination">Password:</label>
-                        <input type="password" class="form-control" id="current-password" required>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <button type="button" id="btn-login" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <button type="button" id="signout-btn" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Sign-Out</button>
-                                                </div>
-                                            </div>
-                                            <!-- Collapsible Group Item #3 -->
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                          Collapsible Group Item #3
-                        </a>
-    <script src="js/userauth.js" charset="utf-8"></script>
-    <script src="js/updatepage.js"></script>
-                                                <div id="collapseThree" class="panel-collapse collapse">
-                                                    <div class="panel-body">
-                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end col-md-8 div -->
-                                    <br>
-                                    <br>
-                                    <hr>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                                </div>
-                                <!-- end container -->
-                                <script type="text/javascript">
-                                // initiate google map
-                                function initMap() {
-                                    var uluru = {
-                                        lat: -25.363,
-                                        lng: 131.044
-                                    };
-                                    var map = new google.maps.Map(document.getElementById('map'), {
-                                        zoom: 4,
-                                        center: uluru
-                                    });
-                                    var marker = new google.maps.Marker({
-                                        position: uluru,
-                                        map: map
-                                    });
-                                }
-                                </script>
-                                <!-- jQuery -->
-                                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL_Eqmi87SQiLCJENBUkS14hW1JM_uWy0&callback=initMap">
-                                </script>
-                                <!-- Latest compiled and minified JavaScript for Bootstrap -->
-                                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-                                <script src="js/login.js" charset="utf-8"></script>
-                                <div id="footer">
-                                    <p>&copy; 2017 UpMeet - By Narin, Kellen, Myles &amp; Hovsep</p>
-                                </div>
+                            <br>
+                        </div>
+                        <!-- end container -->
+                        <script type="text/javascript">
+                        // initiate google map
+                        function initMap() {
+                            var uluru = {
+                                lat: -25.363,
+                                lng: 131.044
+                            };
+                            var map = new google.maps.Map(document.getElementById('map'), {
+                                zoom: 4,
+                                center: uluru
+                            });
+                            var marker = new google.maps.Marker({
+                                position: uluru,
+                                map: map
+                            });
+                        }
+                        </script>
+                        <!-- jQuery -->
+                        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL_Eqmi87SQiLCJENBUkS14hW1JM_uWy0&callback=initMap">
+                        </script>
+                        <!-- Latest compiled and minified JavaScript for Bootstrap -->
+                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                        <script src="js/login.js" charset="utf-8"></script>
+                        <div id="footer">
+                            <p>&copy; 2017 UpMeet - By Narin, Kellen, Myles &amp; Hovsep</p>
+                        </div>
 </body>
 
 </html>
