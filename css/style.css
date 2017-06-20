@@ -5,12 +5,11 @@ body {
     padding-top: 30px;
 }
 
-h2 {
-    color: #000;
-    margin: auto;
-    text-align: center;
-    font-family: "Noto Sans", sans-serif;
-    font-weight: bold 700;
+#upmeet-logo{
+	margin-right: auto;
+	margin-left: auto;	
+	display: block;
+	height: 102px;
 }
 
 .container {
@@ -37,7 +36,7 @@ a.navbar-brand.text-muted {
     margin: 1px;
     border-radius: 3px;
     color: white;
-    background: black;
+    background: #CC3737;
     opacity: 0.9;
 }
 
@@ -146,4 +145,6 @@ div.panel-heading {
     background: #ed1c40;
 }
 
+
 /*# sourceMappingURL=style.css.map */
+
