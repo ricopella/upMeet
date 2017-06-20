@@ -45,13 +45,14 @@ function geocodeAddress(geocoder, userInput) {
             alert('Geocode was not successful for the following reason: ' + status);
         }
         var search = $("#search-subject").val();
-        // searchAPIS(search, lat, lng);
+        searchAPIS(search, lat, lng);
     });
 
 }
 
 function searchAPIS(search, lat, lng) {
     var query = search;
+    var numFinished = 0;
 
     // call meetup
     $.ajax({
@@ -59,13 +60,13 @@ function searchAPIS(search, lat, lng) {
             lng + "&text=" + query + "&radius=" + "30" + "&lat=" + lat + "&key=13493128171b80333fc956a274b1c",
         method: "GET",
     }).done(function(response) {
-        // meetupResponse = response;
+        //  meetupResponse = response;
         console.log(meetupResponse.length);
 
         // var counterOfDel = 0;
 
         response.forEach(function(item, index) {
-          var evalStatement = (moment(item.time, 'YYYY-MM-DD').diff(moment("2017-06-19", 'YYYY-MM-DD')), "hours") <= 6;
+          var evalStatement = (moment(item.time, 'YYYY-MM-DD').diff(moment()), "hours") <= 6;
 
           // moment(meetupResponse[0].time).diff(moment("2017-06-18"), "days") ===1
           console.log(evalStatement);
@@ -88,6 +89,11 @@ function searchAPIS(search, lat, lng) {
           // console.log(counterOfDel);
           // console.log("item time: " + moment(item.time).format("YYYYMMDD") + "passed: 2017-07-11" + " diff: " + moment(item.time).diff(moment("2017-07-11"), "days"));
         });
+        numFinished++;
+        if(numFinished === 3) {
+          updatePage(meetupResponse);
+          updateMap(meetupResponse);
+        }
 
         // meetupResponse.forEach(function(item) {
         //     console.log(moment(item.time).format("YYYY-MM-DD"));
@@ -119,6 +125,11 @@ function searchAPIS(search, lat, lng) {
         function(data) {
             console.log("youtube Data: " + data.items);
             youtubeResponse = data.items;
+            numFinished++;
+            if(numFinished === 3) {
+              updatePage(meetupResponse);
+              updateMap(meetupResponse);
+            }
         }
     );
 
@@ -131,11 +142,17 @@ function searchAPIS(search, lat, lng) {
         cache: false,
         success: function(json) {
             console.log("Wiki data: " + json.query.pages);
-            wikiResponse = json.query.pages
+            wikiResponse = json.query.pages;
+            numFinished++;
+            if(numFinished === 3) {
+              updatePage(meetupResponse);
+              updateMap(meetupResponse);
+            }
         }
     });
 
     // setTimeout(updatePage(meetupResponse), 100000);
+
 }
 
 
