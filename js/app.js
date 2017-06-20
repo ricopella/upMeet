@@ -1,6 +1,10 @@
 // NY // searchAPIS("python", 40.728862, -73.996413);
 // LA // searchAPIS("javascript", 34.020204, -118.490765)
 
+/**
+ * Globals and constants
+ */
+
 var meetupResponse = [];
 var youtubeResponse;
 var wikiResponse;
@@ -11,6 +15,10 @@ var map;
 var address;
 var lat;
 var lng;
+
+/**
+ * Map on.load
+ */
 
 function initMap() {
 
@@ -33,6 +41,10 @@ function initMap() {
     });
 } // end initMap
 
+/**
+ * Convert Address to Lat/Lng
+ */
+
 function geocodeAddress(geocoder, userInput) {
     geocoder = new google.maps.Geocoder();
     address = userInput;
@@ -49,6 +61,10 @@ function geocodeAddress(geocoder, userInput) {
     });
 
 }
+
+/**
+ * API Calls
+ */
 
 // uses inputed subject & geocodeAddress Latitude & Longitude
 // generates meetupResonse of data to be used on page
@@ -128,13 +144,17 @@ function searchAPIS(search, lat, lng) {
     });
 }
 
+/**
+ * Render Page
+ */
+
 var updatePage = function(meetupResponse) {
 
         allData = [];
-        console.log("update page mayne!");
-        console.log(meetupResponse);
 
+        // store values from API calls in 1 object
         for (var i = 0; i < meetupResponse.length; i++) {
+            // push into empty array with iterate == key
             allData.push(allData[meetupResponse[i]] = {
                 "meetupName": meetupResponse[i].name,
                 "meetupDescription": meetupResponse[i].description,
@@ -208,6 +228,10 @@ var updatePage = function(meetupResponse) {
         } // end for loop
     } // end updatePage()
 
+/**
+ * Add Youtube to meetupResponse Object
+ */
+
 // adds Youtube query to meetupResponse object
 function addYoutubeLinks(youtubeResponse) {
     for (var i = 0; i < youtubeResponse.length; i++) {
@@ -268,6 +292,10 @@ function updateMap(meetupResponse) {
 //     allData
 // }
 
+/**
+ * Event Handler 
+ */
+
 // User submits form for query data
 // stores data for use in other functions
 $("#user-submit").on("click", function() {
@@ -277,7 +305,10 @@ $("#user-submit").on("click", function() {
     geocodeAddress(geocoder, address);
 })
 
-//Bootstrap Carousel (timing)
+/**
+ * Bootstrap Carousel (tming)
+ */
+
 $('.carousel').carousel({
     interval: 6000
 })

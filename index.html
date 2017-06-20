@@ -15,8 +15,6 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
-    <!-- Link to jQuery -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <!-- Three Picker Files for JS Time and Date (required) -->
     <script type="text/javascript" src="js/picker.js"></script>
     <script type="text/javascript" src="js/picker.date.js"></script>
@@ -26,18 +24,17 @@
     <link rel="stylesheet" type="text/css" href="css/default.date.css">
     <link rel="stylesheet" type="text/css" href="css/default.time.css">
     <script>
-        // $(function() {
-        //     $('#datepicker').pickadate()
-        //     $('#timepicker').pickatime()
-        // });
+        $(function() {
+            $('#datepicker').pickadate()
+            $('#timepicker').pickatime()
+        });
     </script>
 </head>
 
 <body>
-
     <!-- Navbar -->
     <div class="navbar navbar navbar-static-top">
-        <!-- Title -->
+        <!-- Nav Logo -->
         <img src="/images/upmeet-logo.svg" id="upmeet-logo">
         <!--==============================LOG-IN FORM============================-->
         <div id="log-sign-in" class="pure-g">
@@ -69,10 +66,10 @@
                 </i>SIGN-UP</button>
             </div>
         </div>
-        <!-- end nav bar-->
+        <!-- end Navbar -->
     </div>
 
-    <!-- Carousel -->
+    <!--=====================================CAROUSEL=======================================-->
     <div id="carousel-example-generic" class="carousel slide jumbotron" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -114,11 +111,7 @@
     </div>
 
     <div class="container">
-        <br>
-        <br>
-        <br>
-        <br>
-        <!-- User Input -->
+        <!--=====================================INPUT FORM=======================================-->
         <div class="row">
             <div class="col-sm-3">
                 <h2>MeetUp</h2>
@@ -171,25 +164,17 @@
                             <span class="input-group-btn"></span>
                             <input type="text" class="form-control" id="search-address" placeholder="Search for...">
                         </div>
-                        <!-- /input-group -->
                     </div>
                     <!-- /.col-lg-6 -->
                 </div>
                 <button type="button" id="user-submit" class="btn btn-primary">Submit Form</button>
             </div>
+            <!-- END INPUT FORM -->
         </div>
+        <!-- end Container -->
     </div>
-    <br>
-    <br>
-    <hr>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <!-- Link to Google Maps API -->
-    <!--<div id="map-data"></div>-->
-    <!-- Resources + Map -->
+
+    <!--===================================== MAP + RESOURCES ============================================-->
     <div class="row">
         <div class="row" align="center">
             <div class="col-md-4">
@@ -199,7 +184,7 @@
             </div>
             <div class="col-md-8">
                 <b class="glyphicon glyphicon-road" id="render-data"></b>
-                <h3>Render Data</h3>
+                <h3>Resources</h3>
                 <!-- Accordian to Render Data -->
                 <!-- Collapsible Group Item #1 -->
                 <div class="panel-group" id="accordion"></div>
@@ -208,17 +193,15 @@
         </div>
     </div>
 
-    <!-- end container -->
-
     <div id="footer">
         <p>&copy; 2017 UpMeet - By Narin, Kellen, Myles &amp; Hovsep</p>
     </div>
 
-
+    <!--===================================== SCRIPTS ============================================-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-range/3.0.3/moment-range.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
