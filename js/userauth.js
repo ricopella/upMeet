@@ -1,3 +1,8 @@
+// Testing Account
+// Username: info@gmail.com
+// PW: testing123
+
+
 var userEmail = "";
 var password = "";
 
