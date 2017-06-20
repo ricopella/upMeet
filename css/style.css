@@ -3,23 +3,15 @@
 body {
   padding-top: 30px; }
 
-.container {
-  max-width: 1000px; }
-
 h2 {
-  color: #222;
+  color: #000;
   margin: auto;
   text-align: center;
-  letter-spacing: 2px; }
-  h2 font {
-    family: "PT Sans", sans-serif; }
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold 700; }
 
-.user-input {
-  text-align: center; }
-
-#map {
-  height: 400px;
-  width: 100%; }
+.container {
+  max-width: 1000px; }
 
 /* Navbar
 ==============================*/
@@ -45,16 +37,6 @@ a.navbar-brand.text-muted {
   background-size: cover;
   background-image-rendering: -webkit-optimize-contrast;
   background--webkit-background-size: cover; }
-  .jumbotron h1 {
-    text-shadow: 2px 2px 2px black; }
-    .jumbotron h1 font {
-      size: 96px;
-      family: "Titillium Web", sans-serif; }
-  .jumbotron .jumbotron p {
-    font-size: 28px; }
-  .jumbotron p.lead {
-    font-family: "Titillium Web", sans-serif;
-    text-shadow: 3px 3px 3px black; }
 
 /*Glyphicons
 ===============================*/
@@ -64,6 +46,25 @@ a.navbar-brand.text-muted {
   text-align: center;
   color: #ed1c40; }
 
+p.lead {
+  font-family: "Titillium Web", sans-serif;
+  text-shadow: 3px 3px 3px black; }
+
+.jumbotron p {
+  font-size: 28px; }
+
+#map {
+  height: 400px;
+  width: 100%; }
+
+.jumbotron
+h1 {
+  text-shadow: 2px 2px 2px black; }
+  .jumbotron
+  h1 font {
+    size: 96px;
+    family: "Titillium Web", sans-serif; }
+
 /*Carousel
 ===============================*/
 .carousel-indicators .active {
@@ -71,7 +72,7 @@ a.navbar-brand.text-muted {
 .carousel-indicators li {
   background-color: #222; }
 
-/*Accordian (Render Data)
+/*Render Data Accordian 
 ===============================*/
 .panel-heading .accordion-toggle:after {
   /* symbol for "opening" panels */
@@ -89,7 +90,18 @@ a.navbar-brand.text-muted {
   content: "\e080";
   /* adjust as needed, taken from bootstrap.css */ }
 
-div.panel-heading {
-  color: #ed1c40; }
+#upmeet-logo {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  height: 102px; }
+
+.pure-button {
+  font-size: 90%;
+  margin: 1px;
+  border-radius: 3px;
+  color: white;
+  background: #CC3737;
+  opacity: 0.9; }
 
 /*# sourceMappingURL=style.css.map */

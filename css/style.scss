@@ -11,7 +11,7 @@ $carousel-color: #222;
 $font-stack-primary: 'Titillium Web', sans-serif;
 
 //Variable for secondary fonts (h2)
-$font-stack-secondary: 'PT Sans', sans-serif;
+$font-stack-secondary: 'Noto Sans', sans-serif;
 
 //Center alignment
 $align-center: center;
@@ -25,28 +25,19 @@ body {
 	padding-top: 30px;
 }
 
-.container {
-	max-width: 1000px;
-}
-
 h2{
-	color: $carousel-color;
+	color: $color-secondary;
 	margin: auto;
 	text-align: $align-center;
-	letter-spacing: 2px;
 
-	font {
+	font:{
 		family: $font-stack-secondary;
+		weight: bold 700;
 	}
 }
 
-.user-input {
-	text-align: $align-center;
-}
-
-#map {
-	height: 400px;
-	width: 100%;
+.container {
+	max-width: 1000px;
 }
 
 /* Navbar
@@ -77,25 +68,9 @@ a.navbar-brand.text-muted {
 		size: cover;
 		image-rendering: -webkit-optimize-contrast;
 		-webkit-background-size: cover;
+		
 	}
-	h1 {
-		text-shadow: 2px 2px 2px black;	
-		font {
-			size: 96px;
-			family: $font-stack-primary;
-		}
-	} //end h1 
-	
-	.jumbotron p {
-		font-size: 28px;
-	}
-	
-	p.lead {
-		font-family: $font-stack-primary;
-		text-shadow: 3px 3px 3px black;
-	}
-
-} //end jumbotron
+}
 
 /*Glyphicons
 ===============================*/
@@ -106,6 +81,32 @@ a.navbar-brand.text-muted {
 	color: $color-primary; 
 }
 
+p.lead {
+	font-family: $font-stack-primary;
+	text-shadow: 3px 3px 3px black;
+
+}
+
+.jumbotron p {
+	font-size: 28px;
+	
+}
+
+#map {
+	height: 400px;
+	width: 100%;
+}
+
+
+.jumbotron 
+h1 {	
+	font {
+		size: 96px;
+		family: $font-stack-primary;
+	}
+	text-shadow: 2px 2px 2px black;
+}	
+
 /*Carousel
 ===============================*/
 .carousel-indicators {
@@ -115,9 +116,9 @@ a.navbar-brand.text-muted {
 	li {
 		background-color: $carousel-color; 	
 	}
-} //end .carousel-indicators
+}
 
-/*Accordian (Render Data)
+/*Render Data Accordian 
 ===============================*/
 .panel-heading .accordion-toggle:after {
 	/* symbol for "opening" panels */
@@ -131,6 +132,19 @@ a.navbar-brand.text-muted {
 	content: "\e080";    /* adjust as needed, taken from bootstrap.css */
 }
 
-div.panel-heading {
-	color: #ed1c40;
+// Login Form
+#upmeet-logo {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    height: 102px;
+}
+
+.pure-button {
+    font-size: 90%;
+    margin: 1px;
+    border-radius: 3px;
+    color: white;
+    background: #CC3737;
+    opacity: 0.9;
 }
