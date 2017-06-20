@@ -70,14 +70,14 @@ function searchAPIS(search, lat, lng) {
 
             console.log(evalStatement);
 
-            // filter results to NOT include meetups with NO VENUE 
+            // filter results to NOT include meetups with NO VENUE
             if (item.venue !== undefined) {
                 meetupResponse.push(response[index]);
                 // console.log(index);
             }
         });
 
-        // waits for all 3 API's calls to finish loading data 
+        // waits for all 3 API's calls to finish loading data
         numFinished++;
         if (numFinished === 3) {
             updatePage(meetupResponse);
@@ -98,7 +98,7 @@ function searchAPIS(search, lat, lng) {
             console.log("youtube Data: " + data.items);
             youtubeResponse = data.items;
 
-            // waits for all 3 API's calls to finish loading data 
+            // waits for all 3 API's calls to finish loading data
             numFinished++;
             if (numFinished === 3) {
                 updatePage(meetupResponse);
@@ -118,7 +118,7 @@ function searchAPIS(search, lat, lng) {
             console.log("Wiki data: " + json.query.pages);
             wikiResponse = json.query.pages;
 
-            // waits for all 3 API's calls to finish loading data 
+            // waits for all 3 API's calls to finish loading data
             numFinished++;
             if (numFinished === 3) {
                 updatePage(meetupResponse);
@@ -174,13 +174,6 @@ var updatePage = function(meetupResponse) {
                 .attr("id", "collapse" + j);
 
             var collapseBody = $('<p>').html(allData[j].meetupDescription).text();
-
-            // var collapseBody = $("<div>")
-            //     .addClass("panel-body")
-            //     .text(cleanedDescription);
-            // var collapseBody = $("<div>")
-            //     .addClass("panel-body")
-            //     .text(allData[j].meetupDescription);
             var collapseVenue = $("<p>").text(allData[j].venueName + " Address: " + allData[j].venueAddress + " " + allData[j].venueCity);
             var collapseUrl = $("<a>").text("Click for more info").attr("href", allData[j].meetupURL);
             var collapseAttending = $("<p>").text("RSVP'd: " + allData[j].rsvp);
@@ -238,7 +231,7 @@ function updateMap(meetupResponse) {
     console.log(locations);
 
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 9,
+        zoom: 11,
         center: new google.maps.LatLng(locations[2][1], locations[2][2]),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
@@ -260,6 +253,7 @@ function updateMap(meetupResponse) {
             }
         })(marker, i));
     }
+
     var trafficLayer = new google.maps.TrafficLayer();
     trafficLayer.setMap(map);
 
@@ -277,6 +271,7 @@ function updateMap(meetupResponse) {
 // User submits form for query data
 // stores data for use in other functions
 $("#user-submit").on("click", function() {
+    meetupResponse = [];
     var search = $("#search-subject").val();
     var address = $("#search-address").val();
     geocodeAddress(geocoder, address);
