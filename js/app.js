@@ -1,6 +1,7 @@
 console.log("in");
 
 
+
 $(document).ready(function() {
 
     console.log( "ready!" );
@@ -116,12 +117,16 @@ buildApiRequest('GET',
 // }
 
   //Bootstrap Carousel (timing)
-  $('.carousel').carousel({
+$('.carousel').carousel({
   interval: 6000
 })
 
-  // Wickedpicker Jquery Time Clock
-$('.timepicker').wickedpicker();
+//   // Wickedpicker Jquery Time Clock
+// $('.timepicker').wickedpicker();
+
+
+
+
 
 
 

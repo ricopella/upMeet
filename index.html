@@ -24,11 +24,43 @@
 <h2>upMeet</h2>
 
 
-<!--login/sign up-->
-<div>
-    <button class="pure-button"><i class="fa fa-sign-in" aria-hidden="true"></i>login</button>
-    <button class="pure-button"><i class="fa fa-sign-in" aria-hidden="true"></i>lsign up</button>
+<!--==============================LOG-IN FORM============================-->
+<div  id="log-sign-in" class="pure-g">
+   
+<div class="pure-u-3-4">
+   <form class="pure-form" id="login-2">
+    <fieldset>
+        <input type="email" placeholder="Email Address">
+        <input type="password" placeholder="Password">
+        <button class="pure-button pure-button-active">LOGIN</button>
+    </fieldset> 
+
+   </form>
 </div>
+
+
+            <!--===================SIGN-UP FORM=======================================-->
+<div class="pure-u-3-4">
+   <form class="pure-form" id="sign-up-2">
+    <fieldset>
+        <input type="email" placeholder="Email" id="box-sp">
+        <input type="password" placeholder="Password" id="box-sp">
+        <input type="password" placeholder="Confirm Password" id="box-sp">
+        <button class="pure-button pure-button-active">up</button>
+    </fieldset>
+   </form>
+</div>
+
+
+    <!--===================LOGIN/SIGN-UP BUTTONS=======================================-->
+    <div class="pure-u-1-4" id="log-sign">
+        <button class="pure-button" id="login"></i>LOGIN</button>
+        <button class="pure-button" id="sign-up"></i>SIGN-UP</button>
+    </div>
+
+</div>
+
+
   
   <!-- Navbar -->
   <div class="navbar navbar navbar-static-top">
@@ -191,7 +223,7 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+<script src="js/login.js" charset="utf-8"></script>
 <script src="js/app.js" charset="utf-8"></script>
 
 </body>
