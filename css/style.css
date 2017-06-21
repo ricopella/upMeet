@@ -1,3 +1,28 @@
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px; }
+
+.col-xs-5ths {
+  width: 20%;
+  float: left; }
+
+@media (min-width: 768px) {
+  .col-sm-5ths {
+    width: 20%;
+    float: left; } }
+@media (min-width: 992px) {
+  .col-md-5ths {
+    width: 20%;
+    float: left; } }
+@media (min-width: 1200px) {
+  .col-lg-5ths {
+    width: 20%;
+    float: left; } }
 /* Layout
 ==============================*/
 body {
@@ -5,13 +30,21 @@ body {
 
 h2 {
   color: #000;
-  margin: auto;
   text-align: center;
   font-family: "Noto Sans", sans-serif;
   font-weight: bold 700; }
 
+h3 {
+  text-align: center; }
+
 .container {
   max-width: 1000px; }
+
+.user-input {
+  text-align: center; }
+
+.col-md-4, .col-md-8 {
+  margin-top: 100px; }
 
 /* Navbar
 ==============================*/
@@ -37,33 +70,27 @@ a.navbar-brand.text-muted {
   background-size: cover;
   background-image-rendering: -webkit-optimize-contrast;
   background--webkit-background-size: cover; }
+  .jumbotron p.lead {
+    font-family: "Titillium Web", sans-serif;
+    text-shadow: 3px 3px 3px black; }
+  .jumbotron #map {
+    height: 400px;
+    width: 100%; }
+  .jumbotron .jumbotron
+  h1 {
+    text-shadow: 2px 2px 2px black; }
+    .jumbotron .jumbotron
+    h1 font {
+      size: 96px;
+      family: "Titillium Web", sans-serif; }
 
 /*Glyphicons
 ===============================*/
 .glyphicon {
-  font-size: 3em;
+  font-size: 2em;
   display: block;
   text-align: center;
   color: #ed1c40; }
-
-p.lead {
-  font-family: "Titillium Web", sans-serif;
-  text-shadow: 3px 3px 3px black; }
-
-.jumbotron p {
-  font-size: 28px; }
-
-#map {
-  height: 400px;
-  width: 100%; }
-
-.jumbotron
-h1 {
-  text-shadow: 2px 2px 2px black; }
-  .jumbotron
-  h1 font {
-    size: 96px;
-    family: "Titillium Web", sans-serif; }
 
 /*Carousel
 ===============================*/

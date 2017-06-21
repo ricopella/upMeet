@@ -8,8 +8,8 @@
     
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
     
+    <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
     
@@ -30,7 +30,7 @@
     <!-- Navbar -->
     <div class="navbar navbar navbar-static-top">
         <!-- Nav Logo -->
-        <img src="images/upmeet-logo.svg" id="upmeet-logo">
+        <img src="images/upmeet-logo.svg" id="upmeet-logo" alt="UpMeet Logo">
         <!--==============================LOG-IN FORM============================-->
         <div id="log-sign-in" class="pure-g">
             <div class="pure-u-3-4">
@@ -108,23 +108,23 @@
     <div class="container">
         <!--=====================================INPUT FORM=======================================-->
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-md-5ths col-xs-6">
                 <h2>MeetUp</h2>
             </div>
-            <div class="col-sm-3">
+            <div class="col-md-5ths col-xs-6">
                 <h2>Date</h2>
             </div>
-            <div class="col-sm-3">
+            <div class="col-md-5ths col-xs-6">
                 <h2>Times</h2>
             </div>
-            <div class="col-sm-3">
+            <div class="col-md-5ths col-xs-6">
                 <h2>Address</h2>
             </div>
         </div>
 
         <!-- User Input -->    
         <div class="row">
-          <div class="col-md-3" text align="center">
+            <div class="col-md-5ths col-xs-6">
               <div class="input-group" id="user-submit">
                 <span class="input-group-btn">
                 </span>
@@ -134,7 +134,7 @@
 
         <!-- DATEPICKER -->
         <div class="row">
-          <div class="col-md-3" text align="center">
+          <div class="col-md-5ths col-xs-6">
             <div class="input-group">
               <span class="input-group-btn">
               </span>
@@ -144,7 +144,7 @@
 
       <!-- TIMEPICKER-->
       <div class="row">
-        <div class="col-md-3" text align="center">
+        <div class="col-md-5ths col-xs-6">
           <div class="input-group">
             <span class="input-group-btn">
             </span>
@@ -154,17 +154,26 @@
 
     <!-- Address -->
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-5ths col-xs-6">
         <div class="input-group">
           <span class="input-group-btn">
           </span>
           <input type="text" class="form-control" id="Address" placeholder="Search for...">
       </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
+  </div><!-- /.col-md-3 -->
 
-  <!--===================================== MAP + RESOURCES ============================================-->
+  <!-- Submit -->
   <div class="row">
-    <div class="row" align="center">
+      <div class="col-md-5ths col-xs-6">
+        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+        Submit
+      </button>    
+  </div><!-- /input-group -->
+</div><!-- /.col-md-3 -->
+
+<!--===================================== MAP + RESOURCES ============================================-->
+<div class="row">
+    <div class="row">
         <div class="col-md-4">
             <b class="glyphicon glyphicon-road" id="map"></b>
             <h3>Map</h3>
@@ -181,26 +190,29 @@
     </div>
 </div>
 
+</div> <!-- end container -->
+
 <div id="footer">
     <p>&copy; 2017 UpMeet - By Narin, Kellen, Myles &amp; Hovsep</p>
 </div>
 
+
+
 <!--===================================== SCRIPTS ============================================-->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script type="text/javascript"></script>
-
 <!-- Three Picker Files for JS Time and Date (required) -->
-    <script type="text/javascript" src="js/picker.js"></script>
-    <script type="text/javascript" src="js/picker.date.js"></script>
-    <script type="text/javascript" src="js/picker.time.js"></script>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/picker.js"></script>
+<script type="text/javascript" src="js/picker.date.js"></script>
+<script type="text/javascript" src="js/picker.time.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"                                                                   integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-range/3.0.3/moment-range.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnuku9ccYu73mQ5PI-srTZtBXihKyefDk&callback=initMap"></script>
 <script src="js/app.js" charset="utf-8"></script>
+
 </body>
 
 </html>

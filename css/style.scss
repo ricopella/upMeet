@@ -19,6 +19,44 @@ $align-center: center;
 //Variable for Jumbotron and lead paragraph color
 $white: #fff;
 
+// Global Settings for Full Width 5 Columns
+
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-xs-5ths {
+    width: 20%;
+    float: left;
+}
+
+@media (min-width: 768px) {
+    .col-sm-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
 /* Layout
 ==============================*/
 body {
@@ -27,17 +65,33 @@ body {
 
 h2{
 	color: $color-secondary;
-	margin: auto;
 	text-align: $align-center;
 
 	font:{
 		family: $font-stack-secondary;
 		weight: bold 700;
 	}
+
+} //end h2
+
+h3 {
+	text-align: $align-center;
 }
 
 .container {
 	max-width: 1000px;
+}
+
+.user-input {
+	text-align: $align-center;
+}
+
+.col-md-4, .col-md-8 {
+	margin-top: 100px;
+}
+
+.buttton.btn.btn-primary {
+	color: $color-primary:
 }
 
 /* Navbar
@@ -70,42 +124,37 @@ a.navbar-brand.text-muted {
 		-webkit-background-size: cover;
 		
 	}
+
+	p.lead {
+		font-family: $font-stack-primary;
+		text-shadow: 3px 3px 3px black;
+
+	}
+
+	#map {
+		height: 400px;
+		width: 100%;
+	}
+
+	.jumbotron 
+	h1 {	
+		font {
+			size: 96px;
+			family: $font-stack-primary;
+		}
+		text-shadow: 2px 2px 2px black;
+	}	
+
 }
 
 /*Glyphicons
 ===============================*/
 .glyphicon {
-	font-size: 3em;
+	font-size: 2em;
 	display: block;
 	text-align: $align-center;
 	color: $color-primary; 
 }
-
-p.lead {
-	font-family: $font-stack-primary;
-	text-shadow: 3px 3px 3px black;
-
-}
-
-.jumbotron p {
-	font-size: 28px;
-	
-}
-
-#map {
-	height: 400px;
-	width: 100%;
-}
-
-
-.jumbotron 
-h1 {	
-	font {
-		size: 96px;
-		family: $font-stack-primary;
-	}
-	text-shadow: 2px 2px 2px black;
-}	
 
 /*Carousel
 ===============================*/
@@ -134,17 +183,17 @@ h1 {
 
 // Login Form
 #upmeet-logo {
-    margin-right: auto;
-    margin-left: auto;
-    display: block;
-    height: 102px;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	height: 102px;
 }
 
 .pure-button {
-    font-size: 90%;
-    margin: 1px;
-    border-radius: 3px;
-    color: white;
-    background: #CC3737;
-    opacity: 0.9;
+	font-size: 90%;
+	margin: 1px;
+	border-radius: 3px;
+	color: white;
+	background: #CC3737;
+	opacity: 0.9;
 }
