@@ -185,7 +185,8 @@ var updatePage = function(meetupResponse) {
             var panelDefault = $("<div>").addClass("panel panel-default");
             var panelHeading = $("<div>")
                 .addClass("panel-heading")
-                .attr("role", "tab");
+                .attr("role", "tab")
+                .attr("id", "heading" + j);
 
             var panelName = $("<h4>")
                 .addClass("panel-title")
@@ -194,7 +195,9 @@ var updatePage = function(meetupResponse) {
             // accordion collapsed data
             var collapseId = $("<div>")
                 .addClass("panel-collapse collapse")
-                .attr("id", "collapse" + j);
+                .attr("id", "collapse" + j)
+                .attr("role", "tabpanel")
+                .attr("aria-labelledby", "heading" + j);
 
             var collapseBody = $("<div>").addClass("panel-body");
             var collapseDescription = $('<p>').html(allData[j].meetupDescription).text();
