@@ -183,17 +183,21 @@ var updatePage = function(meetupResponse) {
 
             // structures accordion & title
             var panelDefault = $("<div>").addClass("panel panel-default");
-            var panelHeading = $("<div>").addClass("panel-heading");
+            var panelHeading = $("<div>")
+                .addClass("panel-heading")
+                .attr("role", "tab");
+
             var panelName = $("<h4>")
                 .addClass("panel-title")
-                .append('<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse' + j + '">' + allData[j].meetupName + '</a>');
+                .append('<a role="button" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse' + j + '">' + allData[j].meetupName + '</a>');
 
             // accordion collapsed data
             var collapseId = $("<div>")
-                .addClass("panel-collapse collapse in")
+                .addClass("panel-collapse collapse")
                 .attr("id", "collapse" + j);
 
-            var collapseBody = $('<p>').html(allData[j].meetupDescription).text();
+            var collapseBody = $("<div>").addClass("panel-body");
+            var collapseDescription = $('<p>').html(allData[j].meetupDescription).text();
             var collapseVenue = $("<p>").text(allData[j].venueName + " Address: " + allData[j].venueAddress + " " + allData[j].venueCity);
             var collapseUrl = $("<a>").text("Click for more info").attr("href", allData[j].meetupURL);
             var collapseAttending = $("<p>").text("RSVP'd: " + allData[j].rsvp);
@@ -210,20 +214,23 @@ var updatePage = function(meetupResponse) {
             var imgContainer = $("<div>").addClass("ytImgContainer");
 
             // create accordion HTML elements
+            panelHeading.append(panelName);
             panelDefault.append(panelHeading);
-            panelDefault.append(panelName);
+            collapseBody.append(collapseDescription);
+            collapseBody.append(collapseVenue);
+            collapseBody.append(collapseUrl);
+            collapseBody.append(collapseAttending);
+            collapseBody.append(collapseWaitlist);
             collapseId.append(collapseBody);
-            collapseId.append(collapseVenue);
-            collapseId.append(collapseUrl);
-            collapseId.append(collapseAttending);
-            collapseId.append(collapseWaitlist);
+
             imgContainer.append(videoTitle);
             imgContainer.append(videoThumbnail);
             collapseId.append(imgContainer);
+            panelDefault.append(collapseId);
 
             // update accordion to page
             $("#accordion").append(panelDefault);
-            $("#accordion").append(collapseId);
+            // $("#accordion").append(collapseBody);
 
         } // end for loop
     } // end updatePage()
