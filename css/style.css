@@ -174,3 +174,19 @@ div.panel-heading {
     background: #CC3737;
     opacity: 0.9;
 }
+
+.panel-body p {
+    font-weight: bold;
+}
+
+h3 {
+    text-align: center;
+}
+
+
+/*Footer
+===============================*/
+
+div#footer {
+    text-align: center;
+}

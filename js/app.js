@@ -224,11 +224,12 @@ var updatePage = function(meetupResponse) {
             collapseBody.append(collapseUrl);
             collapseBody.append(collapseAttending);
             collapseBody.append(collapseWaitlist);
-            collapseId.append(collapseBody);
-
             imgContainer.append(videoTitle);
             imgContainer.append(videoThumbnail);
-            collapseId.append(imgContainer);
+            collapseBody.append(imgContainer);
+            collapseId.append(collapseBody);
+
+
             panelDefault.append(collapseId);
 
             // update accordion to page

@@ -139,6 +139,14 @@ p.lead {
     /* adjust as needed, taken from bootstrap.css */
 }
 
-.panel-collapse {
-    border: 1px grey solid;
+.panel-body p {
+    font-weight: bold;
+}
+
+
+/*Footer
+===============================*/
+
+div#footer {
+    text-align: center;
 }
