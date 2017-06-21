@@ -55,8 +55,9 @@ var userSignUp = function(event) {
 
 }; // end userSignUp
 
+// user Login in Navbar
 var userLogin = function(event) {
-    console.log("reached me!");
+
     // prevent page reload
     event.preventDefault;
     userEmail = $("#user-name").val();
@@ -109,13 +110,15 @@ var initApp = function() {
             $("#login-form").hide();
             $("#create-form").hide();
             $("#signout-btn").show();
+            $("#login").hide();
+            $("#sign-up").hide();
             // CREATE SIGNOUT BUTTON ***
         } else {
             // if user is signed out
             console.log("User is Signed out!");
             $("#signout-btn").hide();
-            $("#login-form").show();
-            $("#create-form").show();
+            $("#login").show();
+            $("#sign-up").show();
             // CREATE SIGNED IN BUTTON ***
         }
     });
@@ -152,6 +155,8 @@ var initApp = function() {
     $("#signout-btn").on("click", function(event) {
         firebase.auth().signOut().then(function() {
             console.log("User is signed out!");
+            $("#login").show();
+            $("#sign-up").show();
         }, function(error) {
             console.error("sign out error: " + error);
         })
