@@ -118,9 +118,7 @@ h3 {
 		size: cover;
 		image-rendering: -webkit-optimize-contrast;
 		-webkit-background-size: cover;
-		
 	}
-
 
 	p.lead {
 		font-family: $font-stack-primary;
@@ -134,19 +132,13 @@ h3 {
 	}
 
 	.jumbotron 
-	h1 {	
+	h1 {
+		text-shadow: 2px 2px 2px black;	
 		font {
 			size: 96px;
 			family: $font-stack-primary;
 		}
-		text-shadow: 2px 2px 2px black;
 	}	
-
-}
-
-h1 {
-	text-shadow: 2px 2px 2px black;
-}
 
 /* Input Text Boxes
 ==============================*/
@@ -233,6 +225,7 @@ input#MeetUp.form-control, input#datepicker.form-control.picker__input, input#ti
 #lgsu {
     padding-top: 1%;
 }
+
 .pure-button {
     margin: 0.5px;
     border-radius: 3px;
@@ -249,7 +242,7 @@ input#MeetUp.form-control, input#datepicker.form-control.picker__input, input#ti
     color: white;
 }
 
-#upmeet-row{
+#upmeet-row {
     margin-top: 0px;
     margin-bottom: 5px;
 }
@@ -266,43 +259,9 @@ form#login-2.pure-form {
     margin-top: 5px;
     margin-left: 50% !important;
     margin-bottom: -7px;
-    }
+ }
 
  #box-sp {
  	margin: 2px;
  }
 
- p.lead {
- 	font-family: "Tit"
- }   
-
-/*==================================================
-=            Bootstrap 3 Media Queries             =
-==================================================*/
-
-    /*==========  Mobile First Method  ==========*/
-
-    /* Custom, iPhone Retina */ 
-    @media only screen and (min-width : 320px) {
-
-    }
-
-    /* Extra Small Devices, Phones */ 
-    @media only screen and (min-width : 480px) {
-
-    }
-
-    /* Small Devices, Tablets */
-    @media only screen and (min-width : 768px) {
-
-    }
-
-    /* Medium Devices, Desktops */
-    @media only screen and (min-width : 992px) {
-
-    }
-
-    /* Large Devices, Wide Screens */
-    @media only screen and (min-width : 1200px) {
-
-    }
