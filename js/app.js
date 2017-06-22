@@ -68,9 +68,10 @@ function geocodeAddress(geocoder, userInput) {
 
 // uses inputed subject & geocodeAddress Latitude & Longitude
 // generates meetupResonse of data to be used on page
-function searchAPIS(search, lat, lng) {
+function searchAPIS(search, lat, lng, time, date) {
     var query = search;
     var numFinished = 0;
+    var theMoment = $("#datepicker").val() + " " + $("#timepicker").val();
 
     // call meetup
     $.ajax({
@@ -82,12 +83,13 @@ function searchAPIS(search, lat, lng) {
         console.log(meetupResponse.length);
 
         response.forEach(function(item, index) {
-            var evalStatement = (moment(item.time, 'YYYY-MM-DD').diff(moment()), "hours") <= 6;
+            // var evalStatement = (moment(item.time, 'YYYY-MM-DD hh:mm a').diff(moment(theMoment, "YYYY-MM-DD a")), "hours") <= 6;
+            var evalStatement = (moment(item.time).diff(moment($("#datepicker").val() + " " + $("#timepicker").val(), 'YYYY-MM-DD hh:mm a'), 'hours') <= 5);
 
             console.log(evalStatement);
 
             // filter results to NOT include meetups with NO VENUE
-            if (item.venue !== undefined) {
+            if (item.venue !== undefined && evalStatement === true) {
                 meetupResponse.push(response[index]);
                 // console.log(index);
             }
@@ -106,7 +108,7 @@ function searchAPIS(search, lat, lng) {
             part: 'snippet, id',
             q: query,
             type: 'video',
-            'maxResults': '50',
+            'maxResults': meetupResponse.length,
             key: 'AIzaSyBCZgipwmv-daOhKVQWBKISU5dGjx24rng'
         },
 
@@ -153,7 +155,7 @@ var updatePage = function(meetupResponse) {
         allData = [];
 
         // store values from API calls in 1 object
-        for (var i = 0; i < meetupResponse.length; i++) {
+        for (var i = 0; i < 10; i++) {
             // push into empty array with iterate == key
             allData.push(allData[meetupResponse[i]] = {
                 "meetupName": meetupResponse[i].name,
@@ -179,7 +181,7 @@ var updatePage = function(meetupResponse) {
         console.log(allData);
 
         // Append items to page
-        for (j = 0; j <= 10; j++) {
+        for (j = 0; j < meetupResponse.length; j++) {
 
             // structures accordion & title
             var panelDefault = $("<div>").addClass("panel panel-default");
@@ -258,7 +260,7 @@ function updateMap(meetupResponse) {
 
     var locations = [];
 
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < meetupResponse.length; i++) {
         if ('venue' in meetupResponse[i]) {
             locations.push([meetupResponse[i].name, meetupResponse[i].venue.lat, meetupResponse[i].venue.lon, meetupResponse[i].venue.name]);
         }
@@ -283,7 +285,7 @@ function updateMap(meetupResponse) {
 
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
-                infowindow.setContent(locations[i][0] + "<br />" + locations[i][3]);
+                infowindow.setContent("<a href='" + locations[i][4] + "' target='_blank'>" + locations[i][0] + "</a>" + "<br />" + locations[i][3] + "<br />" + moment(locations[i][5]).format("MMMM DD") + ", " + moment(locations[i][5]).format("hh:mm a"));
                 infowindow.open(map, marker);
             }
         })(marker, i));
@@ -304,7 +306,7 @@ function updateMap(meetupResponse) {
 // }
 
 /**
- * Event Handler 
+ * Event Handler
  */
 
 // User submits form for query data
