@@ -155,7 +155,7 @@ var updatePage = function(meetupResponse) {
         allData = [];
 
         // store values from API calls in 1 object
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < meetupResponse.length; i++) {
             // push into empty array with iterate == key
             allData.push(allData[meetupResponse[i]] = {
                 "meetupName": meetupResponse[i].name,
@@ -185,24 +185,17 @@ var updatePage = function(meetupResponse) {
 
             // structures accordion & title
             var panelDefault = $("<div>").addClass("panel panel-default");
-            var panelHeading = $("<div>")
-                .addClass("panel-heading")
-                .attr("role", "tab")
-                .attr("id", "heading" + j);
-
+            var panelHeading = $("<div>").addClass("panel-heading");
             var panelName = $("<h4>")
                 .addClass("panel-title")
-                .append('<a role="button" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse' + j + '">' + allData[j].meetupName + '</a>');
+                .append('<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse' + j + '">' + allData[j].meetupName + '</a>');
 
             // accordion collapsed data
             var collapseId = $("<div>")
-                .addClass("panel-collapse collapse")
-                .attr("id", "collapse" + j)
-                .attr("role", "tabpanel")
-                .attr("aria-labelledby", "heading" + j);
+                .addClass("panel-collapse collapse in")
+                .attr("id", "collapse" + j);
 
-            var collapseBody = $("<div>").addClass("panel-body");
-            var collapseDescription = $('<p>').html(allData[j].meetupDescription).text();
+            var collapseBody = $('<p>').html(allData[j].meetupDescription).text();
             var collapseVenue = $("<p>").text(allData[j].venueName + " Address: " + allData[j].venueAddress + " " + allData[j].venueCity);
             var collapseUrl = $("<a>").text("Click for more info").attr("href", allData[j].meetupURL);
             var collapseAttending = $("<p>").text("RSVP'd: " + allData[j].rsvp);
@@ -219,24 +212,20 @@ var updatePage = function(meetupResponse) {
             var imgContainer = $("<div>").addClass("ytImgContainer");
 
             // create accordion HTML elements
-            panelHeading.append(panelName);
             panelDefault.append(panelHeading);
-            collapseBody.append(collapseDescription);
-            collapseBody.append(collapseVenue);
-            collapseBody.append(collapseUrl);
-            collapseBody.append(collapseAttending);
-            collapseBody.append(collapseWaitlist);
+            panelDefault.append(panelName);
+            collapseId.append(collapseBody);
+            collapseId.append(collapseVenue);
+            collapseId.append(collapseUrl);
+            collapseId.append(collapseAttending);
+            collapseId.append(collapseWaitlist);
             imgContainer.append(videoTitle);
             imgContainer.append(videoThumbnail);
-            collapseBody.append(imgContainer);
-            collapseId.append(collapseBody);
-
-
-            panelDefault.append(collapseId);
+            collapseId.append(imgContainer);
 
             // update accordion to page
             $("#accordion").append(panelDefault);
-            // $("#accordion").append(collapseBody);
+            $("#accordion").append(collapseId);
 
         } // end for loop
     } // end updatePage()
@@ -262,7 +251,7 @@ function updateMap(meetupResponse) {
 
     for (i = 0; i < meetupResponse.length; i++) {
         if ('venue' in meetupResponse[i]) {
-            locations.push([meetupResponse[i].name, meetupResponse[i].venue.lat, meetupResponse[i].venue.lon, meetupResponse[i].venue.name]);
+            locations.push([meetupResponse[i].name, meetupResponse[i].venue.lat, meetupResponse[i].venue.lon, meetupResponse[i].venue.name, meetupResponse[i].meetupURL, mee]);
         }
     }
     console.log(locations);
@@ -285,7 +274,7 @@ function updateMap(meetupResponse) {
 
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
-                infowindow.setContent("<a href='" + locations[i][4] + "' target='_blank'>" + locations[i][0] + "</a>" + "<br />" + locations[i][3] + "<br />" + moment(locations[i][5]).format("MMMM DD") + ", " + moment(locations[i][5]).format("hh:mm a"));
+                infowindow.setContent(locations[i][0] + "<br />" + locations[i][3]);
                 infowindow.open(map, marker);
             }
         })(marker, i));

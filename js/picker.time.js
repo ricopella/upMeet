@@ -966,7 +966,7 @@ TimePicker.defaults = (function( prefix ) {
         clear: 'Clear',
 
         // The format to show on the `input` element
-        format: 'h:i A',
+        format: 'hh:i A',
 
         // The interval between each time
         interval: 30,
@@ -1006,6 +1006,3 @@ Picker.extend( 'pickatime', TimePicker )
 
 
 }));
-
-
-
