@@ -107,112 +107,96 @@
 
     <div class="container">
         <!--=====================================INPUT FORM=======================================-->
+
+        <!-- User selects MeetUp -->
         <div class="row">
             <div class="col-md-5ths col-xs-6">
                 <h2>MeetUp</h2>
-            </div>
-            <div class="col-md-5ths col-xs-6">
-                <h2>Date</h2>
-            </div>
-            <div class="col-md-5ths col-xs-6">
-                <h2>Times</h2>
-            </div>
-            <div class="col-md-5ths col-xs-6">
-                <h2>Address</h2>
-            </div>
-        </div>
+                <form>
+                    <p>
+                        <input type="text" class="form-control" id="MeetUp" placeholder="Subject...">
+                        <label for="MeetUp"></label>
+                    </p>     
+                </div>
 
-        <!-- User Input -->    
-        <div class="row">
-            <div class="col-md-5ths col-xs-6">
-              <div class="input-group" id="user-submit">
-                <span class="input-group-btn">
-                </span>
-                <input type="text" class="form-control" id="MeetUp" placeholder="Search for...">
-            </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
+                <!-- User Selects Date -->
+                <div class="row">
+                    <div class="col-md-5ths col-xs-6">
+                        <h2>Date</h2>
+                        <p>
+                            <input type="text" class="form-control" id="datepicker" placeholder="Select Date...">
+                            <label for="datepicker"></label>
+                        </p>    
+                    </div>
 
-        <!-- DATEPICKER -->
-        <div class="row">
-          <div class="col-md-5ths col-xs-6">
-            <div class="input-group">
-              <span class="input-group-btn">
-              </span>
-              <input type="text" class="form-control" id="datepicker" placeholder="Search for...">
-          </div><!-- /input-group -->
-      </div><!-- /.col-lg-6 -->
+                    <!-- User Selects Time -->
+                    <div class="row">
+                        <div class="col-md-5ths col-xs-6">
+                            <h2>Time</h2>
+                            <p>
+                                <input type="text" class="form-control" id="timepicker" placeholder="Select Time...">
+                                <label for="datepicker"></label>
+                            </p>    
+                        </div>
 
-      <!-- TIMEPICKER-->
-      <div class="row">
-        <div class="col-md-5ths col-xs-6">
-          <div class="input-group">
-            <span class="input-group-btn">
-            </span>
-            <input type="text" class="form-control" id="timepicker" placeholder="Search for...">
-        </div><!-- /input-group -->
-    </div><!-- /.col-lg-6 -->
+                        <!-- User Selects Address -->
+                        <div class="row">
+                            <div class="col-md-5ths col-xs-6">
+                                <h2>Location</h2>
+                                <p>
+                                    <input type="text" class="form-control" id="Address" placeholder="ex: Los Angeles, CA">
+                                    <label for="Address"></label>
+                                </p>    
+                            </div>
 
-    <!-- Address -->
-    <div class="row">
-      <div class="col-md-5ths col-xs-6">
-        <div class="input-group">
-          <span class="input-group-btn">
-          </span>
-          <input type="text" class="form-control" id="Address" placeholder="Search for...">
-      </div><!-- /input-group -->
-  </div><!-- /.col-md-3 -->
+                            <div class="row">
+                                <div class="col-md-5ths col-xs-6">
+                                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                        Submit
+                                    </button>   
+                                </div>      
+                            </form>        
 
-  <!-- Submit -->
-  <div class="row">
-      <div class="col-md-5ths col-xs-6">
-        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-        Submit
-      </button>    
-  </div><!-- /input-group -->
-</div><!-- /.col-md-3 -->
+                            <!--===================================== MAP + RESOURCES ============================================-->
+                            <div class="row">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <b class="glyphicon glyphicon-road" id="map"></b>
+                                        <h3>Map</h3>
+                                        <p>Maps powered by Google to help you locate and arrive on time to your MeetUp on time</p>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <b class="glyphicon glyphicon-road" id="render-data"></b>
+                                        <h3>Resources</h3>
+                                        <!-- Accordian to Render Data -->
+                                        <!-- Collapsible Group Item #1 -->
+                                        <div class="panel-group" id="accordion"></div>
+                                        <!-- end col-md-8 div -->
+                                    </div>
+                                </div>
+                            </div>
 
-<!--===================================== MAP + RESOURCES ============================================-->
-<div class="row">
-    <div class="row">
-        <div class="col-md-4">
-            <b class="glyphicon glyphicon-road" id="map"></b>
-            <h3>Map</h3>
-            <p>Maps powered by Google to help you locate and arrive on time to your MeetUp on time</p>
-        </div>
-        <div class="col-md-8">
-            <b class="glyphicon glyphicon-road" id="render-data"></b>
-            <h3>Resources</h3>
-            <!-- Accordian to Render Data -->
-            <!-- Collapsible Group Item #1 -->
-            <div class="panel-group" id="accordion"></div>
-            <!-- end col-md-8 div -->
-        </div>
-    </div>
-</div>
+                        </div> <!-- end container -->
 
-</div> <!-- end container -->
+                        <div id="footer">
+                            <p>&copy; 2017 UpMeet - By Narin, Kellen, Myles &amp; Hovsep</p>
+                        </div>
 
-<div id="footer">
-    <p>&copy; 2017 UpMeet - By Narin, Kellen, Myles &amp; Hovsep</p>
-</div>
+                        <!--===================================== SCRIPTS ============================================-->
+                        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+                        <script type="text/javascript"></script>
+                        <!-- Three Picker Files for JS Time and Date (required) -->
+                        <script type="text/javascript" src="js/picker.js"></script>
+                        <script type="text/javascript" src="js/picker.date.js"></script>
+                        <script type="text/javascript" src="js/picker.time.js"></script>
+                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"                                                                   integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                        <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-range/3.0.3/moment-range.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+                        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnuku9ccYu73mQ5PI-srTZtBXihKyefDk&callback=initMap"></script>
+                        <script src="js/app.js" charset="utf-8"></script>
 
+                    </body>
 
-
-<!--===================================== SCRIPTS ============================================-->
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-<script type="text/javascript"></script>
-<!-- Three Picker Files for JS Time and Date (required) -->
-<script type="text/javascript" src="js/picker.js"></script>
-<script type="text/javascript" src="js/picker.date.js"></script>
-<script type="text/javascript" src="js/picker.time.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"                                                                   integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-range/3.0.3/moment-range.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnuku9ccYu73mQ5PI-srTZtBXihKyefDk&callback=initMap"></script>
-<script src="js/app.js" charset="utf-8"></script>
-
-</body>
-
-</html>
+                    </html>

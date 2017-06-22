@@ -1,8 +1,8 @@
 // Variable for main primary color
-$color-primary: #ed1c40;
+$color-primary: #CC3737;
 
 //Variable for secondary color
-$color-secondary: #000;
+$color-secondary: #3F3F3F;
 
 // Variable for carousel colors
 $carousel-color: #222; 
@@ -90,9 +90,6 @@ h3 {
 	margin-top: 100px;
 }
 
-.buttton.btn.btn-primary {
-	color: $color-primary:
-}
 
 /* Navbar
 ==============================*/
@@ -147,6 +144,47 @@ a.navbar-brand.text-muted {
 
 }
 
+/* Input Text Boxes
+==============================*/
+input#MeetUp.form-control, input#datepicker.form-control.picker__input, input#timepicker.form-control.picker__input, input#Address.form-control {
+	background: #fff;
+	border-color: $color-secondary;
+}
+
+// ::-webkit-input-placeholder { /* Chrome */
+//   color: red;
+// }
+
+/* Submit Button
+==============================*/
+.btn {
+    padding: 10px 30px;
+    margin-top: 4.1em;
+    margin-left: 15px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+ 
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+ 
+.btn-primary {
+    background: $color-primary;  
+    color: #ffffff;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: $color-primary; 
+}
+ 
+.btn-primary:active, .btn-primary.active {
+    background: #fff; 
+    box-shadow: none;
+}
+
 /*Glyphicons
 ===============================*/
 .glyphicon {
@@ -167,7 +205,7 @@ a.navbar-brand.text-muted {
 	}
 }
 
-/*Render Data Accordian 
+/*Accordian 
 ===============================*/
 .panel-heading .accordion-toggle:after {
 	/* symbol for "opening" panels */
@@ -194,6 +232,37 @@ a.navbar-brand.text-muted {
 	margin: 1px;
 	border-radius: 3px;
 	color: white;
-	background: #CC3737;
+	background: $color-primary;
 	opacity: 0.9;
 }
+
+/*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
+
+    /*==========  Mobile First Method  ==========*/
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 320px) {
+
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+
+    }
