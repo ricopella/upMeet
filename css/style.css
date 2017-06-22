@@ -48,14 +48,6 @@ h3 {
 
 /* Navbar
 ==============================*/
-div.navbar.navbar-static-top {
-  font-size: 1em; }
-
-a.navbar-brand.text-muted {
-  font-size: 3em;
-  text-align: center;
-  color: #3F3F3F; }
-
 /*Jumbotron
 ===============================*/
 .jumbotron {
@@ -83,6 +75,9 @@ a.navbar-brand.text-muted {
     h1 font {
       size: 96px;
       family: "Titillium Web", sans-serif; }
+
+h1 {
+  text-shadow: 2px 2px 2px black; }
 
 /* Input Text Boxes
 ==============================*/
@@ -130,7 +125,7 @@ input#MeetUp.form-control, input#datepicker.form-control.picker__input, input#ti
 .carousel-indicators li {
   background-color: #222; }
 
-/*Render Data Accordian 
+/*Accordian 
 ===============================*/
 .panel-heading .accordion-toggle:after {
   /* symbol for "opening" panels */
@@ -149,17 +144,56 @@ input#MeetUp.form-control, input#datepicker.form-control.picker__input, input#ti
   /* adjust as needed, taken from bootstrap.css */ }
 
 #upmeet-logo {
-  margin-right: auto;
-  margin-left: auto;
-  display: block;
-  height: 102px; }
+  height: 38px; }
+
+/*CSS from Myles
+===============================*/
+#lgsu {
+  padding-top: 1%; }
 
 .pure-button {
-  font-size: 90%;
-  margin: 1px;
+  margin: 0.5px;
   border-radius: 3px;
   color: white;
+  padding: 4px;
   background: #CC3737;
-  opacity: 0.9; }
+  opacity: 0.9;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s; }
+
+.pure-button:hover {
+  background-color: black;
+  color: white; }
+
+#upmeet-row {
+  margin-top: 0px;
+  margin-bottom: 5px; }
+
+.pure-form {
+  display: none; }
+
+#log-sign {
+  margin-left: 87%; }
+
+form#login-2.pure-form {
+  margin-top: 5px;
+  margin-left: 50% !important;
+  margin-bottom: -7px; }
+
+#box-sp {
+  margin: 2px; }
+
+p.lead {
+  font-family: "Tit"; }
+
+/*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
+/*==========  Mobile First Method  ==========*/
+/* Custom, iPhone Retina */
+/* Extra Small Devices, Phones */
+/* Small Devices, Tablets */
+/* Medium Devices, Desktops */
+/* Large Devices, Wide Screens */
 
 /*# sourceMappingURL=style.css.map */

@@ -90,18 +90,17 @@ h3 {
 	margin-top: 100px;
 }
 
-
 /* Navbar
 ==============================*/
-div.navbar.navbar-static-top {
-	font-size: 1em;
-}
+// div.navbar.navbar-static-top {
+// 	font-size: 1em;
+// }
 
-a.navbar-brand.text-muted {
-	font-size: 3em;
-	text-align: $align-center;
-	color: $color-secondary;
-}
+// a.navbar-brand.text-muted {
+// 	font-size: 3em;
+// 	text-align: $align-center;
+// 	color: $color-secondary;
+// }
 
 /*Jumbotron
 ===============================*/
@@ -121,6 +120,7 @@ a.navbar-brand.text-muted {
 		-webkit-background-size: cover;
 		
 	}
+
 
 	p.lead {
 		font-family: $font-stack-primary;
@@ -142,6 +142,10 @@ a.navbar-brand.text-muted {
 		text-shadow: 2px 2px 2px black;
 	}	
 
+}
+
+h1 {
+	text-shadow: 2px 2px 2px black;
 }
 
 /* Input Text Boxes
@@ -219,22 +223,58 @@ input#MeetUp.form-control, input#datepicker.form-control.picker__input, input#ti
 	content: "\e080";    /* adjust as needed, taken from bootstrap.css */
 }
 
-// Login Form
-#upmeet-logo {
-	margin-right: auto;
-	margin-left: auto;
-	display: block;
-	height: 102px;
+#upmeet-logo{
+    height: 38px;    
 }
 
-.pure-button {
-	font-size: 90%;
-	margin: 1px;
-	border-radius: 3px;
-	color: white;
-	background: $color-primary;
-	opacity: 0.9;
+
+/*CSS from Myles
+===============================*/
+#lgsu {
+    padding-top: 1%;
 }
+.pure-button {
+    margin: 0.5px;
+    border-radius: 3px;
+    color: white;
+    padding: 4px;
+    background: #CC3737;
+    opacity: 0.9;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.pure-button:hover {
+    background-color: black;
+    color: white;
+}
+
+#upmeet-row{
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.pure-form {
+    display: none;
+}
+
+#log-sign {
+    margin-left: 87%;
+}
+
+form#login-2.pure-form {
+    margin-top: 5px;
+    margin-left: 50% !important;
+    margin-bottom: -7px;
+    }
+
+ #box-sp {
+ 	margin: 2px;
+ }
+
+ p.lead {
+ 	font-family: "Tit"
+ }   
 
 /*==================================================
 =            Bootstrap 3 Media Queries             =

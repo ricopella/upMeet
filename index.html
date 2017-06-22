@@ -27,42 +27,41 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <div class="navbar navbar navbar-static-top">
-        <!-- Nav Logo -->
-        <img src="images/upmeet-logo.svg" id="upmeet-logo" alt="UpMeet Logo">
-        <!--==============================LOG-IN FORM============================-->
-        <div id="log-sign-in" class="pure-g">
-            <div class="pure-u-3-4">
-                <form class="pure-form" id="login-2">
-                    <fieldset>
-                        <input type="email" placeholder="Email Address">
-                        <input type="password" placeholder="Password">
-                        <button class="pure-button pure-button-active">LOGIN</button>
-                    </fieldset>
-                </form>
-            </div>
-            <!--===================SIGN-UP FORM=======================================-->
-            <div class="pure-u-3-4">
-                <form class="pure-form" id="sign-up-2">
-                    <fieldset>
-                        <input type="email" placeholder="Email" id="box-sp">
-                        <input type="password" placeholder="Password" id="box-sp">
-                        <input type="password" placeholder="Confirm Password" id="box-sp">
-                        <button class="pure-button pure-button-active">up</button>
-                    </fieldset>
-                </form>
-            </div>
-            <!--===================LOGIN/SIGN-UP BUTTONS=======================================-->
-            <div class="pure-u-1-4" id="log-sign">
-                <button class="pure-button" id="login">
-                </i>LOGIN</button>
-                <button class="pure-button" id="sign-up">
-                </i>SIGN-UP</button>
-            </div>
+
+<!-- Navbar -->
+    <div class="row" id="upmeet-row">
+        <!-- Title -->
+        <div class="col-md-10"><img src="images/upmeet-logo.svg" id="upmeet-logo"></div>
+
+        <div class="col-md-2" id="lgsu">
+            <button class="pure-button" id="login">LOGIN</button>
+            <button class="pure-button" id="sign-up">SIGN-UP</button>
         </div>
-        <!-- end Navbar -->
-    </div>
+
+
+ <!--==============================LOG-IN FORM============================-->
+    <div id="log-sign-in">
+        <div class="pure-u-3-4">
+            <form class="pure-form" id="login-2">
+                <fieldset id="fieldset-log">
+                    <input type="email" placeholder="Email Address">
+                    <input type="password" placeholder="Password">
+                    <button class="pure-button pure-button-active">LOGIN</button>
+                </fieldset>
+            </form>
+        </div>
+<!--===================SIGN-UP FORM=======================================-->
+        <div class="pure-u-3-4">
+            <form class="pure-form" id="sign-up-2">
+                <fieldset id="fieldset-sign">
+                    <input type="email" placeholder="Email" id="box-sp">
+                    <input type="password" placeholder="Password" id="box-sp">
+                    <button class="pure-button pure-button-active">up</button>
+                </fieldset>
+            </form>
+        </div>
+  
+</div>
 
     <!--=====================================CAROUSEL=======================================-->
     <div id="carousel-example-generic" class="carousel slide jumbotron" data-ride="carousel">
