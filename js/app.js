@@ -57,7 +57,7 @@ function geocodeAddress(geocoder, userInput) {
             alert('Geocode was not successful for the following reason: ' + status);
         }
         var search = $("#search-subject").val();
-        searchAPIS(search, lat, lng);
+        searchMeetup(search, lat, lng);
     });
 
 }
@@ -66,63 +66,58 @@ function geocodeAddress(geocoder, userInput) {
  * API Calls
  */
 
-// uses inputed subject & geocodeAddress Latitude & Longitude
-// generates meetupResonse of data to be used on page
-function searchAPIS(search, lat, lng) {
+function searchMeetup(search, lat, lng) {
     var query = search;
-    var numFinished = 0;
+    var theMoment = $("#datepicker").val() + " " + $("#timepicker").val();
 
-    // call meetup
     $.ajax({
         url: "https://api.meetup.com/find/events?&sign=true&photo-host=public&lon=" +
             lng + "&text=" + query + "&radius=" + "30" + "&lat=" + lat + "&key=13493128171b80333fc956a274b1c",
         method: "GET",
     }).done(function(response) {
-
         console.log(meetupResponse.length);
-
         response.forEach(function(item, index) {
-            var evalStatement = (moment(item.time, 'YYYY-MM-DD').diff(moment()), "hours") <= 6;
-
+            // var evalStatement = (moment(item.time, 'YYYY-MM-DD hh:mm a').diff(moment(theMoment, "YYYY-MM-DD a")), "hours") <= 6;
+            var evalStatement = (moment(item.time).diff(moment($("#datepicker").val() + " " + $("#timepicker").val(), 'YYYY-MM-DD hh:mm a'), 'hours') <= 5);
             console.log(evalStatement);
-
             // filter results to NOT include meetups with NO VENUE
-            if (item.venue !== undefined) {
+            if (item.venue !== undefined && evalStatement === true) {
                 meetupResponse.push(response[index]);
                 // console.log(index);
             }
         });
+        searchAPIS(search, lat, lng);
 
-        // waits for all 3 API's calls to finish loading data
-        numFinished++;
-        if (numFinished === 3) {
-            updatePage(meetupResponse);
-            updateMap(meetupResponse);
-        }
     });
+}
+
+// uses inputed subject & geocodeAddress Latitude & Longitude
+// generates meetupResonse of data to be used on page
+function searchAPIS(search, lat, lng) {
+    var query = search;
+    var numFinished = 0;
+    var totalNeeded = 2;
+
 
     // call youtube
     $.get("https://www.googleapis.com/youtube/v3/search", {
             part: 'snippet, id',
             q: query,
             type: 'video',
-            'maxResults': '50',
+            'maxResults': 6,
             key: 'AIzaSyBCZgipwmv-daOhKVQWBKISU5dGjx24rng'
         },
-
         function(data) {
             console.log("youtube Data: " + data.items);
             youtubeResponse = data.items;
-
             // waits for all 3 API's calls to finish loading data
             numFinished++;
-            if (numFinished === 3) {
+            if (numFinished === totalNeeded) {
                 updatePage(meetupResponse);
                 updateMap(meetupResponse);
             }
         }
     );
-
     // call wikipedia
     $.ajax({
         type: 'GET',
@@ -133,10 +128,9 @@ function searchAPIS(search, lat, lng) {
         success: function(json) {
             console.log("Wiki data: " + json.query.pages);
             wikiResponse = json.query.pages;
-
             // waits for all 3 API's calls to finish loading data
             numFinished++;
-            if (numFinished === 3) {
+            if (numFinished === totalNeeded) {
                 updatePage(meetupResponse);
                 updateMap(meetupResponse);
             }
@@ -179,7 +173,7 @@ var updatePage = function(meetupResponse) {
         console.log(allData);
 
         // Append items to page
-        for (j = 0; j <= 10; j++) {
+        for (j = 0; j < meetupResponse.length; j++) {
 
             // structures accordion & title
             var panelDefault = $("<div>").addClass("panel panel-default");
@@ -245,7 +239,11 @@ var updatePage = function(meetupResponse) {
 
 // adds Youtube query to meetupResponse object
 function addYoutubeLinks(youtubeResponse) {
-    for (var i = 0; i < youtubeResponse.length; i++) {
+    var totalItems = meetupResponse.length;
+    if (youtubeResponse.length < totalItems) {
+        totalItems = youtubeResponse.length;
+    }
+    for (var i = 0; i < totalItems; i++) {
         allData[i].youtubeTitle = youtubeResponse[i].snippet.title;
         allData[i].youtubeURL = "https://www.youtube.com/watch?v=" + youtubeResponse[i].id.videoId;
         allData[i].youtubeThumbnail = youtubeResponse[i].snippet.thumbnails.high.url;
@@ -258,7 +256,7 @@ function updateMap(meetupResponse) {
 
     var locations = [];
 
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < meetupResponse.length; i++) {
         if ('venue' in meetupResponse[i]) {
             locations.push([meetupResponse[i].name, meetupResponse[i].venue.lat, meetupResponse[i].venue.lon, meetupResponse[i].venue.name]);
         }
@@ -283,7 +281,7 @@ function updateMap(meetupResponse) {
 
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
-                infowindow.setContent(locations[i][0] + "<br />" + locations[i][3]);
+                infowindow.setContent("<a href='" + locations[i][4] + "' target='_blank'>" + locations[i][0] + "</a>" + "<br />" + locations[i][3] + "<br />" + moment(locations[i][5]).format("MMMM DD") + ", " + moment(locations[i][5]).format("hh:mm a"));
                 infowindow.open(map, marker);
             }
         })(marker, i));
