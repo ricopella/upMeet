@@ -258,7 +258,7 @@ function updateMap(meetupResponse) {
 
     for (i = 0; i < meetupResponse.length; i++) {
         if ('venue' in meetupResponse[i]) {
-            locations.push([meetupResponse[i].name, meetupResponse[i].venue.lat, meetupResponse[i].venue.lon, meetupResponse[i].venue.name]);
+            locations.push([meetupResponse[i].name, meetupResponse[i].venue.lat, meetupResponse[i].venue.lon, meetupResponse[i].venue.name, meetupResponse[i].link, meetupResponse[i].time]);
         }
     }
     console.log(locations);
@@ -302,7 +302,7 @@ function updateMap(meetupResponse) {
 // }
 
 /**
- * Event Handler 
+ * Event Handler
  */
 
 // User submits form for query data
