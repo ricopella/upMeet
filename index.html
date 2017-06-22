@@ -30,15 +30,23 @@
 </head>
 
 <body>
+
     <!-- Navbar -->
-    <div class="navbar navbar navbar-static-top">
-        <!-- Nav Logo -->
-        <img src="/images/upmeet-logo.svg" id="upmeet-logo">
+    <div class="row" id="upmeet-row">
+        <!-- Title -->
+        <div class="col-md-10"><img src="images/upmeet-logo.svg" id="upmeet-logo"></div>
+
+        <div class="col-md-2" id="lgsu">
+            <button class="pure-button" id="login">LOGIN</button>
+            <button class="pure-button" id="sign-up">SIGN-UP</button>
+        </div>
+
+
         <!--==============================LOG-IN FORM============================-->
-        <div id="log-sign-in" class="pure-g">
+        <div id="log-sign-in">
             <div class="pure-u-3-4">
                 <form class="pure-form" id="login-2">
-                    <fieldset>
+                    <fieldset id="fieldset-log">
                         <input type="email" placeholder="Email Address">
                         <input type="password" placeholder="Password">
                         <button class="pure-button pure-button-active">LOGIN</button>
@@ -48,25 +56,15 @@
             <!--===================SIGN-UP FORM=======================================-->
             <div class="pure-u-3-4">
                 <form class="pure-form" id="sign-up-2">
-                    <fieldset>
+                    <fieldset id="fieldset-sign">
                         <input type="email" placeholder="Email" id="box-sp">
                         <input type="password" placeholder="Password" id="box-sp">
-                        <input type="password" placeholder="Confirm Password" id="box-sp">
                         <button class="pure-button pure-button-active">up</button>
                     </fieldset>
                 </form>
             </div>
-            <!--===================LOGIN/SIGN-UP BUTTONS=======================================-->
-            <div class="pure-u-1-4" id="log-sign">
-                <button class="pure-button" id="login">
-                </i>LOGIN</button>
-                <button class="pure-button" id="sign-up">
-                </i>SIGN-UP</button>
-                <button class="pure-button" id="signout-btn">
-                </i>SIGN-OUT</button>
-            </div>
         </div>
-        <!-- end Navbar -->
+        <!-- end Navbar-->
     </div>
 
     <!--=====================================CAROUSEL=======================================-->
@@ -112,99 +110,69 @@
 
     <div class="container">
         <!--=====================================INPUT FORM=======================================-->
+
+        <!-- User selects MeetUp -->
         <div class="row">
-            <div class="col-sm-3">
-                <h2>MeetUp</h2>
-            </div>
-            <div class="col-sm-3">
-                <h2>Date</h2>
-            </div>
-            <div class="col-sm-3">
-                <h2>Times</h2>
-            </div>
-            <div class="col-sm-3">
-                <h2>Address</h2>
-            </div>
+            <form>
+                <div class="col-md-5ths col-xs-6">
+                    <h2>MeetUp</h2>
+                    <input type="text" class="form-control" id="search-subject" placeholder="Subject...">
+                    <label for="MeetUp"></label>
+                </div>
+
+                <!-- User Selects Date -->
+                <div class="col-md-5ths col-xs-6">
+                    <h2>Date</h2>
+                    <input type="text" class="form-control" id="datepicker" placeholder="Select Date...">
+                    <label for="datepicker"></label>
+                </div>
+
+                <!-- User Selects Time -->
+                <div class="col-md-5ths col-xs-6">
+                    <h2>Time</h2>
+                    <input type="text" class="form-control" id="timepicker" placeholder="Select Time...">
+                    <label for="datepicker"></label>
+                </div>
+
+                <!-- User Selects Address -->
+                <div class="col-md-5ths col-xs-6">
+                    <h2>Location</h2>
+                    <input type="text" class="form-control" id="search-address" placeholder="ex: Los Angeles, CA">
+                    <label for="Address"></label>
+                </div>
+
+                <div class="col-md-5ths col-xs-6">
+                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="user-submit">Submit</button>
+                </div>
+
         </div>
-        <!-- Search input for MeetUp -->
+        </form>
+
+        <!--===================================== MAP + RESOURCES ============================================-->
         <div class="row">
-            <div class="col-md-3" text align="center">
-                <div class="input-group">
-                    <span class="input-group-btn"></span>
-                    <input type="text" class="form-control" id="search-subject" placeholder="Search for...">
+            <div class="container">
+                <div class="col-md-4">
+                    <b class="glyphicon glyphicon-road"></b>
+                    <h3>Map</h3>
+                    <div id="map"></div>
                 </div>
-                <!-- /input-group -->
-            </div>
-            <!-- /.col-lg-6 -->
-            <!-- DATEPICKER -->
-            <div class="row">
-                <div class="col-md-3" text align="center">
-                    <div class="input-group">
-                        <span class="input-group-btn"></span>
-                        <input type="text" class="form-control" id="datepicker" placeholder="Search for...">
-                    </div>
-                    <!-- /input-group -->
+                <div class="col-md-8">
+                    <b class="glyphicon glyphicon-road"></b>
+                    <h3>Resources</h3>
+                    <div id="render-data"></div>
+                    <!-- Accordian to Render Data -->
+                    <!-- Collapsible Group Item #1 -->
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"></div>
+                    <!-- end col-md-8 div -->
                 </div>
-            </div>
-            <!-- /.col-lg-6 -->
-            <!-- TIMEPICKER-->
-            <div class="row">
-                <div class="col-md-3" text align="center">
-                    <div class="input-group">
-                        <span class="input-group-btn"></span>
-                        <input type="text" class="form-control" id="timepicker" placeholder="Search for...">
-                    </div>
-                    <!-- /input-group -->
-                </div>
-                <!-- /.col-lg-6 -->
-                <!-- Address -->
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="input-group">
-                            <span class="input-group-btn"></span>
-                            <input type="text" class="form-control" id="search-address" placeholder="Search for...">
-                        </div>
-                    </div>
-                    <!-- /.col-lg-6 -->
-                </div>
-                <button type="button" id="user-submit" class="btn btn-primary">Submit Form</button>
-            </div>
-            <!-- END INPUT FORM -->
-        </div>
-        <!-- end Container -->
-    </div>
-
-    <!--===================================== MAP + RESOURCES ============================================-->
-    <div class="row">
-        <div class="container">
-            <div class="col-md-4">
-
-                <b class="glyphicon glyphicon-road"></b>
-                <h3>Map</h3>
-                <div id="map"></div>
-
-                <p>Maps powered by Google to help you locate and arrive on time to your MeetUp on time</p>
-            </div>
-            <div class="col-md-8">
-
-                <b class="glyphicon glyphicon-road"></b>
-                <h3>Resources</h3>
-                <div id="render-data"></div>
-
-                <!-- Accordian to Render Data -->
-                <!-- Collapsible Group Item #1 -->
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"></div>
-                <!-- end col-md-8 div -->
             </div>
         </div>
+        <!-- end Container-->
     </div>
-
     <div id="footer">
         <p>&copy; 2017 UpMeet - By Narin, Kellen, Myles &amp; Hovsep</p>
     </div>
-
     <!--===================================== SCRIPTS ============================================-->
-
     <!-- Three Picker Files for JS Time and Date (required) -->
     <script type="text/javascript" src="js/picker.js"></script>
     <script type="text/javascript" src="js/picker.date.js"></script>

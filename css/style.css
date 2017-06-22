@@ -1,3 +1,40 @@
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-xs-5ths {
+    width: 20%;
+    float: left;
+}
+
+@media (min-width: 768px) {
+    .col-sm-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+
 /* Layout
 ==============================*/
 
@@ -6,47 +43,32 @@ body {
 }
 
 h2 {
-    color: #000;
-    margin: auto;
+    color: #3F3F3F;
     text-align: center;
     font-family: "Noto Sans", sans-serif;
     font-weight: bold 700;
+}
+
+h3 {
+    text-align: center;
 }
 
 .container {
     max-width: 1000px;
 }
 
+.user-input {
+    text-align: center;
+}
+
+.col-md-4,
+.col-md-8 {
+    margin-top: 100px;
+}
+
 
 /* Navbar
 ==============================*/
-
-div.navbar.navbar-static-top {
-    font-size: 1em;
-}
-
-a.navbar-brand.text-muted {
-    font-size: 3em;
-    text-align: center;
-    color: #000;
-}
-
-.pure-button {
-    font-size: 90%;
-    margin: 1px;
-    border-radius: 3px;
-    color: white;
-    background: black;
-    opacity: 0.9;
-}
-
-.pure-form {
-    display: none;
-}
-
-#log-sign {
-    margin-left: 87%;
-}
 
 
 /*Jumbotron
@@ -66,38 +88,27 @@ a.navbar-brand.text-muted {
     background--webkit-background-size: cover;
 }
 
-
-/*Glyphicons
-===============================*/
-
-.glyphicon {
-    font-size: 3em;
-    display: block;
-    text-align: center;
-    color: #ed1c40;
-}
-
-p.lead {
+.jumbotron p.lead {
     font-family: "Titillium Web", sans-serif;
     text-shadow: 3px 3px 3px black;
 }
 
-.jumbotron p {
-    font-size: 28px;
+.jumbotron #map {
+    height: 400px;
+    width: 100%;
 }
 
-#sign-up-2 {
-    margin-left: 42% !important;
+.jumbotron .jumbotron h1 {
+    text-shadow: 2px 2px 2px black;
 }
 
-#box-sp {
-    margin: 2px;
+.jumbotron .jumbotron h1 font {
+    size: 96px;
+    family: "Titillium Web", sans-serif;
 }
 
-form#login-2.pure-form {
-    margin-top: 5px;
-    margin-left: 50% !important;
-    margin-bottom: -10px;
+h1 {
+    text-shadow: 2px 2px 2px black;
 }
 
 #map {
@@ -105,22 +116,71 @@ form#login-2.pure-form {
     width: 100%;
 }
 
-.jumbotron h1 {
-    text-shadow: 2px 2px 2px black;
+
+/* Input Text Boxes
+==============================*/
+
+input#MeetUp.form-control,
+input#datepicker.form-control.picker__input,
+input#timepicker.form-control.picker__input,
+input#Address.form-control {
+    background: #fff;
+    border-color: #3F3F3F;
 }
 
-.jumbotron h1 font {
-    size: 96px;
-    family: "Titillium Web", sans-serif;
+
+/* Submit Button
+==============================*/
+
+.btn {
+    padding: 10px 30px;
+    margin-top: 4.1em;
+    margin-left: 15px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+    outline: 0 none;
+}
+
+.btn-primary {
+    background: #CC3737;
+    color: #ffffff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open>.dropdown-toggle.btn-primary {
+    background: #CC3737;
+}
+
+.btn-primary:active,
+.btn-primary.active {
+    background: #fff;
+    box-shadow: none;
+}
+
+
+/*Glyphicons
+===============================*/
+
+.glyphicon {
+    font-size: 2em;
+    display: block;
+    text-align: center;
+    color: #CC3737;
 }
 
 
 /*Carousel
 ===============================*/
-
-.carousel-indicators {
-    bottom: 0;
-}
 
 .carousel-indicators .active {
     background-color: #222;
@@ -131,7 +191,7 @@ form#login-2.pure-form {
 }
 
 
-/*Render Data Accordian 
+/*Accordian 
 ===============================*/
 
 .panel-heading .accordion-toggle:after {
@@ -152,35 +212,59 @@ form#login-2.pure-form {
     /* adjust as needed, taken from bootstrap.css */
 }
 
-div.panel-heading {
-    background: #ed1c40;
+#upmeet-logo {
+    height: 38px;
 }
 
 
-/*# sourceMappingURL=style.css.map */
+/*CSS from Myles
+===============================*/
 
-#upmeet-logo {
-    margin-right: auto;
-    margin-left: auto;
-    display: block;
-    height: 102px;
+#lgsu {
+    padding-top: 1%;
 }
 
 .pure-button {
-    font-size: 90%;
-    margin: 1px;
+    margin: 0.5px;
     border-radius: 3px;
     color: white;
+    padding: 4px;
     background: #CC3737;
     opacity: 0.9;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
 }
 
-.panel-body p {
-    font-weight: bold;
+.pure-button:hover {
+    background-color: black;
+    color: white;
 }
 
-h3 {
-    text-align: center;
+#upmeet-row {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.pure-form {
+    display: none;
+}
+
+#log-sign {
+    margin-left: 87%;
+}
+
+form#login-2.pure-form {
+    margin-top: 5px;
+    margin-left: 50% !important;
+    margin-bottom: -7px;
+}
+
+#box-sp {
+    margin: 2px;
+}
+
+p.lead {
+    font-family: "Tit";
 }
 
 
@@ -190,3 +274,29 @@ h3 {
 div#footer {
     text-align: center;
 }
+
+
+/*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
+
+
+/*==========  Mobile First Method  ==========*/
+
+
+/* Custom, iPhone Retina */
+
+
+/* Extra Small Devices, Phones */
+
+
+/* Small Devices, Tablets */
+
+
+/* Medium Devices, Desktops */
+
+
+/* Large Devices, Wide Screens */
+
+
+/*# sourceMappingURL=style.css.map */
