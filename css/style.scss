@@ -19,42 +19,41 @@ $align-center: center;
 //Variable for Jumbotron and lead paragraph color
 $white: #fff;
 
-// Global Settings for Full Width 5 Columns
-
+// Layout Settings for Full Width 5 Columns
 .col-xs-5ths,
 .col-sm-5ths,
 .col-md-5ths,
 .col-lg-5ths {
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
 }
 
 .col-xs-5ths {
-    width: 20%;
-    float: left;
+	width: 20%;
+	float: left;
 }
 
 @media (min-width: 768px) {
-    .col-sm-5ths {
-        width: 20%;
-        float: left;
-    }
+	.col-sm-5ths {
+		width: 20%;
+		float: left;
+	}
 }
 
 @media (min-width: 992px) {
-    .col-md-5ths {
-        width: 20%;
-        float: left;
-    }
+	.col-md-5ths {
+		width: 20%;
+		float: left;
+	}
 }
 
 @media (min-width: 1200px) {
-    .col-lg-5ths {
-        width: 20%;
-        float: left;
-    }
+	.col-lg-5ths {
+		width: 20%;
+		float: left;
+	}
 }
 
 /* Layout
@@ -162,31 +161,31 @@ input#MeetUp.form-control, input#datepicker.form-control.picker__input, input#ti
 /* Submit Button
 ==============================*/
 .btn {
-    padding: 10px 30px;
-    margin-top: 4.1em;
-    margin-left: 15px;
-    border: 0 none;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+	padding: 10px 30px;
+	margin-top: 4.1em;
+	margin-left: 15px;
+	border: 0 none;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
 }
- 
+
 .btn:focus, .btn:active:focus, .btn.active:focus {
-    outline: 0 none;
+	outline: 0 none;
 }
- 
+
 .btn-primary {
-    background: $color-primary;  
-    color: #ffffff;
+	background: $color-primary;  
+	color: #ffffff;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-    background: $color-primary; 
+	background: $color-primary; 
 }
- 
+
 .btn-primary:active, .btn-primary.active {
-    background: #fff; 
-    box-shadow: none;
+	background: #fff; 
+	box-shadow: none;
 }
 
 /*Glyphicons
@@ -224,85 +223,174 @@ input#MeetUp.form-control, input#datepicker.form-control.picker__input, input#ti
 }
 
 #upmeet-logo{
-    height: 38px;    
+	height: 38px;    
 }
 
 
 /*CSS from Myles
 ===============================*/
 #lgsu {
-    padding-top: 1%;
+	padding-top: 1%;
 }
 .pure-button {
-    margin: 0.5px;
-    border-radius: 3px;
-    color: white;
-    padding: 4px;
-    background: #CC3737;
-    opacity: 0.9;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
+	margin: 0.5px;
+	border-radius: 3px;
+	color: white;
+	padding: 4px;
+	background: #CC3737;
+	opacity: 0.9;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
 }
 
 .pure-button:hover {
-    background-color: black;
-    color: white;
+	background-color: black;
+	color: white;
 }
 
 #upmeet-row{
-    margin-top: 0px;
-    margin-bottom: 5px;
+	margin-top: 0px;
+	margin-bottom: 5px;
 }
 
 .pure-form {
-    display: none;
+	display: none;
 }
 
 #log-sign {
-    margin-left: 87%;
+	margin-left: 87%;
 }
 
 form#login-2.pure-form {
-    margin-top: 5px;
-    margin-left: 50% !important;
-    margin-bottom: -7px;
-    }
+	margin-top: 5px;
+	margin-left: 50% !important;
+	margin-bottom: -7px;
+}
 
- #box-sp {
- 	margin: 2px;
- }
-
- p.lead {
- 	font-family: "Tit"
- }   
+#box-sp {
+	margin: 2px;
+}
 
 /*==================================================
 =            Bootstrap 3 Media Queries             =
 ==================================================*/
 
-    /*==========  Mobile First Method  ==========*/
+/*==========  Mobile First Method  ==========*/
 
-    /* Custom, iPhone Retina */ 
-    @media only screen and (min-width : 320px) {
+/* Custom, iPhone Retina */ //KELLEN MADE EDITS HERE
+@media only screen and (min-width : 320px) {
 
-    }
+//Body 
+	html,
+	body {
+		margin: 0;
+		padding-top: 15px;
+	}
 
-    /* Extra Small Devices, Phones */ 
-    @media only screen and (min-width : 480px) {
+//Login and Sign-Up
+#lgsu {
+	margin-left: 190px;
+	margin-bottom: -40px;
+}
 
-    }
+//upMeet Logo
+#upmeet-logo {
+	margin-left: 10px;				
+	margin-bottom: -50px;	
+}
 
-    /* Small Devices, Tablets */
-    @media only screen and (min-width : 768px) {
+//Submit Button
+button#user-submit.btn.btn-primary {
+	margin-left: 90px;	
+}
 
-    }
+//Footer
+#footer {
+	margin-top: 100px;
+	margin-bottom: 0;
+	text-align: $align-center;
+}	
 
-    /* Medium Devices, Desktops */
-    @media only screen and (min-width : 992px) {
+	} // end 320 px media query
 
-    }
+/* Extra Small Devices, Phones */ // KELLEN MADE EDITS HERE
+@media only screen and (min-width : 480px) {
 
-    /* Large Devices, Wide Screens */
-    @media only screen and (min-width : 1200px) {
+//Body 
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+	}
 
-    }
+//Jumbotron
+div#carousel-example-generic.carousel.slide.jumbotron {
+	padding: 0;
+}
+
+//Login and Sign-Up
+#lgsu {
+	margin-left: 355px;
+	margin-bottom: -40px;
+}
+
+//upMeet Logo
+#upmeet-logo {
+	margin-left: 10px;				
+	margin-bottom: -50px;	
+}
+
+//Submit Button
+button#user-submit.btn.btn-primary {
+	margin-left: 165px;	
+}
+
+//Footer
+#footer {
+	margin-top: 100px;
+	margin-bottom: 0;
+	text-align: $align-center;
+}	
+
+	} // end 480 px Media Query
+
+
+/* Small Devices, Tablets */ //KELLEN MADE EDITS HERE
+@media only screen and (min-width : 768px) {
+
+//Login and Sign-Up
+#lgsu {
+	margin-left: 625px;
+	margin-bottom: -45px;
+}
+
+//upMeet Logo
+#upmeet-logo {
+	margin-left: 5px;				
+	margin-bottom: -55px;	
+}
+
+//Submit Button
+button#user-submit.btn.btn-primary {
+	margin-left: 300px;	
+}
+
+//Footer
+#footer {
+	margin-top: 100px;
+	margin-bottom: 0;
+	text-align: $align-center;
+}	
+
+	} //end of 768px Media Query 
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}

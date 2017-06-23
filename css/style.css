@@ -2,301 +2,256 @@
 .col-sm-5ths,
 .col-md-5ths,
 .col-lg-5ths {
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-}
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px; }
 
 .col-xs-5ths {
-    width: 20%;
-    float: left;
-}
+  width: 20%;
+  float: left; }
 
 @media (min-width: 768px) {
-    .col-sm-5ths {
-        width: 20%;
-        float: left;
-    }
-}
-
+  .col-sm-5ths {
+    width: 20%;
+    float: left; } }
 @media (min-width: 992px) {
-    .col-md-5ths {
-        width: 20%;
-        float: left;
-    }
-}
-
+  .col-md-5ths {
+    width: 20%;
+    float: left; } }
 @media (min-width: 1200px) {
-    .col-lg-5ths {
-        width: 20%;
-        float: left;
-    }
-}
-
-
+  .col-lg-5ths {
+    width: 20%;
+    float: left; } }
 /* Layout
 ==============================*/
-
 body {
-    padding-top: 30px;
-}
+  padding-top: 30px; }
 
 h2 {
-    color: #3F3F3F;
-    text-align: center;
-    font-family: "Noto Sans", sans-serif;
-    font-weight: bold 700;
-}
+  color: #3F3F3F;
+  text-align: center;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold 700; }
 
 h3 {
-    text-align: center;
-}
+  text-align: center; }
 
 .container {
-    max-width: 1000px;
-}
+  max-width: 1000px; }
 
 .user-input {
-    text-align: center;
-}
+  text-align: center; }
 
-.col-md-4,
-.col-md-8 {
-    margin-top: 100px;
-}
-
+.col-md-4, .col-md-8 {
+  margin-top: 100px; }
 
 /* Navbar
 ==============================*/
-
-
 /*Jumbotron
 ===============================*/
-
 .jumbotron {
-    color: #fff;
-    margin-bottom: 20px;
-    min-height: 50%;
-    font-weight: 200;
-    text-align: center;
-    background-image: url("../images/StockSnap.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-image-rendering: -webkit-optimize-contrast;
-    background--webkit-background-size: cover;
-}
-
-.jumbotron p.lead {
+  color: #fff;
+  margin-bottom: 20px;
+  min-height: 50%;
+  font-weight: 200;
+  text-align: center;
+  background-image: url("../images/StockSnap.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image-rendering: -webkit-optimize-contrast;
+  background--webkit-background-size: cover; }
+  .jumbotron p.lead {
     font-family: "Titillium Web", sans-serif;
-    text-shadow: 3px 3px 3px black;
-}
-
-.jumbotron #map {
+    text-shadow: 3px 3px 3px black; }
+  .jumbotron #map {
     height: 400px;
-    width: 100%;
-}
-
-.jumbotron .jumbotron h1 {
-    text-shadow: 2px 2px 2px black;
-}
-
-.jumbotron .jumbotron h1 font {
-    size: 96px;
-    family: "Titillium Web", sans-serif;
-}
+    width: 100%; }
+  .jumbotron .jumbotron
+  h1 {
+    text-shadow: 2px 2px 2px black; }
+    .jumbotron .jumbotron
+    h1 font {
+      size: 96px;
+      family: "Titillium Web", sans-serif; }
 
 h1 {
-    text-shadow: 2px 2px 2px black;
-}
-
-#map {
-    height: 400px;
-    width: 100%;
-}
-
+  text-shadow: 2px 2px 2px black; }
 
 /* Input Text Boxes
 ==============================*/
-
-input#MeetUp.form-control,
-input#datepicker.form-control.picker__input,
-input#timepicker.form-control.picker__input,
-input#Address.form-control {
-    background: #fff;
-    border-color: #3F3F3F;
-}
-
+input#MeetUp.form-control, input#datepicker.form-control.picker__input, input#timepicker.form-control.picker__input, input#Address.form-control {
+  background: #fff;
+  border-color: #3F3F3F; }
 
 /* Submit Button
 ==============================*/
-
 .btn {
-    padding: 10px 30px;
-    margin-top: 4.1em;
-    margin-left: 15px;
-    border: 0 none;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
+  padding: 10px 30px;
+  margin-top: 4.1em;
+  margin-left: 15px;
+  border: 0 none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase; }
 
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus {
-    outline: 0 none;
-}
+.btn:focus, .btn:active:focus, .btn.active:focus {
+  outline: 0 none; }
 
 .btn-primary {
-    background: #CC3737;
-    color: #ffffff;
-}
+  background: #CC3737;
+  color: #ffffff; }
 
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open>.dropdown-toggle.btn-primary {
-    background: #CC3737;
-}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+  background: #CC3737; }
 
-.btn-primary:active,
-.btn-primary.active {
-    background: #fff;
-    box-shadow: none;
-}
-
+.btn-primary:active, .btn-primary.active {
+  background: #fff;
+  box-shadow: none; }
 
 /*Glyphicons
 ===============================*/
-
 .glyphicon {
-    font-size: 2em;
-    display: block;
-    text-align: center;
-    color: #CC3737;
-}
-
+  font-size: 2em;
+  display: block;
+  text-align: center;
+  color: #CC3737; }
 
 /*Carousel
 ===============================*/
-
 .carousel-indicators .active {
-    background-color: #222;
-}
-
+  background-color: #222; }
 .carousel-indicators li {
-    background-color: #222;
-}
-
+  background-color: #222; }
 
 /*Accordian 
 ===============================*/
-
 .panel-heading .accordion-toggle:after {
-    /* symbol for "opening" panels */
-    font-family: 'Glyphicons Halflings';
-    /* essential for enabling glyphicon */
-    content: "\e114";
-    /* adjust as needed, taken from bootstrap.css */
-    float: right;
-    /* adjust as needed */
-    color: grey;
-    /* adjust as needed */
-}
+  /* symbol for "opening" panels */
+  font-family: 'Glyphicons Halflings';
+  /* essential for enabling glyphicon */
+  content: "\e114";
+  /* adjust as needed, taken from bootstrap.css */
+  float: right;
+  /* adjust as needed */
+  color: grey;
+  /* adjust as needed */ }
 
 .panel-heading .accordion-toggle.collapsed:after {
-    /* symbol for "collapsed" panels */
-    content: "\e080";
-    /* adjust as needed, taken from bootstrap.css */
-}
+  /* symbol for "collapsed" panels */
+  content: "\e080";
+  /* adjust as needed, taken from bootstrap.css */ }
 
 #upmeet-logo {
-    height: 38px;
-}
-
+  height: 38px; }
 
 /*CSS from Myles
 ===============================*/
-
 #lgsu {
-    padding-top: 1%;
-}
+  padding-top: 1%; }
 
 .pure-button {
-    margin: 0.5px;
-    border-radius: 3px;
-    color: white;
-    padding: 4px;
-    background: #CC3737;
-    opacity: 0.9;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-}
+  margin: 0.5px;
+  border-radius: 3px;
+  color: white;
+  padding: 4px;
+  background: #CC3737;
+  opacity: 0.9;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s; }
 
 .pure-button:hover {
-    background-color: black;
-    color: white;
-}
+  background-color: black;
+  color: white; }
 
 #upmeet-row {
-    margin-top: 0px;
-    margin-bottom: 5px;
-}
+  margin-top: 0px;
+  margin-bottom: 5px; }
 
 .pure-form {
-    display: none;
-}
+  display: none; }
 
 #log-sign {
-    margin-left: 87%;
-}
+  margin-left: 87%; }
 
 form#login-2.pure-form {
-    margin-top: 5px;
-    margin-left: 50% !important;
-    margin-bottom: -7px;
-}
+  margin-top: 5px;
+  margin-left: 50% !important;
+  margin-bottom: -7px; }
 
 #box-sp {
-    margin: 2px;
-}
-
-p.lead {
-    font-family: "Tit";
-}
-
-
-/*Footer
-===============================*/
-
-div#footer {
-    text-align: center;
-}
-
+  margin: 2px; }
 
 /*==================================================
 =            Bootstrap 3 Media Queries             =
 ==================================================*/
-
-
 /*==========  Mobile First Method  ==========*/
-
-
 /* Custom, iPhone Retina */
+@media only screen and (min-width: 320px) {
+  html,
+  body {
+    margin: 0;
+    padding-top: 15px; }
 
+  #lgsu {
+    margin-left: 190px;
+    margin-bottom: -40px; }
 
+  #upmeet-logo {
+    margin-left: 10px;
+    margin-bottom: -50px; }
+
+  button#user-submit.btn.btn-primary {
+    margin-left: 90px; }
+
+  #footer {
+    margin-top: 100px;
+    margin-bottom: 0;
+    text-align: center; } }
 /* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+  html,
+  body {
+    margin: 0;
+    padding: 0; }
 
+  div#carousel-example-generic.carousel.slide.jumbotron {
+    padding: 0; }
 
+  #lgsu {
+    margin-left: 355px;
+    margin-bottom: -40px; }
+
+  #upmeet-logo {
+    margin-left: 10px;
+    margin-bottom: -50px; }
+
+  button#user-submit.btn.btn-primary {
+    margin-left: 165px; }
+
+  #footer {
+    margin-top: 100px;
+    margin-bottom: 0;
+    text-align: center; } }
 /* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+  #lgsu {
+    margin-left: 625px;
+    margin-bottom: -45px; }
 
+  #upmeet-logo {
+    margin-left: 5px;
+    margin-bottom: -55px; }
 
+  button#user-submit.btn.btn-primary {
+    margin-left: 300px; }
+
+  #footer {
+    margin-top: 100px;
+    margin-bottom: 0;
+    text-align: center; } }
 /* Medium Devices, Desktops */
-
-
 /* Large Devices, Wide Screens */
-
 
 /*# sourceMappingURL=style.css.map */
