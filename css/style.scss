@@ -284,24 +284,30 @@ form#login-2.pure-form {
 	html,
 	body {
 		margin: 0;
-		padding-top: 15px;
+		padding: 2px;
 	}
+
+//Jumbotron
+div#carousel-example-generic.carousel.slide.jumbotron {
+	margin-top: 20px;
+	
+}	
 
 //Login and Sign-Up
 #lgsu {
-	margin-left: 190px;
-	margin-bottom: -40px;
+	margin-left: 185px;
+	margin-bottom: -45px;
 }
 
 //upMeet Logo
 #upmeet-logo {
-	margin-left: 10px;				
-	margin-bottom: -50px;	
+	margin-left: -5px;			
+	margin-bottom: -53px;	
 }
 
 //Submit Button
 button#user-submit.btn.btn-primary {
-	margin-left: 90px;	
+	margin-left: 85px;	
 }
 
 //Footer
@@ -309,7 +315,7 @@ button#user-submit.btn.btn-primary {
 	margin-top: 100px;
 	margin-bottom: 0;
 	text-align: $align-center;
-}	
+	}	
 
 	} // end 320 px media query
 
@@ -320,24 +326,23 @@ button#user-submit.btn.btn-primary {
 	html,
 	body {
 		margin: 0;
-		padding: 0;
+		padding: 2px;
 	}
 
 //Jumbotron
 div#carousel-example-generic.carousel.slide.jumbotron {
-	padding: 0;
-}
+	margin-right: 5px;
+}		
 
 //Login and Sign-Up
 #lgsu {
-	margin-left: 355px;
-	margin-bottom: -40px;
+	margin-left: 343px;
+	margin-bottom: -50px;
 }
 
 //upMeet Logo
-#upmeet-logo {
-	margin-left: 10px;				
-	margin-bottom: -50px;	
+#upmeet-logo {			
+	margin-bottom: -55px;	
 }
 
 //Submit Button
@@ -350,24 +355,35 @@ button#user-submit.btn.btn-primary {
 	margin-top: 100px;
 	margin-bottom: 0;
 	text-align: $align-center;
-}	
+	}	
 
-	} // end 480 px Media Query
+} // end 480 px Media Query
 
 
 /* Small Devices, Tablets */ //KELLEN MADE EDITS HERE
 @media only screen and (min-width : 768px) {
 
+//Body 
+	html,
+	body {
+		margin: 0;
+		padding: 2px;
+	}
+
+//Jumbotron
+div#carousel-example-generic.carousel.slide.jumbotron {
+	margin-right: 15px;
+}		
+
 //Login and Sign-Up
 #lgsu {
-	margin-left: 625px;
-	margin-bottom: -45px;
+	margin-left: 620px;
+	margin-bottom: -50px;
 }
 
 //upMeet Logo
-#upmeet-logo {
-	margin-left: 5px;				
-	margin-bottom: -55px;	
+#upmeet-logo {				
+	margin-bottom: -65px;	
 }
 
 //Submit Button
@@ -380,9 +396,9 @@ button#user-submit.btn.btn-primary {
 	margin-top: 100px;
 	margin-bottom: 0;
 	text-align: $align-center;
-}	
+	}	
 
-	} //end of 768px Media Query 
+} //end of 768px Media Query 
 
 
 /* Medium Devices, Desktops */

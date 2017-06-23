@@ -192,18 +192,21 @@ form#login-2.pure-form {
   html,
   body {
     margin: 0;
-    padding-top: 15px; }
+    padding: 2px; }
+
+  div#carousel-example-generic.carousel.slide.jumbotron {
+    margin-top: 20px; }
 
   #lgsu {
-    margin-left: 190px;
-    margin-bottom: -40px; }
+    margin-left: 185px;
+    margin-bottom: -45px; }
 
   #upmeet-logo {
-    margin-left: 10px;
-    margin-bottom: -50px; }
+    margin-left: -5px;
+    margin-bottom: -53px; }
 
   button#user-submit.btn.btn-primary {
-    margin-left: 90px; }
+    margin-left: 85px; }
 
   #footer {
     margin-top: 100px;
@@ -214,18 +217,17 @@ form#login-2.pure-form {
   html,
   body {
     margin: 0;
-    padding: 0; }
+    padding: 2px; }
 
   div#carousel-example-generic.carousel.slide.jumbotron {
-    padding: 0; }
+    margin-right: 5px; }
 
   #lgsu {
-    margin-left: 355px;
-    margin-bottom: -40px; }
+    margin-left: 343px;
+    margin-bottom: -50px; }
 
   #upmeet-logo {
-    margin-left: 10px;
-    margin-bottom: -50px; }
+    margin-bottom: -55px; }
 
   button#user-submit.btn.btn-primary {
     margin-left: 165px; }
@@ -236,13 +238,20 @@ form#login-2.pure-form {
     text-align: center; } }
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
+  html,
+  body {
+    margin: 0;
+    padding: 2px; }
+
+  div#carousel-example-generic.carousel.slide.jumbotron {
+    margin-right: 15px; }
+
   #lgsu {
-    margin-left: 625px;
-    margin-bottom: -45px; }
+    margin-left: 620px;
+    margin-bottom: -50px; }
 
   #upmeet-logo {
-    margin-left: 5px;
-    margin-bottom: -55px; }
+    margin-bottom: -65px; }
 
   button#user-submit.btn.btn-primary {
     margin-left: 300px; }
