@@ -294,14 +294,14 @@ div#upmeet-row.row {
 
 //Jumbotron
 div#carousel-example-generic.carousel.slide.jumbotron {
-	margin-top: 25px;
+	margin-top: 35px;
 	
 }	
 
 //Login and Sign-Up
 #lgsu {
 	margin-left: 189px;
-	margin-bottom: -60px;
+	margin-bottom: -65px;
 }
 
 //upMeet Logo
@@ -342,7 +342,7 @@ div#carousel-example-generic.carousel.slide.jumbotron {
 //Login and Sign-Up
 #lgsu {
 	margin-left: 344px;
-	margin-bottom: -60px;
+	margin-bottom: -65px;
 }
 
 //upMeet Logo
@@ -383,7 +383,7 @@ div#carousel-example-generic.carousel.slide.jumbotron {
 //Login and Sign-Up
 #lgsu {
 	margin-left: 620px;
-	margin-bottom: -60px;
+	margin-bottom: -70px;
 }
 
 //upMeet Logo
@@ -409,15 +409,63 @@ button#user-submit.btn.btn-primary {
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
 
+//Body 
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+	}
 
-
-
-
-
-
-
-
+//Navbar
+div#upmeet-row.row {
+	padding-top: 10px;
+	margin: 0;
 }
+
+//Jumbotron
+div#carousel-example-generic.carousel.slide.jumbotron {
+	margin-left: 75px;
+	width: 100%;
+}		
+
+//Login and Sign-Up
+#lgsu {
+	margin-left: 929px;
+}
+
+//upMeet Logo
+#upmeet-logo {				
+	margin-left: 50px;
+	margin-bottom: -70px;	
+}
+
+//User Input Row for MeetUp Information
+.row {
+	margin-left: 150px;
+}
+
+//Submit Button
+button#user-submit.btn.btn-primary {
+	margin-left: 30px;
+}
+
+//Map
+div.col-md-4 {
+	margin-left: -100px;
+}
+
+div.col-md-8 {
+	margin-left: 60px;
+}
+
+//Footer
+#footer {
+	margin-top: 300px;
+	margin-bottom: 0;
+	margin-left: 160px;
+	}	
+
+} //end 992 resolution
 
 
 /* Large Devices, Wide Screens */
