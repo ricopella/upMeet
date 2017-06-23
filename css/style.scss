@@ -287,22 +287,27 @@ form#login-2.pure-form {
 		padding: 2px;
 	}
 
+//Navbar
+div#upmeet-row.row {
+	margin-top: 10px;
+}
+
 //Jumbotron
 div#carousel-example-generic.carousel.slide.jumbotron {
-	margin-top: 20px;
+	margin-top: 25px;
 	
 }	
 
 //Login and Sign-Up
 #lgsu {
-	margin-left: 185px;
-	margin-bottom: -45px;
+	margin-left: 189px;
+	margin-bottom: -60px;
 }
 
 //upMeet Logo
 #upmeet-logo {
 	margin-left: -5px;			
-	margin-bottom: -53px;	
+	margin-bottom: -50px;	
 }
 
 //Submit Button
@@ -336,8 +341,8 @@ div#carousel-example-generic.carousel.slide.jumbotron {
 
 //Login and Sign-Up
 #lgsu {
-	margin-left: 343px;
-	margin-bottom: -50px;
+	margin-left: 344px;
+	margin-bottom: -60px;
 }
 
 //upMeet Logo
@@ -378,12 +383,12 @@ div#carousel-example-generic.carousel.slide.jumbotron {
 //Login and Sign-Up
 #lgsu {
 	margin-left: 620px;
-	margin-bottom: -50px;
+	margin-bottom: -60px;
 }
 
 //upMeet Logo
 #upmeet-logo {				
-	margin-bottom: -65px;	
+	margin-bottom: -60px;	
 }
 
 //Submit Button
@@ -404,7 +409,16 @@ button#user-submit.btn.btn-primary {
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
 
+
+
+
+
+
+
+
+
 }
+
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {

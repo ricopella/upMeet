@@ -194,16 +194,19 @@ form#login-2.pure-form {
     margin: 0;
     padding: 2px; }
 
+  div#upmeet-row.row {
+    margin-top: 10px; }
+
   div#carousel-example-generic.carousel.slide.jumbotron {
-    margin-top: 20px; }
+    margin-top: 25px; }
 
   #lgsu {
-    margin-left: 185px;
-    margin-bottom: -45px; }
+    margin-left: 189px;
+    margin-bottom: -60px; }
 
   #upmeet-logo {
     margin-left: -5px;
-    margin-bottom: -53px; }
+    margin-bottom: -50px; }
 
   button#user-submit.btn.btn-primary {
     margin-left: 85px; }
@@ -223,8 +226,8 @@ form#login-2.pure-form {
     margin-right: 5px; }
 
   #lgsu {
-    margin-left: 343px;
-    margin-bottom: -50px; }
+    margin-left: 344px;
+    margin-bottom: -60px; }
 
   #upmeet-logo {
     margin-bottom: -55px; }
@@ -248,10 +251,10 @@ form#login-2.pure-form {
 
   #lgsu {
     margin-left: 620px;
-    margin-bottom: -50px; }
+    margin-bottom: -60px; }
 
   #upmeet-logo {
-    margin-bottom: -65px; }
+    margin-bottom: -60px; }
 
   button#user-submit.btn.btn-primary {
     margin-left: 300px; }
