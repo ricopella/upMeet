@@ -1,6 +1,7 @@
 var userEmail = "";
 var password = "";
 
+// Initialize Firebase
 var config = {
     apiKey: "AIzaSyCiFEAaf5MJyCwQnsPaPt8rac1oRto3UbA",
     authDomain: "upmeet-35726.firebaseapp.com",
@@ -60,7 +61,7 @@ var userLogin = function(event) {
     event.preventDefault;
     userEmail = $("#user-name").val();
     password = $("#current-password").val();
-
+    debugger;
     if (firebase.auth().currentUser) {
         // start signout
         firebase.auth().signOut();
@@ -124,12 +125,14 @@ var initApp = function() {
 
     // submit button on Sign-Up
     $("#btn-add").on("click", function(event) {
+        event.preventDefault;
         console.log('user added?');
         userSignUp(event);
     });
 
     // enter key on Sign-up
     $("#sign-up-2").on("keypress", function(event) {
+        event.preventDefault;
         if (event.which == 13) {
             console.log("Enter!")
             userSignUp(event);
@@ -145,6 +148,7 @@ var initApp = function() {
 
     // enter key on login
     $("#login-2").on("keypress", function(event) {
+        event.preventDefault;
         if (event.which == 13) {
             console.log("Enter on form!");
             userLogin(event);
