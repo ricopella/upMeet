@@ -462,7 +462,7 @@ div.col-md-8 {
 #footer {
 	margin-top: 300px;
 	margin-bottom: 0;
-	margin-left: 160px;
+	margin-left: 150px;
 	}	
 
 } //end 992 resolution
@@ -471,4 +471,41 @@ div.col-md-8 {
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
 
+//Body 
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+	}
+
+//Navbar
+div#upmeet-row.row {
+	padding-top: 10px;
+	margin: 0;
 }
+
+//Jumbotron
+div#carousel-example-generic.carousel.slide.jumbotron {
+	margin-left: 20px;
+	width: 100%;
+}	
+
+//Login and Sign-Up
+#lgsu {
+	margin-left: 1080px;
+}
+
+//upMeet Logo
+#upmeet-logo {				
+	margin-left: 0px;
+	margin-bottom: -75px;
+}
+
+//Footer
+#footer {
+	margin-top: 300px;
+	margin-bottom: 0;
+	$align-center: center;
+	}	
+
+} //end 1200px media query

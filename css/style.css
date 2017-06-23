@@ -300,7 +300,31 @@ form#login-2.pure-form {
   #footer {
     margin-top: 300px;
     margin-bottom: 0;
-    margin-left: 160px; } }
+    margin-left: 150px; } }
 /* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+  html,
+  body {
+    margin: 0;
+    padding: 0; }
+
+  div#upmeet-row.row {
+    padding-top: 10px;
+    margin: 0; }
+
+  div#carousel-example-generic.carousel.slide.jumbotron {
+    margin-left: 20px;
+    width: 100%; }
+
+  #lgsu {
+    margin-left: 1080px; }
+
+  #upmeet-logo {
+    margin-left: 0px;
+    margin-bottom: -75px; }
+
+  #footer {
+    margin-top: 300px;
+    margin-bottom: 0; } }
 
 /*# sourceMappingURL=style.css.map */
