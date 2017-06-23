@@ -1,5 +1,3 @@
-console.log("User Auth");
-
 var userEmail = "";
 var password = "";
 
@@ -109,10 +107,10 @@ var initApp = function() {
             console.log("Signed In!");
             $("#login-form").hide();
             $("#create-form").hide();
-            $("#signout-btn").show();
             $("#login").hide();
             $("#sign-up").hide();
-            // CREATE SIGNOUT BUTTON ***
+            $("#signout-btn").show();
+
         } else {
             // if user is signed out
             console.log("User is Signed out!");
@@ -157,11 +155,33 @@ var initApp = function() {
             console.log("User is signed out!");
             $("#login").show();
             $("#sign-up").show();
+            $("#signout-btn").hide();
         }, function(error) {
             console.error("sign out error: " + error);
         })
     })
 }
+
+$("#login").on("click", function() {
+    console.log("login clicked!");
+    $('#sign-up-2').hide();
+    $('#log-sign').hide();
+    $("#login").hide();
+    $("#sign-up").hide();
+    $('#signout-btn').hide();
+    $('#login-2').show();
+
+});
+
+
+$("#sign-up").on("click", function() {
+    console.log("signup clicked!");
+    $('#login-2').hide();
+    $('#login').hide();
+    $('#signout-btn').hide();
+    $("#sign-up").hide();
+    $('#sign-up-2').show();
+});
 
 window.onload = function() {
     initApp();
