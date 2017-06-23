@@ -152,7 +152,7 @@ var updatePage = function(meetupResponse) {
             allData.push(allData[meetupResponse[i]] = {
                 "meetupName": meetupResponse[i].name,
                 "meetupDescription": meetupResponse[i].description,
-                "startTime": meetupResponse[i].time,
+                "startTime": moment(meetupResponse[i].time).format("hh:mm A"),
                 "meetingLength": meetupResponse[i].duration,
                 "lat": meetupResponse[i].group.lat,
                 "lon": meetupResponse[i].group.lon,
@@ -195,6 +195,7 @@ var updatePage = function(meetupResponse) {
 
             var collapseBody = $("<div>").addClass("panel-body");
             var collapseDescription = $('<p>').html(allData[j].meetupDescription).text();
+            var collapseStartTime = $('<p>').text("Start Time: " + allData[j].startTime);
             var collapseVenue = $("<p>").text(allData[j].venueName + " Address: " + allData[j].venueAddress + " " + allData[j].venueCity);
             var collapseUrl = $("<a>").text("Click for more info").attr("href", allData[j].meetupURL);
             var collapseAttending = $("<p>").text("RSVP'd: " + allData[j].rsvp);
@@ -207,6 +208,7 @@ var updatePage = function(meetupResponse) {
             // display youtube title
             var videoTitle = $("<p>").text(allData[j].youtubeTitle);
             // display youtube Thumbnail
+            var videoLink = $("<a>").attr("href", allData[j].youtubeURL);
             var videoThumbnail = $("<img>").attr("src", allData[j].youtubeThumbnail);
             var imgContainer = $("<div>").addClass("ytImgContainer");
 
@@ -214,12 +216,14 @@ var updatePage = function(meetupResponse) {
             panelHeading.append(panelName);
             panelDefault.append(panelHeading);
             collapseBody.append(collapseDescription);
+            collapseBody.append(collapseStartTime);
             collapseBody.append(collapseVenue);
             collapseBody.append(collapseUrl);
             collapseBody.append(collapseAttending);
             collapseBody.append(collapseWaitlist);
             imgContainer.append(videoTitle);
-            imgContainer.append(videoThumbnail);
+            videoThumbnail.append(videoLink);
+            imgContainer.append(videoLink);
             collapseBody.append(imgContainer);
             collapseId.append(collapseBody);
 

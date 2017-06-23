@@ -124,11 +124,12 @@ var initApp = function() {
 
     // submit button on Sign-Up
     $("#btn-add").on("click", function(event) {
+        console.log('user added?');
         userSignUp(event);
     });
 
     // enter key on Sign-up
-    $("#create-form").on("keypress", function(event) {
+    $("#sign-up-2").on("keypress", function(event) {
         if (event.which == 13) {
             console.log("Enter!")
             userSignUp(event);
@@ -137,12 +138,13 @@ var initApp = function() {
 
     // submit button on Login
     $("#btn-login").on("click", function(event) {
+        event.preventDefault;
         console.log("Entered on Form!");
         userLogin(event);
     });
 
     // enter key on login
-    $("#login-form").on("keypress", function(event) {
+    $("#login-2").on("keypress", function(event) {
         if (event.which == 13) {
             console.log("Enter on form!");
             userLogin(event);

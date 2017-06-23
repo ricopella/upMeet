@@ -1,5 +1,3 @@
-console.log("picker in");
-
 /*!
  * Date picker for pickadate.js v3.5.6
  * http://amsul.github.io/pickadate.js/date.htm
