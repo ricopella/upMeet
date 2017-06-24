@@ -1,6 +1,3 @@
-// NY // searchAPIS("python", 40.728862, -73.996413);
-// LA // searchAPIS("javascript", 34.020204, -118.490765)
-
 /**
  * Globals and constants
  */
@@ -77,7 +74,6 @@ function searchMeetup(search, lat, lng) {
     }).done(function(response) {
         console.log(meetupResponse.length);
         response.forEach(function(item, index) {
-            // var evalStatement = (moment(item.time, 'YYYY-MM-DD hh:mm a').diff(moment(theMoment, "YYYY-MM-DD a")), "hours") <= 6;
             var evalStatement = (moment(item.time).diff(moment($("#datepicker").val() + " " + $("#timepicker").val(), 'YYYY-MM-DD hh:mm a'), 'hours') <= 5);
             console.log(evalStatement);
             // filter results to NOT include meetups with NO VENUE
@@ -86,7 +82,12 @@ function searchMeetup(search, lat, lng) {
                 // console.log(index);
             }
         });
-        searchAPIS(search, lat, lng);
+        // error handle
+        if (meetupResponse.length === 0) {
+            alert("Looks like no Meetups match your search criteria. Please check the input fields and try again.");
+        } else {
+            searchAPIS(search, lat, lng);
+        }
 
     });
 }
@@ -122,12 +123,12 @@ function searchAPIS(search, lat, lng) {
     $.ajax({
         type: 'GET',
         dataType: 'jsonp',
-        url: 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&inprop=url&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=' + query,
+        url: 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=' + meetupResponse.length + '&prop=pageimages|extracts&inprop=url&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=' + query,
         crossDomain: true,
         cache: false,
         success: function(json) {
             console.log("Wiki data: " + json.query.pages);
-            wikiResponse = json.query.pages;
+            wikiResponse = Object.values(json.query.pages);
             // waits for all 3 API's calls to finish loading data
             numFinished++;
             if (numFinished === totalNeeded) {
@@ -166,8 +167,8 @@ var updatePage = function(meetupResponse) {
             });
         }
 
-        // append Youtube results to object
         addYoutubeLinks(youtubeResponse);
+        addWikiLinks(wikiResponse);
 
         console.log("All Data:");
         console.log(allData);
@@ -250,6 +251,18 @@ function addYoutubeLinks(youtubeResponse) {
     }
 } // end addYoutubeResponse()
 
+function addWikiLinks(wikiResponse) {
+    var totalItems = meetupResponse.length;
+    if (wikiResponse.length < totalItems) {
+        totalItems = wikiResponse.length;
+    }
+
+    for (m = 0; m < totalItems; m++){
+      allData[m].wikiTitle = wikiResponse[m].title;
+      allData[m].wikiURL = "http://en.wikipedia.org/?curid=" + wikiResponse[m].pageid;
+    }
+} // end addYoutubeResponse()
+
 // Updates Map to display one marker for each meetup
 // utilizes meetupResponse for lat/lng
 function updateMap(meetupResponse) {
@@ -291,15 +304,6 @@ function updateMap(meetupResponse) {
     trafficLayer.setMap(map);
 
 }
-
-//  add wikipedia data to meetupResponse object
-// for (var val in wikiData) {
-//     var title = wikiData[val].title;
-//     var extract = wikiData[val].extract;
-//     var articleURL = 'https://en.wikipedia.org/?curid='+wikiData[val].pageid;
-//     console.log(title, extract, articleURL);
-//     allData
-// }
 
 /**
  * Event Handler
