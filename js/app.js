@@ -77,7 +77,6 @@ function searchMeetup(search, lat, lng) {
     }).done(function(response) {
         console.log(meetupResponse.length);
         response.forEach(function(item, index) {
-            // var evalStatement = (moment(item.time, 'YYYY-MM-DD hh:mm a').diff(moment(theMoment, "YYYY-MM-DD a")), "hours") <= 6;
             var evalStatement = (moment(item.time).diff(moment($("#datepicker").val() + " " + $("#timepicker").val(), 'YYYY-MM-DD hh:mm a'), 'hours') <= 5);
             console.log(evalStatement);
             // filter results to NOT include meetups with NO VENUE
@@ -86,7 +85,12 @@ function searchMeetup(search, lat, lng) {
                 // console.log(index);
             }
         });
-        searchAPIS(search, lat, lng);
+        // error handle
+        if (meetupResponse.length === 0) {
+            alert("Looks like no Meetups match your search criteria. Please check the input fields and try again.");
+        } else {
+            searchAPIS(search, lat, lng);
+        }
 
     });
 }
@@ -119,15 +123,16 @@ function searchAPIS(search, lat, lng) {
         }
     );
     // call wikipedia
+    // call wikipedia
     $.ajax({
         type: 'GET',
         dataType: 'jsonp',
-        url: 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&inprop=url&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=' + query,
+        url: 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=' + meetupResponse.length + '&prop=pageimages|extracts&inprop=url&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=' + query,
         crossDomain: true,
         cache: false,
         success: function(json) {
             console.log("Wiki data: " + json.query.pages);
-            wikiResponse = json.query.pages;
+            wikiResponse = Object.values(json.query.pages);
             // waits for all 3 API's calls to finish loading data
             numFinished++;
             if (numFinished === totalNeeded) {
@@ -168,6 +173,7 @@ var updatePage = function(meetupResponse) {
 
         // append Youtube results to object
         addYoutubeLinks(youtubeResponse);
+        addWikiLinks(wikiResponse);
 
         console.log("All Data:");
         console.log(allData);
@@ -193,6 +199,7 @@ var updatePage = function(meetupResponse) {
                 .attr("role", "tabpanel")
                 .attr("aria-labelledby", "heading" + j);
 
+            // add Meetup Details
             var collapseBody = $("<div>").addClass("panel-body");
             var collapseDescription = $('<p>').html(allData[j].meetupDescription).text();
             var collapseStartTime = $('<p>').text("Start Time: " + allData[j].startTime);
@@ -201,16 +208,17 @@ var updatePage = function(meetupResponse) {
             var collapseAttending = $("<p>").text("RSVP'd: " + allData[j].rsvp);
             var collapseWaitlist = $("<p>").text("Waitlist: " + allData[j].waitlist);
 
-            // displays time
-
-            // display wiki description
-
-            // display youtube title
+            // add Youtube details
             var videoTitle = $("<p>").text(allData[j].youtubeTitle);
-            // display youtube Thumbnail
             var videoLink = $("<a>").attr("href", allData[j].youtubeURL);
             var videoThumbnail = $("<img>").attr("src", allData[j].youtubeThumbnail);
             var imgContainer = $("<div>").addClass("ytImgContainer");
+
+            // add Wikipedia details
+            var wiki = $("<a>").attr({
+                href: allData[j].wikiURL,
+                value: allData[j].wikiTitle
+            });
 
             // create accordion HTML elements
             panelHeading.append(panelName);
@@ -225,6 +233,7 @@ var updatePage = function(meetupResponse) {
             videoThumbnail.append(videoLink);
             imgContainer.append(videoLink);
             collapseBody.append(imgContainer);
+            collapseBody.append(wiki);
             collapseId.append(collapseBody);
 
 
@@ -251,6 +260,19 @@ function addYoutubeLinks(youtubeResponse) {
         allData[i].youtubeTitle = youtubeResponse[i].snippet.title;
         allData[i].youtubeURL = "https://www.youtube.com/watch?v=" + youtubeResponse[i].id.videoId;
         allData[i].youtubeThumbnail = youtubeResponse[i].snippet.thumbnails.high.url;
+    }
+} // end addYoutubeResponse()
+
+// adds Wikipedia query to meetupResponse object
+function addWikiLinks(wikiResponse) {
+    var totalItems = meetupResponse.length;
+    if (wikiResponse.length < totalItems) {
+        totalItems = wikiResponse.length;
+    }
+
+    for (m = 0; m < totalItems; m++) {
+        allData[m].wikiTitle = wikiResponse[m].title;
+        allData[m].wikiURL = "http://en.wikipedia.org/?curid=" + wikiResponse[m].pageid;
     }
 } // end addYoutubeResponse()
 
@@ -296,15 +318,6 @@ function updateMap(meetupResponse) {
 
 }
 
-//  add wikipedia data to meetupResponse object
-// for (var val in wikiData) {
-//     var title = wikiData[val].title;
-//     var extract = wikiData[val].extract;
-//     var articleURL = 'https://en.wikipedia.org/?curid='+wikiData[val].pageid;
-//     console.log(title, extract, articleURL);
-//     allData
-// }
-
 /**
  * Event Handler
  */
@@ -325,3 +338,12 @@ $("#user-submit").on("click", function() {
 $('.carousel').carousel({
     interval: 6000
 })
+
+/**
+ * JS Picker - On Load
+ */
+
+$(function() {
+    $('#datepicker').pickadate()
+    $('#timepicker').pickatime()
+});

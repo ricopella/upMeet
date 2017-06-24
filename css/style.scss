@@ -1,26 +1,20 @@
 // Variable for main primary color
 $color-primary: #CC3737;
-
 //Variable for secondary color
 $color-secondary: #3F3F3F;
-
 // Variable for carousel colors
-$carousel-color: #222; 
-
+$carousel-color: #222;
 //Variable for main fonts
-$font-stack-primary: 'Titillium Web', sans-serif;
-
+$font-stack-primary: 'Titillium Web',
+sans-serif;
 //Variable for secondary fonts (h2)
-$font-stack-secondary: 'Noto Sans', sans-serif;
-
+$font-stack-secondary: 'Noto Sans',
+sans-serif;
 //Center alignment
 $align-center: center;
-
 //Variable for Jumbotron and lead paragraph color
 $white: #fff;
-
 // Global Settings for Full Width 5 Columns
-
 .col-xs-5ths,
 .col-sm-5ths,
 .col-md-5ths,
@@ -57,45 +51,46 @@ $white: #fff;
     }
 }
 
+
 /* Layout
 ==============================*/
+
 body {
-	padding-top: 30px;
+    padding-top: 30px;
 }
 
-h2{
-	color: $color-secondary;
-	text-align: $align-center;
-
-	font:{
-		family: $font-stack-secondary;
-		weight: bold 700;
-	}
-
+h2 {
+    color: $color-secondary;
+    text-align: $align-center;
+    font: {
+        family: $font-stack-secondary;
+        weight: bold 700;
+    }
 } //end h2
-
 h3 {
-	text-align: $align-center;
+    text-align: $align-center;
 }
 
 .container {
-	max-width: 1000px;
+    max-width: 1000px;
 }
 
 .user-input {
-	text-align: $align-center;
+    text-align: $align-center;
 }
 
-.col-md-4, .col-md-8 {
-	margin-top: 100px;
+.col-md-4,
+.col-md-8 {
+    margin-top: 100px;
 }
+
 
 /* Navbar
 ==============================*/
+
 // div.navbar.navbar-static-top {
 // 	font-size: 1em;
 // }
-
 // a.navbar-brand.text-muted {
 // 	font-size: 3em;
 // 	text-align: $align-center;
@@ -104,55 +99,52 @@ h3 {
 
 /*Jumbotron
 ===============================*/
+
 .jumbotron {
-	color: $white;
-	margin-bottom: 20px;
-	min-height: 50%;
-	font-weight: 200;
-	text-align: $align-center;
-	
-	background: {
-		image: url("../images/StockSnap.jpg");
-		repeat: no-repeat;
-		position: $align-center;
-		size: cover;
-		image-rendering: -webkit-optimize-contrast;
-		-webkit-background-size: cover;
-		
-	}
-
-
-	p.lead {
-		font-family: $font-stack-primary;
-		text-shadow: 3px 3px 3px black;
-
-	}
-
-	#map {
-		height: 400px;
-		width: 100%;
-	}
-
-	.jumbotron 
-	h1 {	
-		font {
-			size: 96px;
-			family: $font-stack-primary;
-		}
-		text-shadow: 2px 2px 2px black;
-	}	
-
+    color: $white;
+    margin-bottom: 20px;
+    min-height: 50%;
+    font-weight: 200;
+    text-align: $align-center;
+    background: {
+        image: url("../images/StockSnap.jpg");
+        repeat: no-repeat;
+        position: $align-center;
+        size: cover;
+        image-rendering: -webkit-optimize-contrast;
+        -webkit-background-size: cover;
+    }
+    p.lead {
+        font-family: $font-stack-primary;
+        text-shadow: 3px 3px 3px black;
+    }
+    #map {
+        height: 400px;
+        width: 100%;
+    }
+    .jumbotron h1 {
+        font {
+            size: 96px;
+            family: $font-stack-primary;
+        }
+        text-shadow: 2px 2px 2px black;
+    }
 }
 
 h1 {
-	text-shadow: 2px 2px 2px black;
+    text-shadow: 2px 2px 2px black;
 }
+
 
 /* Input Text Boxes
 ==============================*/
-input#MeetUp.form-control, input#datepicker.form-control.picker__input, input#timepicker.form-control.picker__input, input#Address.form-control {
-	background: #fff;
-	border-color: $color-secondary;
+
+input#MeetUp.form-control,
+input#datepicker.form-control.picker__input,
+input#timepicker.form-control.picker__input,
+input#Address.form-control {
+    background: #fff;
+    border-color: $color-secondary;
 }
 
 // ::-webkit-input-placeholder { /* Chrome */
@@ -161,6 +153,7 @@ input#MeetUp.form-control, input#datepicker.form-control.picker__input, input#ti
 
 /* Submit Button
 ==============================*/
+
 .btn {
     padding: 10px 30px;
     margin-top: 4.1em;
@@ -170,69 +163,90 @@ input#MeetUp.form-control, input#datepicker.form-control.picker__input, input#ti
     letter-spacing: 1px;
     text-transform: uppercase;
 }
- 
-.btn:focus, .btn:active:focus, .btn.active:focus {
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
     outline: 0 none;
 }
- 
+
 .btn-primary {
-    background: $color-primary;  
+    background: $color-primary;
     color: #ffffff;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-    background: $color-primary; 
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open>.dropdown-toggle.btn-primary {
+    background: $color-primary;
 }
- 
-.btn-primary:active, .btn-primary.active {
-    background: #fff; 
+
+.btn-primary:active,
+.btn-primary.active {
+    background: #fff;
     box-shadow: none;
 }
 
+
 /*Glyphicons
 ===============================*/
+
 .glyphicon {
-	font-size: 2em;
-	display: block;
-	text-align: $align-center;
-	color: $color-primary; 
+    font-size: 2em;
+    display: block;
+    text-align: $align-center;
+    color: $color-primary;
 }
+
 
 /*Carousel
 ===============================*/
+
 .carousel-indicators {
-	.active {
-		background-color: $carousel-color; 
-	}
-	li {
-		background-color: $carousel-color; 	
-	}
+    .active {
+        background-color: $carousel-color;
+    }
+    li {
+        background-color: $carousel-color;
+    }
 }
+
 
 /*Accordian 
 ===============================*/
+
 .panel-heading .accordion-toggle:after {
-	/* symbol for "opening" panels */
-	font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
-	content: "\e114";    /* adjust as needed, taken from bootstrap.css */
-	float: right;        /* adjust as needed */
-	color: grey;         /* adjust as needed */
-}
-.panel-heading .accordion-toggle.collapsed:after {
-	/* symbol for "collapsed" panels */
-	content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';
+    /* essential for enabling glyphicon */
+    content: "\e114";
+    /* adjust as needed, taken from bootstrap.css */
+    float: right;
+    /* adjust as needed */
+    color: grey;
+    /* adjust as needed */
 }
 
-#upmeet-logo{
-    height: 38px;    
+.panel-heading .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\e080";
+    /* adjust as needed, taken from bootstrap.css */
+}
+
+#upmeet-logo {
+    height: 38px;
 }
 
 
 /*CSS from Myles
 ===============================*/
+
 #lgsu {
     padding-top: 1%;
 }
+
 .pure-button {
     margin: 0.5px;
     border-radius: 3px;
@@ -249,7 +263,7 @@ input#MeetUp.form-control, input#datepicker.form-control.picker__input, input#ti
     color: white;
 }
 
-#upmeet-row{
+#upmeet-row {
     margin-top: 0px;
     margin-bottom: 5px;
 }
@@ -266,43 +280,187 @@ form#login-2.pure-form {
     margin-top: 5px;
     margin-left: 50% !important;
     margin-bottom: -7px;
-    }
+}
 
- #box-sp {
- 	margin: 2px;
- }
+#box-sp {
+    margin: 2px;
+}
 
- p.lead {
- 	font-family: "Tit"
- }   
+p.lead {
+    font-family: "Tit"
+}
+
 
 /*==================================================
 =            Bootstrap 3 Media Queries             =
 ==================================================*/
 
-    /*==========  Mobile First Method  ==========*/
 
-    /* Custom, iPhone Retina */ 
-    @media only screen and (min-width : 320px) {
+/*==========  Mobile First Method  ==========*/
 
+
+/* Custom, iPhone Retina */
+
+@media only screen and (min-width: 320px) {
+    html,
+    body {
+        margin: 0;
+        padding: 2px;
     }
-
-    /* Extra Small Devices, Phones */ 
-    @media only screen and (min-width : 480px) {
-
+    div#upmeet-row.row {
+        margin-top: 10px;
     }
-
-    /* Small Devices, Tablets */
-    @media only screen and (min-width : 768px) {
-
+    div#carousel-example-generic.carousel.slide.jumbotron {
+        margin-top: 35px;
     }
-
-    /* Medium Devices, Desktops */
-    @media only screen and (min-width : 992px) {
-
+    #lgsu {
+        margin-left: 189px;
+        margin-bottom: -65px;
     }
-
-    /* Large Devices, Wide Screens */
-    @media only screen and (min-width : 1200px) {
-
+    #upmeet-logo {
+        margin-left: -5px;
+        margin-bottom: -50px;
     }
+    button#user-submit.btn.btn-primary {
+        margin-left: 85px;
+    }
+    #footer {
+        margin-top: 100px;
+        margin-bottom: 0;
+        text-align: center;
+    }
+}
+
+
+/* Extra Small Devices, Phones */
+
+@media only screen and (min-width: 480px) {
+    html,
+    body {
+        margin: 0;
+        padding: 2px;
+    }
+    div#carousel-example-generic.carousel.slide.jumbotron {
+        margin-right: 5px;
+    }
+    #lgsu {
+        margin-left: 344px;
+        margin-bottom: -65px;
+    }
+    #upmeet-logo {
+        margin-bottom: -55px;
+    }
+    button#user-submit.btn.btn-primary {
+        margin-left: 165px;
+    }
+    #footer {
+        margin-top: 100px;
+        margin-bottom: 0;
+        text-align: center;
+    }
+}
+
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width: 768px) {
+    html,
+    body {
+        margin: 0;
+        padding: 2px;
+    }
+    div#carousel-example-generic.carousel.slide.jumbotron {
+        margin-right: 15px;
+    }
+    #lgsu {
+        margin-left: 620px;
+        margin-bottom: -70px;
+    }
+    #upmeet-logo {
+        margin-bottom: -60px;
+    }
+    button#user-submit.btn.btn-primary {
+        margin-left: 300px;
+    }
+    #footer {
+        margin-top: 100px;
+        margin-bottom: 0;
+        text-align: center;
+    }
+}
+
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width: 992px) {
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    div#upmeet-row.row {
+        padding-top: 10px;
+        margin: 0;
+    }
+    div#carousel-example-generic.carousel.slide.jumbotron {
+        margin-left: 75px;
+        width: 100%;
+    }
+    #lgsu {
+        margin-left: 929px;
+    }
+    #upmeet-logo {
+        margin-left: 50px;
+        margin-bottom: -70px;
+    }
+    .row {
+        margin-left: 150px;
+    }
+    button#user-submit.btn.btn-primary {
+        margin-left: 30px;
+    }
+    div.col-md-4 {
+        margin-left: -100px;
+    }
+    div.col-md-8 {
+        margin-left: 60px;
+    }
+    #footer {
+        margin-top: 300px;
+        margin-bottom: 0;
+        margin-left: 150px;
+    }
+}
+
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width: 1200px) {
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    div#upmeet-row.row {
+        padding-top: 10px;
+        margin: 0;
+    }
+    div#carousel-example-generic.carousel.slide.jumbotron {
+        margin-left: 20px;
+        width: 100%;
+    }
+    #lgsu {
+        margin-left: 1080px;
+    }
+    #upmeet-logo {
+        margin-left: 0px;
+        margin-bottom: -75px;
+    }
+    #footer {
+        margin-top: 300px;
+        margin-bottom: 0;
+    }
+}
+
+
+/*# sourceMappingURL=style.css.map */

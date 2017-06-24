@@ -136,6 +136,11 @@ input#Address.form-control {
     border-color: #3F3F3F;
 }
 
+input#search-subject,
+input#search-address {
+    border-color: black;
+}
+
 
 /* Submit Button
 ==============================*/
@@ -295,17 +300,166 @@ div#footer {
 
 /* Custom, iPhone Retina */
 
+@media only screen and (min-width: 320px) {
+    html,
+    body {
+        margin: 0;
+        padding: 2px;
+    }
+    div#upmeet-row.row {
+        margin-top: 10px;
+    }
+    div#carousel-example-generic.carousel.slide.jumbotron {
+        margin-top: 35px;
+    }
+    #lgsu {
+        margin-left: 65%;
+        margin-bottom: -65px;
+    }
+    #upmeet-logo {
+        margin-left: -5px;
+        margin-bottom: -50px;
+    }
+    button#user-submit.btn.btn-primary {
+        margin-left: 75%;
+    }
+    #footer {
+        margin-top: 100px;
+        margin-bottom: 0;
+        text-align: center;
+    }
+}
+
 
 /* Extra Small Devices, Phones */
+
+@media only screen and (min-width: 480px) {
+    html,
+    body {
+        margin: 0;
+        padding: 2px;
+    }
+    div#carousel-example-generic.carousel.slide.jumbotron {
+        margin-right: 5px;
+    }
+    #lgsu {
+        margin-left: 344px;
+        margin-bottom: -65px;
+    }
+    #upmeet-logo {
+        margin-bottom: -55px;
+    }
+    button#user-submit.btn.btn-primary {
+        margin-left: 165px;
+    }
+    #footer {
+        margin-top: 100px;
+        margin-bottom: 0;
+        text-align: center;
+    }
+}
 
 
 /* Small Devices, Tablets */
 
+@media only screen and (min-width: 768px) {
+    html,
+    body {
+        margin: 0;
+        padding: 2px;
+    }
+    div#carousel-example-generic.carousel.slide.jumbotron {
+        margin-right: 15px;
+    }
+    #lgsu {
+        margin-left: 620px;
+        margin-bottom: -70px;
+    }
+    #upmeet-logo {
+        margin-bottom: -60px;
+    }
+    button#user-submit.btn.btn-primary {
+        margin-left: 300px;
+    }
+    #footer {
+        margin-top: 100px;
+        margin-bottom: 0;
+        text-align: center;
+    }
+}
+
 
 /* Medium Devices, Desktops */
 
+@media only screen and (min-width: 992px) {
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    div#upmeet-row.row {
+        padding-top: 10px;
+        margin: 0;
+    }
+    div#carousel-example-generic.carousel.slide.jumbotron {
+        margin-left: 75px;
+        width: 100%;
+    }
+    #lgsu {
+        margin-left: 929px;
+    }
+    #upmeet-logo {
+        margin-left: 50px;
+        margin-bottom: -70px;
+    }
+    .row {
+        margin-left: 150px;
+    }
+    button#user-submit.btn.btn-primary {
+        margin-left: 30px;
+    }
+    div.col-md-4 {
+        margin-left: -100px;
+    }
+    div.col-md-8 {
+        margin-left: 60px;
+    }
+    #footer {
+        margin-top: 300px;
+        margin-bottom: 0;
+        margin-left: 150px;
+    }
+}
+
 
 /* Large Devices, Wide Screens */
+
+@media only screen and (min-width: 1200px) {
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    div#upmeet-row.row {
+        padding-top: 10px;
+        margin: 0;
+    }
+    div#carousel-example-generic.carousel.slide.jumbotron {
+        margin-left: 20px;
+        width: 100%;
+    }
+    #lgsu {
+        margin-left: 1080px;
+    }
+    #upmeet-logo {
+        margin-left: 0px;
+        margin-bottom: -75px;
+    }
+    #footer {
+        margin-top: 300px;
+        margin-bottom: 0;
+    }
+}
 
 
 /*# sourceMappingURL=style.css.map */
