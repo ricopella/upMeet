@@ -204,7 +204,10 @@ var updatePage = function(meetupResponse) {
             var collapseDescription = $('<p>').html("Meetup Details: " + allData[j].meetupDescription).text();
             var collapseStartTime = $('<p>').text("Start Time: " + allData[j].startTime);
             var collapseVenue = $("<p>").text("Venue Name: " + allData[j].venueName + " Address: " + allData[j].venueAddress + " " + allData[j].venueCity);
-            var collapseUrl = $("<a>").text("Click to RSVP").attr("href", allData[j].meetupURL);
+            var collapseUrl = $("<a>").text("Click to RSVP").attr({
+                href: allData[j].meetupURL,
+                target: "_blank"
+            });
             var collapseAttending = $("<p>").text("RSVP'd: " + allData[j].rsvp);
             var collapseWaitlist = $("<p>").text("Waitlist: " + allData[j].waitlist);
 
@@ -219,7 +222,11 @@ var updatePage = function(meetupResponse) {
             var imgContainer = $("<div>").addClass("ytImgContainer");
 
             // add Wikipedia details
-            var wiki = $("<a>").attr("href", allData[j].wikiURL).html('<i class="fa fa-wikipedia-w" aria-hidden="true"></i>' + "ikipedia: " + allData[j].wikiTitle)
+            var wiki = $("<a>").attr({
+                    href: allData[j].wikiURL,
+                    target: "_blank"
+                })
+                .html('<i class="fa fa-wikipedia-w" aria-hidden="true"></i>' + "ikipedia: " + allData[j].wikiTitle)
 
             // create accordion HTML elements
             panelHeading.append(panelName);
@@ -328,7 +335,7 @@ $("#user-submit").on("click", function() {
     var address = $("#search-address").val();
     geocodeAddress(geocoder, address);
     $('html, body').animate({
-        scrollTop: $("#render-data").offset().top
+        scrollTop: $("#resources").offset().top
     }, 2000);
 })
 
