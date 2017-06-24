@@ -327,6 +327,9 @@ $("#user-submit").on("click", function() {
     var search = $("#search-subject").val();
     var address = $("#search-address").val();
     geocodeAddress(geocoder, address);
+    $('html, body').animate({
+        scrollTop: $("#render-data").offset().top
+    }, 2000);
 })
 
 /**
