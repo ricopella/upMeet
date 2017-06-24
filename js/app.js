@@ -215,10 +215,7 @@ var updatePage = function(meetupResponse) {
             var imgContainer = $("<div>").addClass("ytImgContainer");
 
             // add Wikipedia details
-            var wiki = $("<a>").attr({
-                href: allData[j].wikiURL,
-                value: allData[j].wikiTitle
-            });
+            var wiki = $("<a>").attr("href", allData[j].wikiURL).html('<i class="fa fa-wikipedia-w" aria-hidden="true"></i>' + ": " + allData[j].wikiTitle)
 
             // create accordion HTML elements
             panelHeading.append(panelName);
