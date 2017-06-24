@@ -239,6 +239,7 @@ input#search-address {
 
 #lgsu {
     padding-top: 1%;
+    float: right;
 }
 
 .pure-button {
@@ -317,7 +318,7 @@ div#footer {
         margin-top: 35px;
     }
     #lgsu {
-        margin-left: 65%;
+        margin-left: 60%;
         margin-bottom: -65px;
     }
     #upmeet-logo {
@@ -401,23 +402,22 @@ div#footer {
         margin: 0;
         padding: 0;
     }
+    #lgsu {
+        padding-right: 3.5%;
+    }
     div#upmeet-row.row {
         padding-top: 10px;
         margin: 0;
     }
     div#carousel-example-generic.carousel.slide.jumbotron {
-        margin-left: 75px;
         width: 100%;
-    }
-    #lgsu {
-        margin-left: 929px;
     }
     #upmeet-logo {
         margin-left: 50px;
         margin-bottom: -70px;
     }
-    .row {
-        margin-left: 150px;
+    .map-resources {
+        padding-left: 7%;
     }
     button#user-submit.btn.btn-primary {
         margin-left: 30px;
@@ -429,7 +429,6 @@ div#footer {
         margin-left: 60px;
     }
     #footer {
-        margin-top: 300px;
         margin-bottom: 0;
         margin-left: 150px;
     }
@@ -449,18 +448,13 @@ div#footer {
         margin: 0;
     }
     div#carousel-example-generic.carousel.slide.jumbotron {
-        margin-left: 20px;
         width: 100%;
-    }
-    #lgsu {
-        margin-left: 1080px;
     }
     #upmeet-logo {
         margin-left: 0px;
         margin-bottom: -75px;
     }
     #footer {
-        margin-top: 300px;
         margin-bottom: 0;
     }
 }
