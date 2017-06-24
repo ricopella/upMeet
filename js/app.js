@@ -201,21 +201,25 @@ var updatePage = function(meetupResponse) {
 
             // add Meetup Details
             var collapseBody = $("<div>").addClass("panel-body");
-            var collapseDescription = $('<p>').html(allData[j].meetupDescription).text();
+            var collapseDescription = $('<p>').html("Meetup Details: " + allData[j].meetupDescription).text();
             var collapseStartTime = $('<p>').text("Start Time: " + allData[j].startTime);
-            var collapseVenue = $("<p>").text(allData[j].venueName + " Address: " + allData[j].venueAddress + " " + allData[j].venueCity);
-            var collapseUrl = $("<a>").text("Click for more info").attr("href", allData[j].meetupURL);
+            var collapseVenue = $("<p>").text("Venue Name: " + allData[j].venueName + " Address: " + allData[j].venueAddress + " " + allData[j].venueCity);
+            var collapseUrl = $("<a>").text("Click to RSVP").attr("href", allData[j].meetupURL);
             var collapseAttending = $("<p>").text("RSVP'd: " + allData[j].rsvp);
             var collapseWaitlist = $("<p>").text("Waitlist: " + allData[j].waitlist);
 
             // add Youtube details
-            var videoTitle = $("<p>").text(allData[j].youtubeTitle);
-            var videoLink = $("<a>").attr("href", allData[j].youtubeURL);
-            var videoThumbnail = $("<img>").attr("src", allData[j].youtubeThumbnail);
+            var videoTitle = $("<p>").text("Youtube Example: " + allData[j].youtubeTitle);
+            var videoLink = $("<a>")
+                .attr({
+                    href: allData[j].youtubeURL,
+                    target: "_blank"
+                })
+                .html("<img src=" + allData[j].youtubeThumbnail + ">");
             var imgContainer = $("<div>").addClass("ytImgContainer");
 
             // add Wikipedia details
-            var wiki = $("<a>").attr("href", allData[j].wikiURL).html('<i class="fa fa-wikipedia-w" aria-hidden="true"></i>' + ": " + allData[j].wikiTitle)
+            var wiki = $("<a>").attr("href", allData[j].wikiURL).html('<i class="fa fa-wikipedia-w" aria-hidden="true"></i>' + "ikipedia: " + allData[j].wikiTitle)
 
             // create accordion HTML elements
             panelHeading.append(panelName);
@@ -226,14 +230,11 @@ var updatePage = function(meetupResponse) {
             collapseBody.append(collapseUrl);
             collapseBody.append(collapseAttending);
             collapseBody.append(collapseWaitlist);
+            collapseBody.append(wiki);
             imgContainer.append(videoTitle);
-            videoThumbnail.append(videoLink);
             imgContainer.append(videoLink);
             collapseBody.append(imgContainer);
-            collapseBody.append(wiki);
             collapseId.append(collapseBody);
-
-
             panelDefault.append(collapseId);
 
             // update accordion to page
