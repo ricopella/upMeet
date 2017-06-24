@@ -74,7 +74,7 @@ p {
 /* Navbar
 ==============================*/
 
-form#sign-up-2 {
+div#sign-up-2 {
     padding-left: 50%;
 }
 
@@ -271,7 +271,7 @@ input#search-address {
     margin-left: 87%;
 }
 
-form#login-2.pure-form {
+div#login-2.pure-form {
     margin-top: 5px;
     margin-left: 50% !important;
     margin-bottom: -7px;

@@ -61,7 +61,6 @@ var userLogin = function(event) {
     event.preventDefault;
     userEmail = $("#user-name").val();
     password = $("#current-password").val();
-    debugger;
     if (firebase.auth().currentUser) {
         // start signout
         firebase.auth().signOut();
@@ -106,7 +105,8 @@ var initApp = function() {
             // if user is signed in
             var email = user.email;
             console.log("Signed In!");
-            $("#login-form").hide();
+            $("#login-2").hide();
+            $("#sign-up-2").hide();
             $("#create-form").hide();
             $("#login").hide();
             $("#sign-up").hide();
@@ -157,6 +157,7 @@ var initApp = function() {
 
     // signout event handler to sign user out
     $("#signout-btn").on("click", function(event) {
+        event.preventDefault;
         firebase.auth().signOut().then(function() {
             console.log("User is signed out!");
             $("#login").show();
@@ -168,7 +169,8 @@ var initApp = function() {
     })
 }
 
-$("#login").on("click", function() {
+$("#login").on("click", function(event) {
+    event.preventDefault;
     console.log("login clicked!");
     $('#sign-up-2').hide();
     $('#log-sign').hide();
