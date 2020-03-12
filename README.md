@@ -4,6 +4,7 @@
 ### UpMeet is a all-in-one search tool that allows developers to easily find meetups that match their availability and provides resources to prep them for the topics to be covered.
 
 ![Upmeet Prototype](./images/all-demo.gif "Upmeet Prototype")
+https://ricopella.github.io/upMeet/
 
 ## Technology
 
